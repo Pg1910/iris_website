@@ -136,7 +136,18 @@
   function scrollToSection(id) {
     const target = document.getElementById(id);
     if (!target) return;
-    target.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
+    const style = getComputedStyle(target);
+    if (style.position === "sticky") {
+      // A pinned card reports its pinned position, so scrollIntoView would not
+      // move. Measure where the card naturally sits and scroll there instead.
+      const pin = parseFloat(style.top) || 0;
+      target.style.position = "static";
+      const top = target.getBoundingClientRect().top + scrollY - pin;
+      target.style.position = "";
+      scrollTo({ top, behavior: scrollBehavior() });
+    } else {
+      target.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
+    }
     const heading = target.querySelector("h2");
     if (heading) {
       heading.tabIndex = -1;
@@ -575,4 +586,168 @@
 
   document.querySelector("#year").textContent = new Date().getFullYear();
   openHash({ focus: false });
+})();
+
+
+/* ---------------------------------------------------------------------------
+   Flight plan: the animated drone mission in the Solutions call to action.
+   Styles live in the Solutions stylesheet under "flight plan".
+   The drone takes off from the first point, flies the survey lines, pauses at
+   each waypoint to light up one workflow stage, then lands and stops.
+   Stage names are read from the workflow section on the page, so the two
+   always match. Plays once, the first time the card scrolls into view.
+   --------------------------------------------------------------------------- */
+(() => {
+  const host = document.querySelector("#solutions .solutions-project-fit .shell");
+  if (!host || host.querySelector(".fit-flight")) return;
+
+  const fallback = ["Frame", "Control", "Acquire", "Model", "Deliver"];
+  const found = [
+    ...document.querySelectorAll("#solutions .chain-stop .stop-card strong"),
+  ].map((el) => el.textContent.trim());
+  const names = found.length === 5 ? found : fallback;
+
+  // Each stop: where it is on the route, and where its label sits.
+  const stops = [
+    { x: 82, y: 84, lx: 124, ly: 66, anchor: "start", cls: "ff-start" },
+    { x: 353, y: 93, lx: 338, ly: 98, anchor: "end" },
+    { x: 87, y: 153, lx: 103, ly: 157, anchor: "start" },
+    { x: 359, y: 185, lx: 344, ly: 190, anchor: "end" },
+    { x: 106, y: 222, lx: 148, ly: 247, anchor: "start", cls: "ff-end" },
+  ];
+  const route =
+    "M82 84 L338 70 Q352 69 353 83 L354 102 Q355 116 341 117 L100 130 " +
+    "Q86 131 87 145 L88 162 Q89 176 103 175 L344 162 Q358 161 359 175 " +
+    "L360 194 Q361 208 347 209 L106 222";
+
+  const stopMarkup = stops
+    .map(
+      (s, i) => `
+      <g class="ff-stop ${s.cls || ""}">
+        <circle class="ff-ring" cx="${s.x}" cy="${s.y}" r="10"></circle>
+        <circle class="ff-dot" cx="${s.x}" cy="${s.y}" r="5"></circle>
+        <text class="ff-label" x="${s.lx}" y="${s.ly}" text-anchor="${s.anchor}"><tspan>0${i + 1}</tspan> ${names[i]}</text>
+      </g>`,
+    )
+    .join("");
+
+  const figure = document.createElement("div");
+  figure.className = "fit-flight";
+  figure.setAttribute("aria-hidden", "true");
+  figure.innerHTML = `
+    <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
+      <path class="ff-area" d="M38 46 L372 28 L392 252 L58 272 Z"></path>
+      <g class="ff-corner">
+        <rect x="33" y="41" width="10" height="10"></rect>
+        <rect x="367" y="23" width="10" height="10"></rect>
+        <rect x="387" y="247" width="10" height="10"></rect>
+        <rect x="53" y="267" width="10" height="10"></rect>
+      </g>
+      <path class="ff-plan" d="${route}"></path>
+      <path class="ff-flown" d="${route}"></path>
+      ${stopMarkup}
+      <g class="ff-drone" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 19L41 41M41 19L19 41" stroke="#fff" stroke-width="7"></path>
+        <path d="M19 19L41 41M41 19L19 41" stroke="#17485f" stroke-width="4"></path>
+        <g fill="#0a293b" stroke="#42d2e7" stroke-width="2">
+          <g transform="rotate(-35 13 13)"><ellipse class="ff-rotor" cx="13" cy="13" rx="10" ry="5"></ellipse></g>
+          <g transform="rotate(35 47 13)"><ellipse class="ff-rotor" cx="47" cy="13" rx="10" ry="5"></ellipse></g>
+          <g transform="rotate(35 13 47)"><ellipse class="ff-rotor" cx="13" cy="47" rx="10" ry="5"></ellipse></g>
+          <g transform="rotate(-35 47 47)"><ellipse class="ff-rotor" cx="47" cy="47" rx="10" ry="5"></ellipse></g>
+        </g>
+        <path d="M23 23Q30 18 37 23L36 36Q30 41 24 36Z" fill="#fff" stroke="#17485f" stroke-width="2"></path>
+        <path d="M26 25H34M27 29H33" stroke="#086582" stroke-width="2"></path>
+        <circle cx="30" cy="36" r="3" fill="#0a293b" stroke="#42d2e7" stroke-width="1.5"></circle>
+      </g>
+    </svg>`;
+  host.append(figure);
+
+  const flown = figure.querySelector(".ff-flown");
+  const drone = figure.querySelector(".ff-drone");
+  const stopEls = [...figure.querySelectorAll(".ff-stop")];
+  const total = flown.getTotalLength();
+
+  // Find how far along the route each stop sits.
+  const marks = stops.map((s) => {
+    let best = 0;
+    let bestGap = Infinity;
+    for (let d = 0; d <= total; d += 1) {
+      const p = flown.getPointAtLength(d);
+      const gap = Math.hypot(p.x - s.x, p.y - s.y);
+      if (gap < bestGap) {
+        bestGap = gap;
+        best = d;
+      }
+    }
+    return best;
+  });
+  marks[0] = 0;
+  marks[marks.length - 1] = total;
+
+  flown.style.strokeDasharray = `${total} ${total}`;
+
+  function place(distance) {
+    const p = flown.getPointAtLength(distance);
+    drone.setAttribute(
+      "transform",
+      `translate(${p.x} ${p.y}) scale(1.15) translate(-30 -30)`,
+    );
+    flown.style.strokeDashoffset = total - distance;
+  }
+  function reach(index) {
+    stopEls[index].classList.add("is-reached");
+  }
+  function finish() {
+    place(total);
+    stopEls.forEach((el) => el.classList.add("is-reached"));
+    figure.classList.remove("is-flying");
+  }
+
+  place(0);
+
+  const SPEED = 190; // route units per second
+  const PAUSE = 550; // milliseconds spent at each waypoint
+  const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
+
+  function fly() {
+    let leg = 0;
+    let legStart = null;
+    reach(0);
+    figure.classList.add("is-flying");
+
+    function frame(now) {
+      if (legStart === null) legStart = now + PAUSE; // hold at the stop first
+      const from = marks[leg];
+      const to = marks[leg + 1];
+      const duration = ((to - from) / SPEED) * 1000;
+      const t = Math.min(Math.max((now - legStart) / duration, 0), 1);
+      place(from + (to - from) * ease(t));
+      if (t === 1) {
+        leg += 1;
+        reach(leg);
+        legStart = null;
+        if (leg === marks.length - 1) {
+          // Landed: rotors wind down and the drone stays put.
+          setTimeout(() => figure.classList.remove("is-flying"), 350);
+          return;
+        }
+      }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    finish();
+    return;
+  }
+  const watcher = new IntersectionObserver(
+    (entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      watcher.disconnect();
+      fly();
+    },
+    { threshold: 0.6 },
+  );
+  watcher.observe(figure);
 })();

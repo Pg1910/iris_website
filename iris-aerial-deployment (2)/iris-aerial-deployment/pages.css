@@ -2092,3 +2092,1078 @@ body[data-route="akshaa"] {
     border-color: CanvasText;
   }
 }
+
+/* ===========================================================================
+   Solutions page redesign
+   Every rule below is scoped to #solutions, so no other page is affected.
+   =========================================================================== */
+
+/* --- Hero: dark, confident opening ------------------------------------- */
+#solutions .solutions-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: 88px;
+  background:
+    radial-gradient(900px 420px at 85% 0%, rgba(66, 185, 232, 0.22), transparent 70%),
+    linear-gradient(135deg, var(--navy) 0%, #0b3a5e 100%);
+}
+#solutions .solutions-hero h1 {
+  color: #fff;
+  max-width: 620px;
+}
+#solutions .solutions-hero-copy p {
+  color: var(--on-dark);
+  font-size: 21px;
+  max-width: 520px;
+}
+#solutions .solutions-hero .light {
+  background: #fff;
+  color: var(--navy);
+}
+#solutions .solutions-hero .light:hover {
+  background: var(--accent);
+  color: var(--navy);
+}
+#solutions .solutions-scene .image-open {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+}
+#solutions .solutions-scene img {
+  height: 440px;
+}
+
+/* --- Sector jump bar: sticky pills ------------------------------------- */
+#solutions .page-jumps {
+  position: sticky;
+  top: var(--header);
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-block: 1px solid var(--line);
+}
+#solutions .page-jumps .shell {
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding-block: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+#solutions .page-jumps .shell::-webkit-scrollbar {
+  display: none;
+}
+#solutions .page-jumps a {
+  flex: 0 0 auto;
+  min-height: 42px;
+  padding: 0 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--mist);
+  color: var(--ink);
+  font-size: 16px;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+#solutions .page-jumps a:hover {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* --- Sector rows -------------------------------------------------------- */
+#solutions .solution-portfolio .section-head {
+  margin-bottom: 48px;
+}
+#solutions .solution-families {
+  gap: 36px;
+}
+#solutions .solution-family {
+  border-radius: 20px;
+  box-shadow:
+    0 1px 2px rgba(8, 29, 54, 0.05),
+    0 18px 40px rgba(8, 29, 54, 0.06);
+}
+/* The cropped ghost numerals fought with the headings; a sector tag replaces them. */
+#solutions .solution-family .ghost-num {
+  display: none;
+}
+#solutions .solution-family .service-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+  padding: 52px 48px;
+}
+#solutions .solution-family .service-copy::before {
+  align-self: flex-start;
+  margin-bottom: 18px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--sky-tint);
+  color: var(--cyan2);
+  font: 700 12.5px/1 var(--font-technical);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+#solutions .solution-family.rail .service-copy::before {
+  content: "Railways";
+}
+#solutions .solution-family.road .service-copy::before {
+  content: "Roads & highways";
+}
+#solutions .solution-family.city .service-copy::before {
+  content: "Cities & land";
+}
+#solutions .solution-family.mine .service-copy::before {
+  content: "Mining";
+}
+#solutions .solution-family.water .service-copy::before {
+  content: "Water & agriculture";
+}
+#solutions .solution-family h2 {
+  font-size: 38px;
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+#solutions .solution-family p {
+  max-width: 52ch;
+  margin-bottom: 8px;
+}
+#solutions .solution-spec {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 0;
+  border-top: 0;
+}
+#solutions .solution-spec > div {
+  display: block;
+  padding: 14px 18px;
+  border-left: 3px solid var(--sky-bright);
+  border-radius: 0 10px 10px 0;
+  background: var(--sky-tint);
+}
+#solutions .solution-spec strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--cyan2);
+  font: 700 12px/1 var(--font-technical);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+#solutions .solution-spec span {
+  display: block;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.5;
+}
+#solutions .solution-family .service-media {
+  align-self: stretch;
+}
+#solutions .solution-family .service-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#solutions .solution-family:hover .service-media img {
+  transform: scale(1.04);
+}
+@media (min-width: 1101px) {
+  #solutions .solution-family,
+  #solutions .solution-family:first-child {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  }
+  #solutions .solution-family .service-media .image-open,
+  #solutions .solution-family:first-child .service-media .image-open {
+    min-height: 470px;
+  }
+}
+
+/* --- Workflow: dark band with a clean five-step line ------------------- */
+#solutions .solution-chain {
+  background: linear-gradient(160deg, var(--navy) 0%, #0b3a5e 100%);
+  color: #fff;
+}
+#solutions .solution-chain .kicker {
+  color: var(--accent);
+}
+#solutions .solution-chain h2 {
+  color: #fff;
+}
+#solutions .solution-chain .hl {
+  background: linear-gradient(transparent 62%, rgba(66, 185, 232, 0.4) 0);
+}
+#solutions .chain-intro p {
+  color: var(--on-dark);
+}
+@media (min-width: 1101px) {
+  #solutions .chain-road {
+    --road-h: auto;
+    height: auto;
+    margin-top: 52px;
+  }
+  #solutions .road-line {
+    display: none;
+  }
+  #solutions .chain-stops {
+    height: auto;
+    gap: 20px;
+  }
+  #solutions .chain-stops::before {
+    content: "";
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 11px;
+    height: 2px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--sky-bright) 0 10px,
+      transparent 10px 20px
+    );
+  }
+  #solutions .chain-stop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #solutions .chain-stop .stop-pin {
+    position: relative;
+    left: auto;
+    top: auto;
+    translate: none;
+    flex: 0 0 auto;
+    margin-bottom: 26px;
+    background: var(--navy);
+    border-color: var(--sky-bright);
+    box-shadow: 0 0 0 6px rgba(66, 185, 232, 0.2);
+  }
+  #solutions .chain-stop.finish .stop-pin {
+    background: var(--ak-lime);
+    border-color: var(--ak-lime);
+    box-shadow: 0 0 0 6px rgba(160, 230, 109, 0.2);
+  }
+  #solutions .chain-stop .stop-card,
+  #solutions .chain-stop.up .stop-card,
+  #solutions .chain-stop.down .stop-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    translate: none;
+    width: 100%;
+    flex: 1;
+    padding: 24px 22px 26px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: none;
+    text-align: left;
+  }
+  #solutions .chain-stop:hover .stop-card {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
+  }
+  #solutions .stop-card::after {
+    display: none;
+  }
+  #solutions .stop-no {
+    width: auto;
+    height: auto;
+    margin-bottom: 14px;
+    border-radius: 0;
+    background: none;
+    color: var(--accent);
+    font-size: 15px;
+    letter-spacing: 0.14em;
+  }
+  #solutions .chain-stop.finish .stop-no {
+    background: none;
+    color: var(--ak-lime);
+  }
+  #solutions .stop-card strong {
+    color: #fff;
+    font-size: 24px;
+  }
+  #solutions .stop-card p {
+    color: var(--on-dark);
+    font-size: 16px;
+  }
+}
+
+/* --- Project work: tidy cards ------------------------------------------ */
+#solutions .case-gallery {
+  background: var(--white);
+}
+#solutions .case-visual {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(8, 29, 54, 0.05), 0 12px 28px rgba(8, 29, 54, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+#solutions .case-visual:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 44px rgba(8, 29, 54, 0.14);
+}
+#solutions .case-visual .image-open {
+  height: 250px;
+  padding: 0;
+  border-radius: 0;
+  background: var(--sky-tint);
+}
+#solutions .case-visual img {
+  object-fit: cover;
+}
+#solutions .case-visual.aizawl img {
+  object-fit: contain;
+  padding: 12px;
+}
+#solutions .case-visual > div {
+  padding: 24px 26px 28px;
+}
+#solutions .case-visual > div > span {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--sky-tint);
+  color: var(--cyan2);
+  font: 700 12px/1 var(--font-technical);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+#solutions .case-visual h3 {
+  font-size: 25px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+#solutions .case-download {
+  margin-top: 44px;
+  padding: 30px 36px;
+  border: 1px solid var(--sky-line);
+  border-left: 5px solid var(--cyan);
+  border-radius: 16px;
+  background: linear-gradient(120deg, var(--sky-tint), #fff 70%);
+}
+
+/* --- Closing call to action -------------------------------------------- */
+#solutions .solutions-project-fit {
+  padding-block: 88px;
+  background:
+    radial-gradient(700px 320px at 90% 100%, rgba(66, 185, 232, 0.35), transparent 70%),
+    linear-gradient(135deg, var(--cyan2) 0%, var(--navy) 100%);
+}
+#solutions .solutions-project-fit .heading {
+  color: #fff;
+}
+#solutions .solutions-project-fit .light {
+  background: #fff;
+  color: var(--navy);
+}
+#solutions .solutions-project-fit .light:hover {
+  background: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #solutions .solution-family .service-media img,
+  #solutions .case-visual {
+    transition: none;
+  }
+  #solutions .solution-family:hover .service-media img,
+  #solutions .case-visual:hover {
+    transform: none;
+  }
+}
+#solutions .case-hero-caption {
+  display: none;
+}
+
+/* ===========================================================================
+   Solutions page — second design pass (static visual design only, no motion)
+   =========================================================================== */
+
+/* Hero: offset frame behind the photo, angled lower edge */
+#solutions .solutions-hero {
+  padding-bottom: 120px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 44px), 0 100%);
+}
+#solutions .solutions-scene {
+  position: relative;
+  isolation: isolate;
+}
+#solutions .solutions-scene::before {
+  content: "";
+  position: absolute;
+  inset: 22px -22px -22px 22px;
+  z-index: -1;
+  border: 2px solid var(--sky-bright);
+  border-radius: 22px;
+  opacity: 0.55;
+}
+#solutions .solutions-scene::after {
+  content: "On site";
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(8, 29, 54, 0.78);
+  color: #fff;
+  font: 700 12px/1 var(--font-technical);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+#solutions .page-jumps {
+  margin-top: -44px;
+}
+
+/* Section headings: short accent rule */
+#solutions .solution-portfolio .heading::after,
+#solutions .case-gallery .heading::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin-top: 18px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--cyan), var(--sky-bright));
+}
+
+/* Sector cards: inset, rounded media and a top accent edge */
+#solutions .solution-family {
+  border-top: 4px solid var(--sky-bright);
+}
+#solutions .solution-family .service-media {
+  padding: 16px;
+}
+#solutions .solution-family .service-media .image-open,
+#solutions .solution-family:first-child .service-media .image-open {
+  min-height: 440px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+#solutions .solution-family .service-media img {
+  border-radius: 14px;
+}
+#solutions .solution-family .service-copy {
+  padding: 48px 44px;
+}
+#solutions .solution-family h2 {
+  font-size: 40px;
+  letter-spacing: -0.01em;
+}
+#solutions .solution-family p {
+  font-size: 18.5px;
+  line-height: 1.6;
+  color: #3f5068;
+}
+#solutions .solution-spec > div {
+  border-left-width: 4px;
+  box-shadow: inset 0 0 0 1px rgba(10, 122, 176, 0.1);
+}
+
+/* Workflow band: fine survey grid under the steps */
+#solutions .solution-chain {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(160deg, var(--navy) 0%, #0b3a5e 100%);
+  background-size: 48px 48px, 48px 48px, auto;
+}
+@media (min-width: 1101px) {
+  #solutions .chain-stop .stop-card {
+    border-top: 3px solid var(--sky-bright);
+  }
+  #solutions .chain-stop.finish .stop-card {
+    border-top-color: var(--ak-lime);
+  }
+}
+
+/* Project cards: tinted footer strip and clearer title weight */
+#solutions .case-visual > div {
+  flex: 1;
+}
+#solutions .case-visual h3 {
+  color: var(--ink);
+}
+#solutions .case-visual::after {
+  content: "";
+  height: 5px;
+  background: linear-gradient(90deg, var(--cyan), var(--sky-bright));
+}
+
+/* Download strip: drawn PDF tile */
+#solutions .case-download {
+  position: relative;
+  padding-left: 112px;
+}
+#solutions .case-download::before {
+  content: "PDF";
+  position: absolute;
+  left: 32px;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 68px;
+  translate: 0 -50%;
+  border-radius: 8px 18px 8px 8px;
+  background: var(--cyan);
+  color: #fff;
+  font: 700 15px/1 var(--font-technical);
+  letter-spacing: 0.1em;
+}
+
+/* Closing call to action: centred, larger, with a dot field */
+#solutions .solutions-project-fit {
+  padding-block: 104px;
+  text-align: center;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.1) 1.5px, transparent 1.6px),
+    radial-gradient(700px 320px at 90% 100%, rgba(66, 185, 232, 0.35), transparent 70%),
+    linear-gradient(135deg, var(--cyan2) 0%, var(--navy) 100%);
+  background-size: 28px 28px, auto, auto;
+}
+#solutions .solutions-project-fit .section-head {
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+#solutions .solutions-project-fit .heading {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+}
+#solutions .solutions-project-fit .copy {
+  flex: 0 1 auto;
+  width: 100%;
+  max-width: 60ch;
+  margin-inline: auto;
+  color: var(--on-dark);
+  font-size: 19px;
+}
+#solutions .solutions-project-fit .light {
+  margin-top: 30px;
+}
+
+@media (max-width: 1100px) {
+  #solutions .solutions-hero {
+    padding-bottom: 96px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), 0 100%);
+  }
+  #solutions .page-jumps {
+    margin-top: -28px;
+  }
+  #solutions .solutions-scene::before {
+    inset: 14px -8px -14px 14px;
+  }
+  #solutions .solution-family .service-media .image-open,
+  #solutions .solution-family:first-child .service-media .image-open {
+    min-height: 280px;
+  }
+}
+@media (max-width: 640px) {
+  #solutions .case-download {
+    padding-left: 32px;
+    padding-top: 112px;
+  }
+  #solutions .case-download::before {
+    top: 32px;
+    translate: 0 0;
+  }
+}
+
+/* ===========================================================================
+   Solutions page — blue harmony pass
+   One blue family, graded from pale sky to deep navy so the sections flow into
+   each other. Patterns are fine survey-style lines and dots. No motion.
+   Footer rules are scoped to this page via the body route attribute.
+   =========================================================================== */
+#solutions {
+  --sx-sky-1: #e1eefa;
+  --sx-sky-2: #d3e6f6;
+  --sx-sky-3: #eaf4fb;
+  --sx-line: #b9d6ec;
+  --sx-deep: #0a3556;
+  --sx-night: #071d35;
+  background: var(--sx-sky-1); /* fills the angled hero edge with the next shade */
+}
+
+/* Hero: add a faint diagonal survey hatch to the existing gradient */
+#solutions .solutions-hero {
+  background:
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 14px),
+    radial-gradient(900px 420px at 88% -8%, rgba(66, 185, 232, 0.28), transparent 70%),
+    linear-gradient(135deg, #071d35 0%, #0a3a62 60%, #0c5380 100%);
+}
+
+/* Sector bar sits in the same pale blue as the section below */
+#solutions .page-jumps {
+  background: rgba(225, 238, 250, 0.94);
+  border-block-color: var(--sx-line);
+}
+#solutions .page-jumps a {
+  background: #fff;
+  border-color: var(--sx-line);
+  color: var(--sx-deep);
+}
+#solutions .page-jumps a:hover {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: #fff;
+}
+
+/* Sectors: pale sky, fading slightly deeper, with a fine dot grid */
+#solutions .solution-portfolio {
+  background-color: var(--sx-sky-1);
+  background-image:
+    radial-gradient(rgba(10, 122, 176, 0.16) 1.2px, transparent 1.3px),
+    linear-gradient(180deg, var(--sx-sky-1) 0%, var(--sx-sky-2) 100%);
+  background-size: 26px 26px, auto;
+}
+#solutions .solution-family {
+  border-color: var(--sx-line);
+  box-shadow:
+    0 1px 2px rgba(8, 29, 54, 0.05),
+    0 18px 40px rgba(10, 53, 86, 0.1);
+}
+#solutions .solution-family:nth-child(even) {
+  background: linear-gradient(140deg, #f2f8fd, #fff 62%);
+}
+
+/* Workflow: the pale blue above melts into the deep band */
+#solutions .solution-chain {
+  background-image:
+    linear-gradient(180deg, var(--sx-sky-2) 0%, #86b5d9 35%, #2b628f 70%, var(--sx-deep) 100%),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(700px 320px at 100% 100%, rgba(66, 185, 232, 0.2), transparent 70%),
+    linear-gradient(170deg, var(--sx-deep) 0%, var(--sx-night) 100%);
+  background-size: 100% 130px, 48px 48px, 48px 48px, auto, auto;
+  background-repeat: no-repeat, repeat, repeat, no-repeat, no-repeat;
+  padding-top: 150px;
+}
+
+/* Project work: no longer white. It rises out of the navy band into pale blue,
+   with a fine graph-paper grid. */
+#solutions .case-gallery {
+  background-color: var(--sx-sky-3);
+  background-image:
+    linear-gradient(180deg, var(--sx-night) 0%, #1a4d78 30%, #7fb0d6 68%, var(--sx-sky-3) 100%),
+    linear-gradient(rgba(10, 122, 176, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 122, 176, 0.07) 1px, transparent 1px),
+    linear-gradient(180deg, var(--sx-sky-3) 0%, var(--sx-sky-2) 100%);
+  background-size: 100% 130px, 40px 40px, 40px 40px, auto;
+  background-repeat: no-repeat, repeat, repeat, no-repeat;
+  padding-top: 160px;
+}
+#solutions .case-gallery .section-head h2,
+#solutions .case-gallery .section-head .copy {
+  position: relative;
+}
+#solutions .case-visual {
+  border-color: var(--sx-line);
+  box-shadow:
+    0 1px 2px rgba(8, 29, 54, 0.05),
+    0 14px 30px rgba(10, 53, 86, 0.1);
+}
+#solutions .case-download {
+  border-color: var(--sx-line);
+  background: linear-gradient(120deg, #e7f2fb, #fff 72%);
+}
+
+/* Closing call to action: bright blue at the top, deepening into the footer's
+   own navy so the two sections join, but with its own contour-ring pattern. */
+#solutions .solutions-project-fit {
+  background-color: var(--sx-night);
+  background-image:
+    repeating-radial-gradient(
+      circle at 100% 0%,
+      transparent 0 26px,
+      rgba(255, 255, 255, 0.06) 26px 27px
+    ),
+    radial-gradient(rgba(255, 255, 255, 0.09) 1.5px, transparent 1.6px),
+    radial-gradient(760px 340px at 12% 0%, rgba(66, 185, 232, 0.35), transparent 70%),
+    linear-gradient(180deg, #0d5c8c 0%, var(--sx-deep) 55%, var(--sx-night) 100%);
+  background-size: auto, 28px 28px, auto, auto;
+}
+#solutions .solutions-project-fit .light {
+  background: #fff;
+  color: var(--sx-deep);
+}
+#solutions .solutions-project-fit .light:hover {
+  background: var(--accent);
+}
+
+/* Footer on this page only: deepest navy, fine survey grid, soft top glow */
+body[data-route="solutions"] .site-footer {
+  position: relative;
+  background-color: #071d35;
+  background-image:
+    linear-gradient(180deg, rgba(143, 216, 245, 0.12) 0%, rgba(143, 216, 245, 0) 120px),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 120px, 36px 36px, 36px 36px;
+  background-repeat: no-repeat, repeat, repeat;
+  border-top: 1px solid rgba(143, 216, 245, 0.22);
+}
+body[data-route="solutions"] .site-footer .footer-bottom {
+  border-top-color: rgba(143, 216, 245, 0.18);
+}
+body[data-route="solutions"] .site-footer .footer-col h3 {
+  color: var(--accent);
+}
+
+/* ===========================================================================
+   Solutions page — calm workflow pass
+   The workflow band was too bright and its top/bottom fades read as a glossy
+   reflection. The fades and glows are removed: the band is now a flat, deep
+   navy with clean edges. One 48px survey grid runs from the workflow
+   band, through project work. The call to action and footer are plain.
+   =========================================================================== */
+#solutions {
+  --sx-grid: 48px;
+  --sx-grid-dark: rgba(255, 255, 255, 0.04);
+  --sx-grid-light: rgba(10, 122, 176, 0.08);
+}
+
+/* Workflow: flat deep navy, no fades, no glow */
+#solutions .solution-chain {
+  background-color: var(--sx-night);
+  background-image:
+    linear-gradient(var(--sx-grid-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--sx-grid-dark) 1px, transparent 1px),
+    linear-gradient(180deg, #0a2b47 0%, var(--sx-night) 100%);
+  background-size: var(--sx-grid) var(--sx-grid), var(--sx-grid) var(--sx-grid), auto;
+  background-repeat: repeat, repeat, no-repeat;
+  padding-top: var(--section-space);
+}
+/* The heading marker was a pale, near-white bar on navy; it is now a muted blue. */
+#solutions .solution-chain .hl {
+  --hl-ink: rgba(66, 185, 232, 0.3);
+  background: none;
+}
+#solutions .chain-stops::before {
+  opacity: 0.6;
+}
+@media (min-width: 1101px) {
+  #solutions .chain-stop .stop-pin {
+    box-shadow: 0 0 0 5px rgba(66, 185, 232, 0.12);
+  }
+  #solutions .chain-stop.finish .stop-pin {
+    box-shadow: 0 0 0 5px rgba(160, 230, 109, 0.14);
+  }
+  #solutions .chain-stop .stop-card,
+  #solutions .chain-stop.up .stop-card,
+  #solutions .chain-stop.down .stop-card {
+    background: rgba(255, 255, 255, 0.045);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  #solutions .chain-stop:hover .stop-card {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Project work: same grid on pale blue, no fade out of the navy band */
+#solutions .case-gallery {
+  background-color: var(--sx-sky-3);
+  background-image:
+    linear-gradient(var(--sx-grid-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--sx-grid-light) 1px, transparent 1px),
+    linear-gradient(180deg, var(--sx-sky-3) 0%, var(--sx-sky-2) 100%);
+  background-size: var(--sx-grid) var(--sx-grid), var(--sx-grid) var(--sx-grid), auto;
+  background-repeat: repeat, repeat, no-repeat;
+  padding-top: var(--section-space);
+}
+
+/* Closing call to action and footer: no patterns on either.
+   They share one navy family so they read as a pair, but the call to action is
+   a step lighter and a hairline marks where the footer begins. */
+#solutions .solutions-project-fit {
+  background-color: #0b3050;
+  background-image: linear-gradient(180deg, #0e3d63 0%, #0b3050 100%);
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+body[data-route="solutions"] .site-footer {
+  background-color: #071d35;
+  background-image: none;
+  border-top: 1px solid rgba(143, 216, 245, 0.16);
+}
+
+/* ===========================================================================
+   Solutions page — sector bar fix
+   The sticky sector bar was see-through, so the card scrolling underneath
+   showed as a blurred ghost, and a sector pill landed with the previous card
+   still peeking out below the bar. The bar is now solid, and each sector lands
+   just under it, inside the gap between cards.
+   =========================================================================== */
+#solutions .page-jumps {
+  background: var(--sx-sky-1);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: 0 6px 14px -10px rgba(10, 53, 86, 0.35);
+}
+#solutions .solution-family {
+  /* The page already reserves header + 24px (scroll-padding-top). Adding 62px
+     clears the 68px bar and leaves 18px of air; the gap between cards is 36px,
+     so the previous card ends up hidden behind the bar. */
+  scroll-margin-top: 62px;
+}
+
+/* ===========================================================================
+   Solutions page — call to action as a "survey plan sheet"
+   The closing section becomes a framed panel, like a drawing sheet waiting to
+   be filled in: corner registration marks, a small label, and an accent rule
+   under the heading. No repeating pattern; the section behind stays plain navy
+   so it still joins the footer.
+   =========================================================================== */
+#solutions .solutions-project-fit {
+  --fit-mark: rgba(143, 216, 245, 0.75);
+  --fit-inset: 20px;
+  padding-block: 88px;
+}
+#solutions .solutions-project-fit .shell {
+  position: relative;
+  max-width: 1040px;
+  padding: 68px 56px 64px;
+  border: 1px solid rgba(143, 216, 245, 0.2);
+  border-radius: 24px;
+  /* Eight short strokes draw the four corner marks; the last layer is the panel fill. */
+  background:
+    linear-gradient(var(--fit-mark), var(--fit-mark)) left var(--fit-inset) top var(--fit-inset) / 24px 2px no-repeat,
+    linear-gradient(var(--fit-mark), var(--fit-mark)) left var(--fit-inset) top var(--fit-inset) / 2px 24px no-repeat,
+    linear-gradient(var(--fit-mark), var(--fit-mark)) right var(--fit-inset) top var(--fit-inset) / 24px 2px no-repeat,
+    linear-gradient(var(--fit-mark), var(--fit-mark)) right var(--fit-inset) top var(--fit-inset) / 2px 24px no-repeat,
+    linear-gradient(var(--fit-mark), var(--fit-mark)) left var(--fit-inset) bottom var(--fit-inset) / 24px 2px no-repeat,
+    linear-gradient(var(--fit-mark), var(--fit-mark)) left var(--fit-inset) bottom var(--fit-inset) / 2px 24px no-repeat,
+    linear-gradient(var(--fit-mark), var(--fit-mark)) right var(--fit-inset) bottom var(--fit-inset) / 24px 2px no-repeat,
+    linear-gradient(var(--fit-mark), var(--fit-mark)) right var(--fit-inset) bottom var(--fit-inset) / 2px 24px no-repeat,
+    linear-gradient(160deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.03) 100%);
+  box-shadow: 0 26px 54px rgba(3, 14, 28, 0.38);
+}
+#solutions .solutions-project-fit .shell::before {
+  content: "Start a project";
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 8px 16px;
+  border: 1px solid rgba(143, 216, 245, 0.35);
+  border-radius: 999px;
+  color: var(--accent);
+  font: 700 12.5px/1 var(--font-technical);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+#solutions .solutions-project-fit .section-head {
+  margin-bottom: 0;
+}
+#solutions .solutions-project-fit .section-head > div {
+  max-width: none;
+}
+#solutions .solutions-project-fit .heading::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin: 20px auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--cyan), var(--sky-bright));
+}
+#solutions .solutions-project-fit .light {
+  margin-top: 34px;
+  box-shadow: 0 10px 24px rgba(3, 14, 28, 0.3);
+}
+@media (max-width: 1100px) {
+  #solutions .solutions-project-fit {
+    --fit-inset: 14px;
+    padding-block: 64px;
+  }
+  #solutions .solutions-project-fit .shell {
+    width: auto;
+    margin-inline: 16px;
+    padding: 52px 24px 48px;
+    border-radius: 20px;
+  }
+  #solutions .solutions-project-fit .section-head > p {
+    margin-inline: auto;
+  }
+}
+
+/* ===========================================================================
+   Solutions page — stacked sector cards
+   While scrolling by hand, the previous sector used to stay visible above the
+   one being read. Each card now pins just under the sector bar and the next
+   card slides up over it, so only one sector is on show at a time.
+   Only on screens wide and tall enough to hold a whole card; phones and short
+   windows keep the normal scrolling list.
+   =========================================================================== */
+@media (min-width: 1101px) and (min-height: 700px) {
+  #solutions .solution-family {
+    position: sticky;
+    top: calc(var(--header) + 86px); /* header + 68px bar + 18px of air */
+    min-height: 500px; /* equal heights, so a pinned card never peeks out from behind the next */
+  }
+  /* Room after the last card so it also reaches the pinned position. */
+  #solutions .solution-families {
+    padding-bottom: 12px;
+  }
+}
+
+/* ===========================================================================
+   Solutions page — Aizawl project image
+   The terrain model is a tall portrait, so fitting the whole image left it
+   small inside a wide frame. It now fills the frame like the other two cards;
+   the full, uncropped image still opens from the expand button.
+   =========================================================================== */
+#solutions .case-visual.aizawl img {
+  object-fit: cover;
+  object-position: 50% 38%; /* keeps the valley and road line in view */
+  padding: 0;
+}
+
+/* ===========================================================================
+   Solutions page — call to action as an animated "flight plan"
+   The text sits on the left and a small drone mission is drawn on the right.
+   The drawing is built and animated by site.js (see "Flight plan" there): the
+   drone takes off from the green point, flies the survey lines, pauses at each
+   waypoint to light up one workflow stage, then lands and its rotors stop.
+   It plays once, when the card scrolls into view.
+   To go back to the centred panel, delete this block.
+   =========================================================================== */
+#solutions .fit-flight {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 36px auto 0;
+}
+#solutions .fit-flight svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+#solutions .fit-flight .ff-area {
+  fill: rgba(66, 185, 232, 0.07);
+  stroke: rgba(143, 216, 245, 0.55);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 6;
+  stroke-linejoin: round;
+}
+#solutions .fit-flight .ff-corner {
+  fill: #0b3050;
+  stroke: rgba(143, 216, 245, 0.8);
+  stroke-width: 1.5;
+}
+/* Planned route: faint dots. Flown route: solid line drawn behind the drone. */
+#solutions .fit-flight .ff-plan,
+#solutions .fit-flight .ff-flown {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#solutions .fit-flight .ff-plan {
+  stroke: rgba(143, 216, 245, 0.4);
+  stroke-dasharray: 2 9;
+}
+#solutions .fit-flight .ff-flown {
+  stroke: var(--accent, #8fd8f5);
+}
+/* Waypoints and their workflow labels: dim until the drone reaches them */
+#solutions .fit-flight .ff-dot {
+  fill: #0b3050;
+  stroke: var(--accent, #8fd8f5);
+  stroke-width: 2;
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+#solutions .fit-flight .ff-ring {
+  fill: none;
+  stroke: var(--accent, #8fd8f5);
+  stroke-width: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+#solutions .fit-flight .ff-label {
+  fill: #fff;
+  font: 700 11.5px/1 var(--font-technical);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.32;
+  transition: opacity 0.35s ease;
+}
+#solutions .fit-flight .ff-label tspan {
+  fill: var(--accent, #8fd8f5);
+}
+#solutions .fit-flight .ff-stop.is-reached .ff-dot {
+  fill: var(--accent, #8fd8f5);
+}
+#solutions .fit-flight .ff-stop.is-reached .ff-ring {
+  opacity: 0.4;
+}
+#solutions .fit-flight .ff-stop.is-reached .ff-label {
+  opacity: 1;
+}
+/* Take-off and landing points use the same lime as the workflow's last step */
+#solutions .fit-flight .ff-stop.is-reached.ff-end .ff-dot,
+#solutions .fit-flight .ff-stop.is-reached.ff-start .ff-dot {
+  fill: var(--ak-lime, #a0e66d);
+  stroke: var(--ak-lime, #a0e66d);
+}
+#solutions .fit-flight .ff-stop.is-reached.ff-end .ff-ring,
+#solutions .fit-flight .ff-stop.is-reached.ff-start .ff-ring {
+  stroke: var(--ak-lime, #a0e66d);
+}
+#solutions .fit-flight .ff-stop.is-reached.ff-end .ff-label tspan {
+  fill: var(--ak-lime, #a0e66d);
+}
+/* Rotors spin only while the drone is flying */
+#solutions .fit-flight .ff-rotor {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#solutions .fit-flight.is-flying .ff-rotor {
+  animation: ff-spin 0.22s linear infinite;
+}
+@keyframes ff-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (min-width: 1101px) {
+  #solutions .solutions-project-fit,
+  #solutions .solutions-project-fit .shell {
+    text-align: left;
+  }
+  #solutions .solutions-project-fit .shell {
+    max-width: 1120px;
+    padding: 68px 64px 68px;
+  }
+  #solutions .solutions-project-fit .section-head {
+    align-items: flex-start;
+    max-width: 52%;
+  }
+  #solutions .solutions-project-fit .heading::after {
+    margin-left: 0;
+  }
+  #solutions .solutions-project-fit .copy {
+    margin-inline: 0;
+    max-width: 46ch;
+  }
+  #solutions .fit-flight {
+    position: absolute;
+    right: 56px;
+    top: 50%;
+    width: 39%;
+    max-width: 430px;
+    margin: 0;
+    translate: 0 -50%;
+  }
+}
