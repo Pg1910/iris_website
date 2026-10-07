@@ -1,0 +1,175 @@
+{
+  "date": "2026-10-07",
+  "checks": [
+    {
+      "name": "home at 1440px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "solutions at 1440px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "akshaa at 1440px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "technology at 1440px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "team at 1440px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "careers at 1440px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "home at 768px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "solutions at 768px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "akshaa at 768px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "technology at 768px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "team at 768px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "careers at 768px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "home at 390px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "solutions at 390px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "akshaa at 390px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "technology at 390px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "team at 390px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "careers at 390px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "home at 320px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "solutions at 320px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "akshaa at 320px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "technology at 320px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "team at 320px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "careers at 320px: route, images and reflow",
+      "passed": true
+    },
+    {
+      "name": "Direct section link solution-road",
+      "passed": true
+    },
+    {
+      "name": "Direct section link tech-method-3",
+      "passed": true
+    },
+    {
+      "name": "Direct section link home-about",
+      "passed": true
+    },
+    {
+      "name": "Direct section link akshaa-urban",
+      "passed": true
+    },
+    {
+      "name": "Sector link focuses its heading",
+      "passed": true
+    },
+    {
+      "name": "Six aligned culture positions",
+      "passed": true
+    },
+    {
+      "name": "Culture positions share width",
+      "passed": true
+    },
+    {
+      "name": "Team image viewer opens",
+      "passed": true
+    },
+    {
+      "name": "Viewer closes and restores focus",
+      "passed": true
+    },
+    {
+      "name": "Mobile navigation isolates background",
+      "passed": true
+    },
+    {
+      "name": "Mobile navigation closes with focus",
+      "passed": true
+    },
+    {
+      "name": "Role details support keyboard",
+      "passed": true
+    },
+    {
+      "name": "Invalid application focuses first error",
+      "passed": true
+    },
+    {
+      "name": "Valid application prepares email draft",
+      "passed": true
+    },
+    {
+      "name": "Draft includes role and current city",
+      "passed": true
+    },
+    {
+      "name": "Manual field gallery advances",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion disables transitions",
+      "passed": true
+    },
+    {
+      "name": "No runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "screenshots": "/tmp/iris-redesign-*.png"
+}
