@@ -175,6 +175,19 @@
   }) {
     const items = [...document.querySelectorAll(itemSelector)];
     const dotsContainer = document.querySelector(dotsSelector);
+    if (!dotsContainer) {
+      const heroVideo = document.querySelector(".hero-video");
+      return {
+        pause: () => heroVideo?.pause(),
+        play: () => { heroVideo?.play().catch(() => {}); },
+        toggle: () => {
+          if (!heroVideo) return;
+          if (heroVideo.paused) heroVideo.play().catch(() => {});
+          else heroVideo.pause();
+        },
+        next: () => {},
+      };
+    }
     const playButton = document.querySelector(playSelector);
     const progress = progressSelector
       ? document.querySelector(progressSelector)
