@@ -143,97 +143,30 @@
               </div>
             </div>
             <div
-              aria-label="Iris Aerial field photographs and survey outputs"
-              aria-roledescription="carousel"
+              aria-label="Iris Aerial field video"
               class="project-atlas"
-              role="group"
             >
               <div class="atlas-head">
-                <span> On site · 1 of 4 </span>
+                <span> On site · Live </span>
               </div>
               <figure class="atlas-frame field-photo active">
-                <img
-                  alt="Iris Aerial surveyor preparing a drone for a mining-site survey"
-                  fetchpriority="high"
-                  height="900"
-                  src="assets/team/1dc4800c8d9a5e20.png"
-                  width="1350"
-                />
-                <figcaption class="atlas-caption">
-                  <strong> Drone survey preparation </strong>
-                </figcaption>
-              </figure>
-              <figure class="atlas-frame field-photo">
-                <img
-                  alt="Iris Aerial colleague preparing a drone in the field"
-                  height="900"
-                  loading="lazy"
-                  src="assets/team/39445f45f58600c1.png"
-                  width="1350"
-                />
-                <figcaption class="atlas-caption">
-                  <strong> Preparing for aerial capture </strong>
-                </figcaption>
-              </figure>
-              <figure class="atlas-frame field-photo">
-                <img
-                  alt="Iris Aerial colleagues beside a railway corridor"
-                  height="900"
-                  loading="lazy"
-                  src="assets/team/2f252ea940bb9266.png"
-                  width="1350"
-                />
-                <figcaption class="atlas-caption">
-                  <strong> Railway corridor survey </strong>
-                </figcaption>
-              </figure>
-              <figure class="atlas-frame field-photo">
-                <img
-                  alt="Iris Aerial field team in safety equipment at an earthworks site"
-                  height="900"
-                  loading="lazy"
-                  src="assets/team/5ce2b499e359e801.png"
-                  width="1350"
-                />
+                <video
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  preload="auto"
+                  style="width:100%;height:100%;object-fit:cover;display:block;"
+                >
+                  <source src="assets/team/hero-video.webm" type="video/webm" />
+                  <source src="assets/team/hero-video.mp4" type="video/mp4" />
+                </video>
                 <figcaption class="atlas-caption">
                   <strong> Survey team on site </strong>
                 </figcaption>
               </figure>
-              <div class="atlas-controls">
-                <button
-                  aria-label="Previous project"
-                  class="atlas-control"
-                  onclick="irisAtlas(-1)"
-                  type="button"
-                >
-                  ←
-                </button>
-                <button
-                  aria-label="Next project"
-                  class="atlas-control"
-                  onclick="irisAtlas(1)"
-                  type="button"
-                >
-                  →
-                </button>
-                <button
-                  aria-label="Play field slideshow"
-                  class="atlas-control"
-                  onclick="irisAtlasPause(this)"
-                  type="button"
-                >
-                  Play
-                </button>
-                <div aria-label="Choose project" class="atlas-dots"></div>
-              </div>
-              <div aria-hidden="true" class="atlas-progress"><span></span></div>
             </div>
-            <div aria-hidden="true" class="hero-hud">
-              <span class="hud-rec">REC</span>
-              <span><b>LAT</b> 28.5921&deg; N</span>
-              <span><b>LON</b> 77.0460&deg; E</span>
-              <span><b>IST</b> <i data-hud-clock>--:--:--</i></span>
-            </div>
+
             <div aria-hidden="true" class="scroll-cue">
               <i></i>
               Scroll
@@ -1220,71 +1153,7 @@
             </div>
           </div>
         </section>
-        <section class="solution-chain">
-          <div class="shell">
-            <div class="chain-intro">
-              <span class="kicker">The workflow</span>
-              <h2>How a survey <span class="hl">comes together</span></h2>
-              <p>
-                Five stages, in order, on one road. Nothing downstream starts
-                until the stage before it checks out.
-              </p>
-            </div>
-            <div class="chain-road">
-              <svg
-                aria-hidden="true"
-                class="road-line"
-                preserveAspectRatio="none"
-                viewBox="0 0 1200 660"
-              >
-                <path class="road-surface" d="M16 560 L160 560 C250 560 250 140 340 140 L380 140 C470 140 470 560 560 560 L640 560 C730 560 730 140 820 140 L860 140 C950 140 950 560 1040 560 L1184 560" />
-                <path class="road-centre" d="M16 560 L160 560 C250 560 250 140 340 140 L380 140 C470 140 470 560 560 560 L640 560 C730 560 730 140 820 140 L860 140 C950 140 950 560 1040 560 L1184 560" />
-              </svg>
-              <ol class="chain-stops">
-                <li class="chain-stop up">
-                  <span class="stop-pin" aria-hidden="true"></span>
-                  <div class="stop-card">
-                    <span class="stop-no">01</span>
-                    <strong>Frame</strong>
-                    <p>Set the question, coverage and accuracy.</p>
-                  </div>
-                </li>
-                <li class="chain-stop down">
-                  <span class="stop-pin" aria-hidden="true"></span>
-                  <div class="stop-card">
-                    <span class="stop-no">02</span>
-                    <strong>Control</strong>
-                    <p>Place GCPs, benchmarks and the control network.</p>
-                  </div>
-                </li>
-                <li class="chain-stop up">
-                  <span class="stop-pin" aria-hidden="true"></span>
-                  <div class="stop-card">
-                    <span class="stop-no">03</span>
-                    <strong>Acquire</strong>
-                    <p>Fly or walk complete coverage, with field QA.</p>
-                  </div>
-                </li>
-                <li class="chain-stop down">
-                  <span class="stop-pin" aria-hidden="true"></span>
-                  <div class="stop-card">
-                    <span class="stop-no">04</span>
-                    <strong>Model</strong>
-                    <p>Calibrate, classify, orthorectify, then review.</p>
-                  </div>
-                </li>
-                <li class="chain-stop up finish">
-                  <span class="stop-pin" aria-hidden="true"></span>
-                  <div class="stop-card">
-                    <span class="stop-no">05</span>
-                    <strong>Deliver</strong>
-                    <p>Issue CAD/GIS terrain, drawings and reports.</p>
-                  </div>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </section>
+
         <section class="section case-gallery">
           <div class="shell">
             <div class="section-head">
@@ -2327,11 +2196,11 @@
             <figure class="careers-rocket">
               <div aria-hidden="true" class="rocket-orbit"></div>
               <img
-                alt=""
-                height="514"
+                alt="Satellite in orbit"
+                height="800"
                 loading="lazy"
-                src="assets/careers/rocket-cutout.png"
-                width="604"
+                src="assets/careers/satellite-cutout.png"
+                width="800"
               />
               <figcaption>Pick a direction. We will help you fly it.</figcaption>
             </figure>
