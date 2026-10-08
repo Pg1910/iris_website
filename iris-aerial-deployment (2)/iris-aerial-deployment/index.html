@@ -1616,17 +1616,20 @@
                     width="1920"
                   />
                 </button>
-                <div
-                  class="photo-reserved ak-photo-slot"
-                  data-photo-slot="akshaa-1"
+                <button
+                  aria-label="Enlarge Akshaa segmentation identifying railway tracks, buildings, roads, and trees"
+                  class="image-open"
+                  onclick="irisPreviewImage(this)"
+                  type="button"
                 >
-                  <div
-                    aria-label="Space reserved for additional Akshaa imagery"
-                    class="reserved-photo"
-                  >
-                    <span> Photo to follow </span>
-                  </div>
-                </div>
+                  <img
+                    alt="Akshaa segmentation identifying railway tracks, buildings, roads, and trees"
+                    height="1080"
+                    loading="lazy"
+                    src="assets/akshaa/drive-download-20260605T085116Z-3-001_12_masked.jpg"
+                    width="1920"
+                  />
+                </button>
               </div>
               <figcaption>
                 <strong> Infrastructure segmentation </strong>
@@ -1734,23 +1737,42 @@
                   </div>
                   <figcaption>Comparison / temporal change</figcaption>
                 </figure>
-                <figure class="defence-image">
-                  <button
-                    aria-label="Enlarge Model review surface highlighting detected changes"
-                    class="image-open"
-                    onclick="irisPreviewImage(this)"
-                    type="button"
-                  >
-                    <img
-                      alt="Model review surface highlighting detected changes"
-                      height="815"
-                      loading="lazy"
-                      src="assets/akshaa/change-detection.png"
-                      width="1605"
-                    />
-                  </button>
-                  <figcaption>Detection / analyst review</figcaption>
-                </figure>
+                <div class="defence-detection-stack">
+                  <figure class="defence-image">
+                    <button
+                      aria-label="Enlarge Model review surface highlighting detected changes"
+                      class="image-open"
+                      onclick="irisPreviewImage(this)"
+                      type="button"
+                    >
+                      <img
+                        alt="Model review surface highlighting detected changes"
+                        height="815"
+                        loading="lazy"
+                        src="assets/akshaa/change-detection.png"
+                        width="1605"
+                      />
+                    </button>
+                    <figcaption>Detection / analyst review</figcaption>
+                  </figure>
+                  <figure class="defence-image">
+                    <button
+                      aria-label="Enlarge Akshaa aircraft detection with labelled bounding boxes"
+                      class="image-open"
+                      onclick="irisPreviewImage(this)"
+                      type="button"
+                    >
+                      <img
+                        alt="Akshaa aircraft detection with labelled bounding boxes"
+                        height="331"
+                        loading="lazy"
+                        src="assets/akshaa/Screenshot_20260518_182157.png"
+                        width="335"
+                      />
+                    </button>
+                    <figcaption>Aircraft detection / labelled results</figcaption>
+                  </figure>
+                </div>
               </div>
               <div class="defence-need">
                 <h3>Review the source</h3>
@@ -1938,17 +1960,17 @@
                 </div>
                 <figure class="method-media terrain-art">
                   <button
-                    aria-label="Enlarge LiDAR ground model showing the terrain along the Aizawl corridor"
+                    aria-label="Enlarge LiDAR UAV scanning terrain and vegetation to create a point cloud"
                     class="image-open"
                     onclick="irisPreviewImage(this)"
                     type="button"
                   >
                     <img
-                      alt="LiDAR ground model showing the terrain along the Aizawl corridor"
-                      height="535"
+                      alt="LiDAR UAV scanning terrain and vegetation to create a point cloud"
+                      height="514"
                       loading="lazy"
-                      src="assets/case-studies/aizawl-terrain.png"
-                      width="357"
+                      src="assets/technology/lidar-uav.png"
+                      width="1200"
                     />
                   </button>
                 </figure>
@@ -2054,7 +2076,7 @@
               </article>
               <article class="tech-method feature-method" id="tech-method-5">
                 <div class="method-intro">
-                  <h2>GIS, AI &amp; Akshaa</h2>
+                  <h2>Artificial Intelligence</h2>
                   <p>
                     GIS connects features with their location and project
                     information. AI helps locate assets and flag changes in
@@ -2230,21 +2252,45 @@
                 <strong> At an innovation pavilion </strong>
               </figcaption>
             </figure>
-            <figure class="team-moment photo-reserved" data-photo-slot="team-1">
-              <div
-                aria-label="Space reserved for an additional team photograph"
-                class="reserved-photo"
+            <figure class="team-moment">
+              <button
+                aria-label="Enlarge Iris Aerial colleagues playing UNO together in the office"
+                class="image-open"
+                onclick="irisPreviewImage(this)"
+                type="button"
               >
-                <span> Photo to follow </span>
-              </div>
+                <img
+                  alt="Iris Aerial colleagues playing UNO together in the office"
+                  height="960"
+                  loading="lazy"
+                  src="assets/team/iris_fun23.jpeg"
+                  width="1280"
+                />
+              </button>
+              <figcaption>
+                <span> Off the clock </span>
+                <strong> UNO at the office </strong>
+              </figcaption>
             </figure>
-            <figure class="team-moment photo-reserved" data-photo-slot="team-2">
-              <div
-                aria-label="Space reserved for an additional team photograph"
-                class="reserved-photo"
+            <figure class="team-moment">
+              <button
+                aria-label="Enlarge Iris Aerial team at the exhibition booth"
+                class="image-open"
+                onclick="irisPreviewImage(this)"
+                type="button"
               >
-                <span> Photo to follow </span>
-              </div>
+                <img
+                  alt="Iris Aerial team at the exhibition booth"
+                  height="1200"
+                  loading="lazy"
+                  src="assets/team/expo-booth-01.jpg"
+                  width="1600"
+                />
+              </button>
+              <figcaption>
+                <span> On the road </span>
+                <strong> At the exhibition booth </strong>
+              </figcaption>
             </figure>
           </div>
         </section>

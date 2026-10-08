@@ -216,10 +216,16 @@ Sectors are full-width rows that alternate: copy left / image right, then image 
 
 The latest user prompt owns the blue-versus-Akshaa-green palette and broader design changes. The previous prompt owns the six team photo positions, forthcoming Akshaa imagery, About Iris / vision / mission content and role corrections. Index content, source imagery and existing contact destinations own the remaining business facts.
 
-Team roles: Nikhil Saini — Founder & CEO; Aditya Raj — Business analyst; Ashish — Project manager; Hitesh — Lead survey expert; Vikas — Survey team. Piyush appears before Vikas after their requested swap. Other roles are preserved.
+Team roles: Nikhil Saini — Founder & CEO; Aditya Raj — Business analyst; Ashish — Project manager; Hitesh — Lead survey expert; Vikas — Surveyor. Piyush appears before Vikas after their requested swap. Other roles are preserved.
 
 Contact destinations: general enquiries `info@irisaerial.in`; global enquiries `global@irisaerial.in`; applications `careers@irisaerial.in`; product enquiries `akshaa@irisaerial.in`. The office address remains B-142, Sector 8, Dwarka, opposite Pathway Library, New Delhi 110077. Solutions enquiries open Home contact with a relevant email subject. Case studies remain a direct PDF download.
 
 ## Reconciliation
 
 The renewed redesign request supersedes the earlier flat split-screen composition and small typography. It authorizes a full photographic Home opening, stronger cobalt identity, Barlow across company headings, distinct catalogue layouts, and wider Team photography. Blue remains the controlling company palette; only Akshaa is green/black. Company facts, corrected roles, reserved image positions and application-email behavior remain intact. `pages.css` is replaced as a single responsive composition system, rather than receiving another override layer.
+
+## October 8 imagery and role update
+
+The Team culture grid now uses all six positions: its final two photographs show office UNO (`iris_fun23.jpeg`) and the exhibition booth (`expo-booth-01.jpg`). The Urban development evidence gallery includes the supplied `_12_masked.jpg` segmentation. Defence adds the supplied `_182157.png` aircraft detection immediately below the analyst-review image, in a shared vertical stack. All four additions use the existing accessible full-image viewer and explicit source dimensions. Technology uses `lidar-uav.png` in the LiDAR method panel.
+
+The Technology header drone runs a single 4.8-second hover-and-bank flight whenever its route opens, then rests. `motion.css` owns this effect, which uses transforms without changing layout and is disabled by reduced-motion preference. Vikas's directory title is Surveyor; `site.js` owns the directory data.

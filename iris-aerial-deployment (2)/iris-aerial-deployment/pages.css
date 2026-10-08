@@ -2148,10 +2148,11 @@ body[data-route="akshaa"] {
   gap: 10px;
   padding-block: 12px;
   overflow-x: auto;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
 }
 #solutions .page-jumps .shell::-webkit-scrollbar {
-  display: none;
+  height: 6px;
 }
 #solutions .page-jumps a {
   flex: 0 0 auto;

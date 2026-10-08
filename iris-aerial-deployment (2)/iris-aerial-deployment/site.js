@@ -317,7 +317,7 @@
     ["Ashish", "Project manager", "ashish.png"],
     ["Hitesh", "Lead survey expert", "hitesh.png"],
     ["Piyush", "AI division · Technical lead", "piyush.jpeg"],
-    ["Vikas", "Survey team", "vikas.png"],
+    ["Vikas", "Surveyor", "vikas.png"],
     ["Arko", "UI/UX & content", "arko.jpeg"],
     ["Lakshay", "Machine learning intern", "lakshay.jpeg"],
     ["Parth", "Machine learning intern", "parth.jpeg"],
