@@ -2888,11 +2888,33 @@ body[data-route="solutions"] .site-footer .footer-col h3 {
    They share one navy family so they read as a pair, but the call to action is
    a step lighter and a hairline marks where the footer begins. */
 #solutions .solutions-project-fit {
-  background-color: #0b3050;
-  background-image: linear-gradient(180deg, #0e3d63 0%, #0b3050 100%);
+  background-color: #b8d8f0;
+  background-image: linear-gradient(180deg, #cce5f8 0%, #a8cde8 100%);
   background-size: auto;
   background-repeat: no-repeat;
+  --fit-mark: rgba(10, 53, 86, 0.6);
 }
+#solutions .solutions-project-fit .heading {
+  color: #0a2b47;
+}
+#solutions .solutions-project-fit .copy {
+  color: #1e3a55;
+}
+#solutions .solutions-project-fit .shell {
+  border-color: rgba(10, 53, 86, 0.2);
+}
+#solutions .solutions-project-fit .shell::before {
+  border-color: rgba(10, 53, 86, 0.35);
+  color: #0a3a62;
+}
+#solutions .solutions-project-fit .light {
+  background: #0a3a62;
+  color: #fff;
+}
+#solutions .solutions-project-fit .light:hover {
+  background: #0c4f88;
+}
+
 body[data-route="solutions"] .site-footer {
   background-color: #071d35;
   background-image: none;
@@ -3137,6 +3159,50 @@ body[data-route="solutions"] .site-footer {
     transform: rotate(360deg);
   }
 }
+/* Drone body colour override: light-blue background needs darker drone parts */
+#solutions .fit-flight .ff-drone path[stroke="#fff"] {
+  stroke: #4a8fb5;
+}
+#solutions .fit-flight .ff-drone path[fill="#fff"] {
+  fill: #7ab2d4;
+  stroke: #2e6a90;
+}
+#solutions .fit-flight .ff-drone g[fill="#0a293b"] ellipse,
+#solutions .fit-flight .ff-drone .ff-rotor {
+  fill: #2e6a90;
+}
+#solutions .fit-flight .ff-drone circle[fill="#0a293b"] {
+  fill: #2e6a90;
+}
+/* Corner squares: darker so visible on light panel */
+#solutions .fit-flight .ff-corner {
+  fill: #4a8fb5;
+  stroke: rgba(10, 53, 86, 0.6);
+}
+/* Waypoint dot background: mid-blue */
+#solutions .fit-flight .ff-dot {
+  fill: #7ab2d4;
+}
+/* Labels: dark ink on light background */
+#solutions .fit-flight .ff-label {
+  fill: #0a3a62;
+  opacity: 0.5;
+}
+#solutions .fit-flight .ff-stop.is-reached .ff-label {
+  opacity: 1;
+}
+/* Route lines: more visible on light bg */
+#solutions .fit-flight .ff-plan {
+  stroke: rgba(10, 80, 130, 0.35);
+}
+#solutions .fit-flight .ff-flown {
+  stroke: #1a6fa8;
+}
+#solutions .fit-flight .ff-area {
+  fill: rgba(10, 80, 130, 0.06);
+  stroke: rgba(10, 80, 130, 0.35);
+}
+
 @media (min-width: 1101px) {
   #solutions .solutions-project-fit,
   #solutions .solutions-project-fit .shell {
