@@ -37,11 +37,11 @@
   --df-accent: #a0e66d;
   --df-muted: #b4c9b9;
 
-  /* Violet close-out band */
-  --vi-deep: #2a1055;
-  --vi-mid: #4a1d94;
-  --vi-bright: #8b5cf6;
-  --vi-soft: #cbb6fb;
+  /* Akshaa pista close-out */
+  --ak-pista: #dcebc5;
+  --ak-pista-light: #edf4e2;
+  --ak-pista-ink: #203b28;
+  --ak-pista-muted: #435e42;
 
   /* Team page — warmth */
   --joy-1: #ff7a4d;
@@ -1143,55 +1143,19 @@ body.drone-locked .drone-cursor-body {
   color: var(--df-muted);
 }
 
-/* --- Violet close-out: "Discuss Akshaa with our team" ---------------------- */
-
+/* --- Pista close-out: "Discuss Akshaa with our team" ---------------------- */
 .ak-contact {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(118deg, var(--vi-deep), var(--vi-mid) 58%, #5b2bb0);
-  color: var(--white);
+  background: linear-gradient(118deg, var(--ak-pista-light), var(--ak-pista));
+  color: var(--ak-pista-ink);
 }
 .ak-contact::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    radial-gradient(
-      44% 120% at 88% 0%,
-      rgba(139, 92, 246, 0.55),
-      transparent 68%
-    ),
-    radial-gradient(
-      40% 110% at 4% 100%,
-      rgba(203, 182, 251, 0.22),
-      transparent 70%
-    );
-}
-.ak-contact::after {
-  content: "";
-  position: absolute;
-  left: -10%;
-  right: -10%;
-  top: -60%;
-  height: 220%;
-  pointer-events: none;
-  opacity: 0.7;
-  filter: blur(42px);
-  background: conic-gradient(
-    from 180deg at 50% 50%,
-    transparent 0deg,
-    rgba(203, 182, 251, 0.14) 70deg,
-    transparent 140deg,
-    rgba(139, 92, 246, 0.2) 230deg,
-    transparent 320deg
-  );
-  animation: violet-drift 34s linear infinite;
-}
-@keyframes violet-drift {
-  to {
-    transform: rotate(360deg);
-  }
+  background: radial-gradient(ellipse at 90% 20%, var(--ak-pista-light), transparent 65%);
 }
 .ak-contact > .shell {
   position: relative;
@@ -1199,37 +1163,28 @@ body.drone-locked .drone-cursor-body {
   align-items: center;
 }
 .ak-contact h2 {
-  color: var(--white);
+  color: var(--ak-pista-ink);
   font-size: clamp(30px, 3vw, 42px);
   max-width: 18ch;
 }
 .ak-contact .ak-contact-copy p {
   margin: 12px 0 0;
   max-width: 46ch;
-  color: var(--vi-soft);
+  color: var(--ak-pista-muted);
   font-size: 17px;
 }
 .ak-contact .button.ak-primary {
-  background: var(--white);
-  border-color: var(--white);
-  color: var(--vi-mid);
+  background: var(--ak-pista-ink);
+  border-color: var(--ak-pista-ink);
+  color: var(--ak-pista-light);
   font-weight: 700;
-  box-shadow: 0 14px 34px rgba(26, 8, 56, 0.4);
-  transition:
-    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    background-color 0.3s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 .ak-contact .button.ak-primary:hover {
-  transform: translateY(-3px);
-  background: var(--vi-soft);
-  border-color: var(--vi-soft);
-  color: #2a1055;
-  box-shadow: 0 20px 44px rgba(26, 8, 56, 0.5);
+  background: var(--ak-pista-muted);
+  border-color: var(--ak-pista-muted);
 }
-.ak-contact :focus-visible {
-  outline-color: var(--vi-soft);
-}
+.ak-contact :focus-visible { outline-color: var(--ak-pista-ink); }
 
 /* ---------------------------------------------------------------------------
    7. Team — the page should feel like the people on it
@@ -2455,4 +2410,25 @@ body.drone-locked .drone-cursor-body {
   #technology:not([hidden]) .technology-aircraft img {
     animation: none;
   }
+}
+
+/* Team memories open with a playful photo-print bounce. */
+@keyframes team-photo-pop {
+  0% { opacity: 0; transform: translateY(30px) scale(0.86) rotate(-3deg); }
+  65% { opacity: 1; transform: translateY(-4px) scale(1.015) rotate(0.8deg); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
+}
+@keyframes team-backdrop-in {
+  from { background-color: #061a2700; }
+  to { background-color: #061a27e6; }
+}
+.image-viewer.team-photo-viewer[open] {
+  animation: team-photo-pop 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.image-viewer.team-photo-viewer[open]::backdrop {
+  animation: team-backdrop-in 300ms ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .image-viewer.team-photo-viewer[open],
+  .image-viewer.team-photo-viewer[open]::backdrop { animation: none; }
 }

@@ -22,7 +22,7 @@
   const CONTOUR_SECTIONS = [
     ".client-band",
     ".home-about",
-    ".trust-strip",
+    ".enterprise-trust",
     ".voices",
     ".solutions-hero",
     ".ak-hero",
@@ -152,63 +152,13 @@
     );
   }
 
-  /* -------------------------------------------------------------------------
-     5. Counters
-     Every figure is counted off the page itself, so none of them can drift out
-     of step with the content or become a number nobody can source.
-     ------------------------------------------------------------------------- */
-
+  /* Company figures supplied by Iris; these describe the organisation,
+     rather than the subset of sectors, portraits and logos on this website. */
   function initTally() {
-    const tally = document.querySelector("[data-tally]");
-    if (!tally) return;
-    const counts = {
-      sectors: all(".solution-family").length,
-      people: all(".person-row").length,
-      clients: all('.client-set:not([aria-hidden="true"]) .client-logo').length,
-    };
-    const cells = all("[data-count]", tally);
-    cells.forEach((cell) => {
-      const value = counts[cell.dataset.count] || 0;
-      cell.dataset.target = String(value);
-      cell.textContent = calm() ? String(value).padStart(2, "0") : "00";
+    const counts = { sectors: "10+", people: "50+", clients: "10+" };
+    all("[data-count]").forEach((cell) => {
+      cell.textContent = counts[cell.dataset.count] || cell.textContent;
     });
-    if (calm()) return;
-
-    const run = () => {
-      cells.forEach((cell) => {
-        const target = Number(cell.dataset.target);
-        const started = performance.now();
-        const span = 1100;
-        const step = (now) => {
-          const t = Math.min(1, (now - started) / span);
-          // ease-out so it lands softly instead of stopping dead
-          const eased = 1 - Math.pow(1 - t, 3);
-          cell.textContent = String(Math.round(target * eased)).padStart(2, "0");
-          if (t < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-      });
-    };
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          observer.disconnect();
-          run();
-        });
-      },
-      { threshold: 0.3 },
-    );
-    observer.observe(tally);
-    // Same guard as the reveal pass: a background tab never delivers an
-    // observer callback, so make sure the numbers still arrive.
-    setTimeout(() => {
-      if (tally.getBoundingClientRect().top < innerHeight * 2) {
-        observer.disconnect();
-        run();
-      }
-    }, 2500);
   }
 
   /* -------------------------------------------------------------------------

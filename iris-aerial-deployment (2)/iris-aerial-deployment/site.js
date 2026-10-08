@@ -382,6 +382,7 @@
     viewerPhoto.width = image.naturalWidth || image.width;
     viewerPhoto.height = image.naturalHeight || image.height;
     document.querySelector("#image-viewer-caption").textContent = image.alt;
+    imageViewer.classList.toggle("team-photo-viewer", Boolean(button.closest("#team")));
     imageViewer.showModal();
   };
   window.irisCloseImage = () => imageViewer.close();

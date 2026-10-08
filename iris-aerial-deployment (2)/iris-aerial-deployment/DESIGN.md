@@ -157,7 +157,7 @@ The brief that produced this layer was that the site read as monotonous and mach
 
 - **Nothing repeats at the same scale.** Oversized numerals crop off the top of each sector and method card; the About tally sets three figures at 72px against 16px body copy. A grid of equally-weighted cards is what made it feel generated.
 - **Small type speaks like an instrument.** Technical kickers with survey ticks, uppercase coordinates, tabular numerals.
-- **The hero is the drone's point of view.** The headline assembles word by word, the readout carries Iris's real office coordinates and a live Asia/Kolkata clock, and the image drifts against the pointer.
+- **The hero is the drone's point of view.** The headline assembles word by word over the field video. The coordinate and clock readout was removed at the user's request.
 - **Interactions reward poking.** Buttons lean toward the cursor, cards tip in 3D, images wipe rather than fade, and a left-click drops a survey benchmark that fades out.
 - **The drone cursor flies the whole site**, not just Home — but it stands down over anything you type into, and the real caret comes back.
 
@@ -166,7 +166,7 @@ Two implementation notes that are easy to undo by accident:
 - The tilt drives the standalone `rotate` property, never `transform`, so each card's existing hover lift keeps working alongside it.
 - `.wipe` owns its own IntersectionObserver. It must never borrow the reveal pass's `in-view` flag, because not every wiped element is a reveal target and a masked image with nothing to unmask it simply never appears.
 
-**Every figure in the About tally is counted off the page at runtime** — sectors from `.solution-family`, people from `.person-row`, clients from the un-cloned `.client-logo` set. None of them can drift out of step with the content, and none of them is a number nobody can source. Do not replace them with hardcoded values.
+**The About tally uses user-supplied company totals:** 10+ sectors, 50+ people, 10+ client organisations. These figures describe Iris as a company, rather than the subset of sectors, portraits or client logos displayed on this site. Keep the values visible in the HTML and consistent with `initTally()` in `character.js`.
 
 ## The company blue is sky blue
 
@@ -184,15 +184,15 @@ Navy #081d36 stays as the dark ink: it is the ground under photography and the f
 - **Akshaa green** opens the Akshaa page and the Home Akshaa teaser, and runs through the subnav.
 - **Akshaa Urban** breaks to daylight: white to pale blue, civic teal #0f7ea8, rounded cards, soft shadow. It is for planning authorities and project teams.
 - **Akshaa Defence** returns to Akshaa green (#13271c → #09180f) with lime #a0e66d. Because the hue is shared with the hero, the separation from Urban is carried by everything else: dark versus daylight, 2px corners versus rounded, uppercase technical labels, scanlines, numbered phases. It is for analysts working repeat captures.
-- **Violet** (#2a1055 → #5b2bb0) carries only the "Discuss Akshaa with our team" close-out, immediately above the site footer.
+- **Pista green** (`--ak-pista` #dcebc5 → `--ak-pista-light` #edf4e2) carries the "Discuss Akshaa with our team" close-out above the site footer. Dark green `--ak-pista-ink` #203b28 and `--ak-pista-muted` #435e42 provide accessible text and button colours. `motion.css :root` owns these tokens.
 
 The footer keeps Iris navy on every route, including Akshaa.
 
 ## Home sequence
 
-Hero → clients → about → projects → delivery → Akshaa teaser (green) → "Why enterprises trust us" (sky strip) → testimonials (sky tint) → contact. The trust block is deliberately a **strip**, not a section: the heading sits beside the six points rather than above them, and its vertical padding is roughly half a normal section's.
+Hero → clients → about → projects → delivery → Akshaa teaser (green) → enterprise trust (compact navy panel) → testimonials (sky tint) → contact. The trust section pairs “Precision on site. Confidence in design.” with three short promises: measured right, ready for design, and one team all the way. Navy, sky-blue survey icons and fine dividers distinguish this compact panel. Evidence columns become compact icon-led rows on phones. `pages.css` owns this composition, using shared tokens from `styles.css` and `motion.css`.
 
-The headline voice on Home is a short claim followed by a description that earns it — "We measure what gets built", "Control first. Everything else follows." Avoid headings that only name the topic.
+Home opens with the approved headline "Pioneering the Future with Geospatial Excellence." and the supplied survey and engineering consultancy introduction. The hero has extra copy width and responsive type to accommodate the longer text. The "Selected work" and "How we work" kickers are removed.
 
 > **The three testimonials on Home are placeholders.** Names, roles, organisations and quotes are invented for layout. An HTML comment above the block says so. Replace every one with an approved client reference, or delete the section, before this page goes live.
 
@@ -226,6 +226,16 @@ The renewed redesign request supersedes the earlier flat split-screen compositio
 
 ## October 8 imagery and role update
 
-The Team culture grid now uses all six positions: its final two photographs show office UNO (`iris_fun23.jpeg`) and the exhibition booth (`expo-booth-01.jpg`). The Urban development evidence gallery includes the supplied `_12_masked.jpg` segmentation. Defence adds the supplied `_182157.png` aircraft detection immediately below the analyst-review image, in a shared vertical stack. All four additions use the existing accessible full-image viewer and explicit source dimensions. Technology uses `lidar-uav.png` in the LiDAR method panel.
+The Team culture grid now uses all six positions: its final two photographs show office UNO (`iris_fun23.jpeg`) and the exhibition booth (`expo-booth-01.jpg`). The Urban development evidence gallery includes the supplied `_12_masked.jpg` segmentation. The subsequently added `_182157.png` aircraft detection was removed at the user’s request. The analyst-review image remains a direct gallery item. The remaining additions use the existing accessible full-image viewer and explicit source dimensions. Technology uses `lidar-uav.png` in the LiDAR method panel.
 
 The Technology header drone runs a single 4.8-second hover-and-bank flight whenever its route opens, then rests. `motion.css` owns this effect, which uses transforms without changing layout and is disabled by reduced-motion preference. Vikas's directory title is Surveyor; `site.js` owns the directory data.
+
+## October 8 copy, trust and culture update
+
+The current user request supplies the company introduction, company totals and establishment year (2023). NH 154A, Aizawl and Dhansiri–Naojan descriptions are expanded consistently on Home and Solutions. Aizawl retains approximately 50 km and a minimum 200 m ROW, 100 m either side of the centreline. Dhansiri–Naojan covers aerial and ground survey for railway doubling EPC work; the repeated highway paragraph in the pasted brief is excluded from this railway description.
+
+Team copy focuses on shared chai breaks, UNO, cricket, Holi and expo trips using existing photography. Team images reuse the shared native dialog: `site.js` sets `team-photo-viewer`, and `motion.css` adds a short photo-print bounce and backdrop fade. Reduced motion disables both effects; Escape, focus trapping and focus restoration retain the shared viewer behavior. Careers removes the four pitch badges and the Open roles kicker while preserving job disclosures and applications.
+
+## October 8 compact trust and Akshaa close-out refinement
+
+The user requested a shorter, sleeker enterprise section and a pista Akshaa closing section. `pages.css` owns the compact navy trust panel, shared sky accents and three evidence columns; it uses the existing Barlow/Source Sans typography and stacks at narrow widths. Copy is intentionally brief and retains verifiable survey, deliverable and team capabilities. `motion.css` replaces the violet close-out styling and removes its ambient rotating wash. The recently added bomber detection figure is removed from the Defence gallery; its source asset remains available in the project.
