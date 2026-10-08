@@ -143,30 +143,27 @@
               </div>
             </div>
             <div
-              aria-label="Iris Aerial field video"
+              aria-label="Iris Aerial drone survey field background video"
               class="project-atlas"
             >
-              <div class="atlas-head">
-                <span> On site · Live </span>
-              </div>
-              <figure class="atlas-frame field-photo active">
-                <video
-                  autoplay
-                  loop
-                  muted
-                  playsinline
-                  preload="auto"
-                  style="width:100%;height:100%;object-fit:cover;display:block;"
-                >
-                  <source src="assets/team/hero-video.webm" type="video/webm" />
-                  <source src="assets/team/hero-video.mp4" type="video/mp4" />
-                </video>
-                <figcaption class="atlas-caption">
-                  <strong> Survey team on site </strong>
-                </figcaption>
-              </figure>
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                class="hero-video"
+                style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 50%;"
+              >
+                <source src="assets/hero-video.mp4" type="video/mp4" />
+              </video>
             </div>
-
+            <div aria-hidden="true" class="hero-hud">
+              <span class="hud-rec">REC</span>
+              <span><b>LAT</b> 28.5921&deg; N</span>
+              <span><b>LON</b> 77.0460&deg; E</span>
+              <span><b>IST</b> <i data-hud-clock>--:--:--</i></span>
+            </div>
             <div aria-hidden="true" class="scroll-cue">
               <i></i>
               Scroll
