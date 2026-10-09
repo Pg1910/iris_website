@@ -3537,11 +3537,16 @@ body[data-route="solutions"] .site-footer {
     margin-bottom: 0;
     overflow: hidden;
     opacity: 0;
+    /* whole lines only: three, then an ellipsis — never a line cut in half */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
     transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.4s ease;
   }
   #home .project-story:hover p,
   #home .project-story:focus-within p {
-    max-height: 6em;
+    max-height: 4.35em; /* exactly 3 lines at line-height 1.45 */
     margin-bottom: 12px;
     opacity: 1;
   }
@@ -3559,6 +3564,9 @@ body[data-route="solutions"] .site-footer {
 }
 @media (min-width: 901px) and (hover: none) {
   #home .project-story p {
+    display: block;
+    -webkit-line-clamp: none;
+    line-clamp: none;
     max-height: none;
     margin-bottom: 12px;
     opacity: 1;
@@ -3585,6 +3593,10 @@ body[data-route="solutions"] .site-footer {
   #home .project-story p {
     font-size: 14.5px;
     line-height: 1.4;
+  }
+  #home .project-story:hover p,
+  #home .project-story:focus-within p {
+    max-height: 4.2em; /* exactly 3 lines at line-height 1.4 */
   }
   #home .project-story h3 {
     font-size: 1.35rem;
