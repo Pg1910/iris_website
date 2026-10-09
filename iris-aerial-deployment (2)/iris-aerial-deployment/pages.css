@@ -3343,3 +3343,277 @@ body[data-route="solutions"] .site-footer {
   .hero-copy h1 { font-size: clamp(38px, 10vw, 48px); }
   .hero-copy > p { font-size: 17px; }
 }
+
+/* ===========================================================================
+   Home page — Selected work as a three-piece mosaic
+   The layout is cut to the shape of the three images: the tall Aizawl terrain
+   model stands full height on the left, and the two wide corridor images are
+   stacked on the right, so every image shows nearly whole with no empty frame.
+   Each piece is the image itself, edge to edge, with its place, title and
+   survey type lettered over it; pointing at a piece opens its description.
+   The background starts white, the same as About Iris above it, eases into
+   pale blue behind the images and returns to white for the section below,
+   so there is no hard colour edge on either side. The mosaic sizes itself to
+   fit one screen.
+   =========================================================================== */
+#home .home-projects {
+  padding-block: 44px;
+  background: linear-gradient(180deg, #fff 0%, #e4eff8 26%, #e4eff8 74%, #fff 100%);
+}
+#home .home-projects .section-head {
+  align-items: flex-end;
+  margin-bottom: 26px;
+}
+#home .home-projects .heading {
+  font-size: clamp(2.3rem, 3.6vw, 3.7rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+#home .project-grid {
+  counter-reset: work;
+}
+#home .project-story,
+#home .project-story:first-child {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #0b2b47;
+  box-shadow: 0 18px 40px rgba(10, 53, 86, 0.2);
+  counter-increment: work;
+}
+#home .project-story figure {
+  margin: 0;
+}
+#home .project-story .image-open,
+#home .project-story:first-child .image-open {
+  display: block;
+  height: 100%;
+  border-radius: 0;
+  background: none;
+}
+#home .project-story img,
+#home .project-story:first-child img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#home .project-story .image-open:hover img {
+  transform: scale(1.04);
+}
+/* expand button: top right, so it never sits on the caption */
+#home .project-story .image-open::after {
+  top: 16px;
+  right: 16px;
+  bottom: auto;
+  background: rgba(7, 29, 53, 0.82);
+}
+/* number, top left */
+#home .project-story::before {
+  content: "0" counter(work) " / 03";
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 22px;
+  color: #fff;
+  font: 700 13px/1 var(--font-technical);
+  letter-spacing: 0.16em;
+  text-shadow: 0 1px 10px rgba(7, 29, 53, 0.9);
+  pointer-events: none;
+}
+#home .project-body,
+#home .project-story:first-child .project-body {
+  padding: 0;
+  align-self: auto;
+}
+#home .project-location {
+  margin-bottom: 8px;
+  color: #8fd8f5;
+  font: 700 12.5px/1.3 var(--font-technical);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+#home .project-story h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: clamp(1.45rem, 1.9vw, 2rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+#home .project-story p {
+  max-width: 54ch;
+  margin: 0 0 12px;
+  color: #dbe8f3;
+  font-size: 16px;
+  line-height: 1.45;
+}
+#home .project-type {
+  color: #fff;
+  font: 700 12.5px/1 var(--font-technical);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+#home .project-type::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 2px;
+  margin-right: 10px;
+  vertical-align: middle;
+  background: #6fd3ff;
+}
+
+/* The mosaic */
+@media (min-width: 901px) {
+  #home .project-grid {
+    display: grid;
+    /* 0.62 : 1 makes the tall piece and the two stacked wide pieces end level */
+    grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+    /* never taller than the screen: the width is capped from the height */
+    max-width: calc((100svh - 215px) * 1.74);
+    margin-inline: auto;
+  }
+  #home .project-story:nth-child(2) {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+  #home .project-story:nth-child(1) {
+    grid-column: 2;
+    grid-row: 1;
+    aspect-ratio: 2.2 / 1;
+  }
+  #home .project-story:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+    aspect-ratio: 2.2 / 1;
+  }
+  #home .project-story figure {
+    position: absolute;
+    inset: 0;
+  }
+  /* caption lettered over the lower part of the image */
+  #home .project-body,
+  #home .project-story:first-child .project-body {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 70px 26px 24px;
+    background: linear-gradient(
+      0deg,
+      rgba(7, 29, 53, 0.96) 0%,
+      rgba(7, 29, 53, 0.8) 50%,
+      rgba(7, 29, 53, 0) 100%
+    );
+    pointer-events: none;
+  }
+  /* shade the top edge so the number and expand button read on pale imagery */
+  #home .project-story::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 84px;
+    background: linear-gradient(180deg, rgba(7, 29, 53, 0.72), rgba(7, 29, 53, 0));
+    pointer-events: none;
+  }
+  /* number the pieces in the order they are seen: tall one first */
+  #home .project-story:nth-child(2)::before {
+    content: "01 / 03";
+  }
+  #home .project-story:nth-child(1)::before {
+    content: "02 / 03";
+  }
+}
+/* The description stays folded so more of the image shows, and opens when a
+   piece is pointed at or focused. Screens without a mouse always show it. */
+@media (min-width: 901px) {
+  #home .project-story p {
+    max-height: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.4s ease;
+  }
+  #home .project-story:hover p,
+  #home .project-story:focus-within p {
+    max-height: 6em;
+    margin-bottom: 12px;
+    opacity: 1;
+  }
+  #home .project-story h3 {
+    margin-bottom: 12px;
+  }
+  /* the caption shade deepens with it, so the text always reads */
+  #home .project-body {
+    transition: padding 0.4s ease;
+  }
+  #home .project-story:hover .project-body,
+  #home .project-story:focus-within .project-body {
+    padding-top: 110px;
+  }
+}
+@media (min-width: 901px) and (hover: none) {
+  #home .project-story p {
+    max-height: none;
+    margin-bottom: 12px;
+    opacity: 1;
+  }
+}
+@media (min-width: 901px) and (max-height: 780px), (min-width: 901px) and (max-width: 1200px) {
+  #home .home-projects {
+    padding-block: 30px;
+  }
+  #home .home-projects .section-head {
+    margin-bottom: 18px;
+  }
+  #home .home-projects .heading {
+    font-size: 2.2rem;
+  }
+  #home .project-grid {
+    gap: 14px;
+    max-width: calc((100svh - 150px) * 1.74);
+  }
+  #home .project-body,
+  #home .project-story:first-child .project-body {
+    padding: 60px 20px 18px;
+  }
+  #home .project-story p {
+    font-size: 14.5px;
+    line-height: 1.4;
+  }
+  #home .project-story h3 {
+    font-size: 1.35rem;
+  }
+}
+/* Phones and small tablets: one piece per row, caption under the image */
+@media (max-width: 900px) {
+  #home .project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  #home .project-story .image-open {
+    aspect-ratio: 2.2 / 1;
+  }
+  #home .project-story:nth-child(2) .image-open {
+    aspect-ratio: 4 / 5;
+  }
+  #home .project-body,
+  #home .project-story:first-child .project-body {
+    padding: 18px 20px 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #home .project-story .image-open:hover img {
+    transform: none;
+  }
+  #home .project-story p,
+  #home .project-body {
+    transition: none;
+  }
+}
