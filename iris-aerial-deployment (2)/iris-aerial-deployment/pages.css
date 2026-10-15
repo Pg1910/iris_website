@@ -319,6 +319,7 @@
 .capture-photo {
   height: 390px;
   object-fit: cover;
+  object-position: center top;
 }
 .field-caption {
   grid-column: 1;
@@ -1036,13 +1037,14 @@ body[data-route="akshaa"] {
 }
 .source-contact-sheet {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 12px;
   margin-top: 24px;
 }
 .source-contact-sheet img {
   width: 100%;
-  height: 130px;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: contain;
 }
 .defence-answer {
@@ -1121,29 +1123,54 @@ body[data-route="akshaa"] {
 }
 .technology-aircraft {
   min-width: 0;
-  max-width: 360px;
-  margin: auto;
+  width: min(100%, 430px);
+  margin: 0 0 0 auto;
 }
 .technology-aircraft img {
   width: 100%;
-  height: 290px;
+  height: 320px;
   object-fit: contain;
+}
+.technology-overview {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+.technology-overview .kicker {
+  color: var(--cyan2);
+}
+.technology-overview .heading {
+  margin: 10px 0 12px;
+  color: var(--navy);
+  font-size: clamp(32px, 4vw, 44px);
+}
+.technology-overview > p {
+  max-width: 62ch;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
 }
 .tech-method-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 28px;
 }
 .tech-method {
   min-width: 0;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--line);
-  border-radius: var(--r);
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: 0 12px 30px rgba(10, 61, 88, 0.07);
   overflow: hidden;
   scroll-margin-top: calc(var(--header) + 28px);
 }
 .method-intro {
+  flex: 1;
+  min-height: 270px;
   padding: 32px;
 }
 .method-intro h2 {
@@ -1161,26 +1188,26 @@ body[data-route="akshaa"] {
 .method-media {
   min-width: 0;
   margin-top: auto;
-  background: var(--mist);
+  background: #e9f4fb;
 }
 .method-media .image-open {
-  padding: 24px;
+  padding: 0;
+  background: transparent;
 }
 .method-media img {
   width: 100%;
-  height: 250px;
-  object-fit: contain;
+  height: 270px;
+  object-fit: cover;
 }
 .method-media .image-open:hover img {
   transform: none;
 }
-.tech-method:last-child {
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+.tech-method:nth-child(odd):last-child {
+  grid-column: 1 / -1;
+  width: calc(50% - 14px);
+  justify-self: center;
 }
-.tech-method:last-child .method-media {
+.tech-method:nth-child(odd):last-child .method-media {
   margin: 0;
 }
 
@@ -1845,7 +1872,7 @@ body[data-route="akshaa"] {
   .ak-contact h2 {
     font-size: 30px;
   }
-  .tech-method:last-child {
+  .tech-method:nth-child(odd):last-child {
     display: flex;
   }
   .method-media img {
@@ -2104,19 +2131,38 @@ body[data-route="akshaa"] {
 #solutions .solutions-hero {
   position: relative;
   overflow: hidden;
-  padding-block: 88px;
+  padding-block: 88px 132px;
   background:
     radial-gradient(900px 420px at 85% 0%, rgba(66, 185, 232, 0.22), transparent 70%),
     linear-gradient(135deg, var(--navy) 0%, #0b3a5e 100%);
 }
+#solutions .solutions-hero-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+#solutions .solutions-hero-copy {
+  max-width: 940px;
+}
+#solutions .solutions-hero-copy > .kicker {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--sky-bright);
+  font: 700 13px/1.4 var(--font-technical);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
 #solutions .solutions-hero h1 {
   color: #fff;
-  max-width: 620px;
+  max-width: 900px;
+  margin-bottom: 24px;
+  font-size: clamp(3.25rem, 7vw, 6rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
 }
 #solutions .solutions-hero-copy p {
   color: var(--on-dark);
+  max-width: 680px;
+  margin-bottom: 28px;
   font-size: 21px;
-  max-width: 520px;
 }
 #solutions .solutions-hero .light {
   background: #fff;
@@ -2126,13 +2172,34 @@ body[data-route="akshaa"] {
   background: var(--accent);
   color: var(--navy);
 }
-#solutions .solutions-scene .image-open {
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+#solutions .solutions-hero-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 820px;
+  margin: 48px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  list-style: none;
 }
-#solutions .solutions-scene img {
-  height: 440px;
+#solutions .solutions-hero-steps li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 42px;
+  color: #fff;
+}
+#solutions .solutions-hero-steps li + li {
+  padding-left: 22px;
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
+}
+#solutions .solutions-hero-steps span {
+  color: var(--sky-bright);
+  font: 700 12px/1 var(--font-technical);
+  letter-spacing: 0.08em;
+}
+#solutions .solutions-hero-steps strong {
+  font-size: 15px;
+  font-weight: 600;
 }
 
 /* --- Sector jump bar: sticky pills ------------------------------------- */
@@ -2494,37 +2561,9 @@ body[data-route="akshaa"] {
    Solutions page — second design pass (static visual design only, no motion)
    =========================================================================== */
 
-/* Hero: offset frame behind the photo, angled lower edge */
+/* Hero: full-width text-led opening with an angled lower edge */
 #solutions .solutions-hero {
-  padding-bottom: 120px;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 44px), 0 100%);
-}
-#solutions .solutions-scene {
-  position: relative;
-  isolation: isolate;
-}
-#solutions .solutions-scene::before {
-  content: "";
-  position: absolute;
-  inset: 22px -22px -22px 22px;
-  z-index: -1;
-  border: 2px solid var(--sky-bright);
-  border-radius: 22px;
-  opacity: 0.55;
-}
-#solutions .solutions-scene::after {
-  content: "On site";
-  position: absolute;
-  left: 18px;
-  top: 18px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(8, 29, 54, 0.78);
-  color: #fff;
-  font: 700 12px/1 var(--font-technical);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  pointer-events: none;
 }
 #solutions .page-jumps {
   margin-top: -44px;
@@ -2665,15 +2704,31 @@ body[data-route="akshaa"] {
   #solutions .page-jumps {
     margin-top: -28px;
   }
-  #solutions .solutions-scene::before {
-    inset: 14px -8px -14px 14px;
-  }
   #solutions .solution-family .service-media .image-open,
   #solutions .solution-family:first-child .service-media .image-open {
     min-height: 280px;
   }
 }
 @media (max-width: 640px) {
+  #solutions .solutions-hero {
+    padding-block: 64px 104px;
+  }
+  #solutions .solutions-hero h1 {
+    font-size: clamp(2.8rem, 12vw, 4.5rem);
+  }
+  #solutions .solutions-hero-copy p {
+    font-size: 18px;
+  }
+  #solutions .solutions-hero-steps {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 36px;
+    padding-top: 18px;
+  }
+  #solutions .solutions-hero-steps li + li {
+    padding-left: 0;
+    border-left: 0;
+  }
   #solutions .case-download {
     padding-left: 32px;
     padding-top: 112px;
@@ -3054,189 +3109,6 @@ body[data-route="solutions"] .site-footer {
   padding: 0;
 }
 
-/* ===========================================================================
-   Solutions page — call to action as an animated "flight plan"
-   The text sits on the left and a small drone mission is drawn on the right.
-   The drawing is built and animated by site.js (see "Flight plan" there): the
-   drone takes off from the green point, flies the survey lines, pauses at each
-   waypoint to light up one workflow stage, then lands and its rotors stop.
-   It plays once, when the card scrolls into view.
-   To go back to the centred panel, delete this block.
-   =========================================================================== */
-#solutions .fit-flight {
-  display: block;
-  width: 100%;
-  max-width: 360px;
-  margin: 36px auto 0;
-}
-#solutions .fit-flight svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-#solutions .fit-flight .ff-area {
-  fill: rgba(66, 185, 232, 0.07);
-  stroke: rgba(143, 216, 245, 0.55);
-  stroke-width: 1.5;
-  stroke-dasharray: 3 6;
-  stroke-linejoin: round;
-}
-#solutions .fit-flight .ff-corner {
-  fill: #0b3050;
-  stroke: rgba(143, 216, 245, 0.8);
-  stroke-width: 1.5;
-}
-/* Planned route: faint dots. Flown route: solid line drawn behind the drone. */
-#solutions .fit-flight .ff-plan,
-#solutions .fit-flight .ff-flown {
-  fill: none;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-#solutions .fit-flight .ff-plan {
-  stroke: rgba(143, 216, 245, 0.4);
-  stroke-dasharray: 2 9;
-}
-#solutions .fit-flight .ff-flown {
-  stroke: var(--accent, #8fd8f5);
-}
-/* Waypoints and their workflow labels: dim until the drone reaches them */
-#solutions .fit-flight .ff-dot {
-  fill: #0b3050;
-  stroke: var(--accent, #8fd8f5);
-  stroke-width: 2;
-  transition: fill 0.3s ease, stroke 0.3s ease;
-}
-#solutions .fit-flight .ff-ring {
-  fill: none;
-  stroke: var(--accent, #8fd8f5);
-  stroke-width: 2;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-#solutions .fit-flight .ff-label {
-  fill: #fff;
-  font: 700 11.5px/1 var(--font-technical);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0.32;
-  transition: opacity 0.35s ease;
-}
-#solutions .fit-flight .ff-label tspan {
-  fill: var(--accent, #8fd8f5);
-}
-#solutions .fit-flight .ff-stop.is-reached .ff-dot {
-  fill: var(--accent, #8fd8f5);
-}
-#solutions .fit-flight .ff-stop.is-reached .ff-ring {
-  opacity: 0.4;
-}
-#solutions .fit-flight .ff-stop.is-reached .ff-label {
-  opacity: 1;
-}
-/* Take-off and landing points use the same lime as the workflow's last step */
-#solutions .fit-flight .ff-stop.is-reached.ff-end .ff-dot,
-#solutions .fit-flight .ff-stop.is-reached.ff-start .ff-dot {
-  fill: var(--ak-lime, #a0e66d);
-  stroke: var(--ak-lime, #a0e66d);
-}
-#solutions .fit-flight .ff-stop.is-reached.ff-end .ff-ring,
-#solutions .fit-flight .ff-stop.is-reached.ff-start .ff-ring {
-  stroke: var(--ak-lime, #a0e66d);
-}
-#solutions .fit-flight .ff-stop.is-reached.ff-end .ff-label tspan {
-  fill: var(--ak-lime, #a0e66d);
-}
-/* Rotors spin only while the drone is flying */
-#solutions .fit-flight .ff-rotor {
-  transform-box: fill-box;
-  transform-origin: center;
-}
-#solutions .fit-flight.is-flying .ff-rotor {
-  animation: ff-spin 0.22s linear infinite;
-}
-@keyframes ff-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-/* Drone body colour override: light-blue background needs darker drone parts */
-#solutions .fit-flight .ff-drone path[stroke="#fff"] {
-  stroke: #4a8fb5;
-}
-#solutions .fit-flight .ff-drone path[fill="#fff"] {
-  fill: #7ab2d4;
-  stroke: #2e6a90;
-}
-#solutions .fit-flight .ff-drone g[fill="#0a293b"] ellipse,
-#solutions .fit-flight .ff-drone .ff-rotor {
-  fill: #2e6a90;
-}
-#solutions .fit-flight .ff-drone circle[fill="#0a293b"] {
-  fill: #2e6a90;
-}
-/* Corner squares: darker so visible on light panel */
-#solutions .fit-flight .ff-corner {
-  fill: #4a8fb5;
-  stroke: rgba(10, 53, 86, 0.6);
-}
-/* Waypoint dot background: mid-blue */
-#solutions .fit-flight .ff-dot {
-  fill: #7ab2d4;
-}
-/* Labels: dark ink on light background */
-#solutions .fit-flight .ff-label {
-  fill: #0a3a62;
-  opacity: 0.5;
-}
-#solutions .fit-flight .ff-stop.is-reached .ff-label {
-  opacity: 1;
-}
-/* Route lines: more visible on light bg */
-#solutions .fit-flight .ff-plan {
-  stroke: rgba(10, 80, 130, 0.35);
-}
-#solutions .fit-flight .ff-flown {
-  stroke: #1a6fa8;
-}
-#solutions .fit-flight .ff-area {
-  fill: rgba(10, 80, 130, 0.06);
-  stroke: rgba(10, 80, 130, 0.35);
-}
-
-@media (min-width: 1101px) {
-  #solutions .solutions-project-fit,
-  #solutions .solutions-project-fit .shell {
-    text-align: left;
-  }
-  #solutions .solutions-project-fit .shell {
-    max-width: 1120px;
-    padding: 68px 64px 68px;
-  }
-  #solutions .solutions-project-fit .section-head {
-    align-items: flex-start;
-    max-width: 52%;
-  }
-  #solutions .solutions-project-fit .heading::after {
-    margin-left: 0;
-  }
-  #solutions .solutions-project-fit .copy {
-    margin-inline: 0;
-    max-width: 46ch;
-  }
-  #solutions .fit-flight {
-    position: absolute;
-    right: 56px;
-    top: 50%;
-    width: 39%;
-    max-width: 430px;
-    margin: 0;
-    translate: 0 -50%;
-  }
-}
-
 /* Enterprise trust: compact navy panel with survey-instrument details. */
 .enterprise-trust.section {
   position: relative;
@@ -3615,5 +3487,221 @@ body[data-route="solutions"] .site-footer {
   #home .project-story p,
   #home .project-body {
     transition: none;
+  }
+}
+
+/* Solutions: unify the catalogue, workflow and project panels with a quieter
+   sea-glass palette, reserving deep navy for the opening and workflow. */
+#solutions {
+  --sx-sky-1: #f3f6f4;
+  --sx-sky-2: #e9f0ed;
+  --sx-sky-3: #f7f8f6;
+  --sx-line: #d2dfda;
+  --sx-deep: #173d47;
+  --sx-night: #102b35;
+  --sx-accent: #25847e;
+  background: var(--sx-sky-1);
+}
+#solutions .solutions-hero {
+  background:
+    radial-gradient(ellipse at 88% 8%, rgba(91, 190, 174, 0.18), transparent 38%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 18px),
+    linear-gradient(135deg, #102b35 0%, #173d4c 62%, #1c5960 100%);
+}
+#solutions .solutions-hero-copy > .kicker,
+#solutions .solutions-hero-steps span {
+  color: #83d6c3;
+}
+#solutions .page-jumps {
+  background: rgba(248, 250, 249, 0.97);
+  border-block-color: var(--sx-line);
+  box-shadow: 0 6px 16px rgba(20, 55, 59, 0.07);
+}
+#solutions .page-jumps a {
+  border-color: var(--sx-line);
+  background: #fff;
+  color: var(--sx-deep);
+}
+#solutions .page-jumps a:hover,
+#solutions .page-jumps a:focus-visible {
+  border-color: var(--sx-accent);
+  background: var(--sx-accent);
+  color: #fff;
+}
+#solutions .solution-portfolio {
+  background: var(--sx-sky-1);
+  background-image: none;
+}
+#solutions .solution-portfolio .section-head {
+  align-items: end;
+  margin-bottom: 40px;
+}
+#solutions .solution-portfolio .kicker,
+#solutions .case-gallery .kicker {
+  color: var(--sx-accent);
+}
+#solutions .solution-portfolio .heading,
+#solutions .case-gallery .heading {
+  color: var(--sx-deep);
+}
+#solutions .solution-portfolio .copy,
+#solutions .case-gallery .copy {
+  color: #596e72;
+  line-height: 1.6;
+}
+#solutions .solution-families {
+  gap: 26px;
+}
+#solutions .solution-family {
+  border: 1px solid var(--sx-line);
+  border-top: 4px solid var(--sx-accent);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(20, 55, 59, 0.08);
+}
+#solutions .solution-family:nth-child(even) {
+  border-top-color: #c48b42;
+  background: #fff;
+}
+#solutions .solution-family .service-copy {
+  padding: clamp(28px, 4vw, 52px);
+}
+#solutions .solution-family .service-copy::before {
+  background: #e8f3ef;
+  color: #26766f;
+}
+#solutions .solution-family:nth-child(even) .service-copy::before {
+  background: #f8f0e4;
+  color: #916325;
+}
+#solutions .solution-family h2 {
+  color: var(--sx-deep);
+  letter-spacing: -0.025em;
+}
+#solutions .solution-family p {
+  color: #53676c;
+}
+#solutions .solution-spec > div {
+  border-left-color: var(--sx-accent);
+  background: #f0f5f3;
+}
+#solutions .solution-family:nth-child(even) .solution-spec > div {
+  border-left-color: #c48b42;
+  background: #f7f4ed;
+}
+#solutions .solution-spec strong {
+  color: var(--sx-deep);
+}
+#solutions .solution-spec span {
+  color: #53676c;
+}
+#solutions .solution-chain {
+  background-color: var(--sx-night);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(145deg, #173d47 0%, var(--sx-night) 76%);
+  background-size: 48px 48px, 48px 48px, auto;
+}
+#solutions .solution-chain .kicker {
+  color: #83d6c3;
+}
+#solutions .case-gallery {
+  padding-top: var(--section-space);
+  background: var(--sx-sky-3);
+  background-image: none;
+}
+#solutions .case-visual {
+  border-color: var(--sx-line);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(20, 55, 59, 0.08);
+}
+#solutions .case-visual > div > span {
+  background: #e8f3ef;
+  color: #26766f;
+}
+#solutions .case-visual h3 {
+  color: var(--sx-deep);
+}
+#solutions .case-download {
+  border-color: var(--sx-line);
+  border-left-color: var(--sx-accent);
+  background: #fff;
+}
+#solutions .solutions-project-fit {
+  background:
+    radial-gradient(760px 340px at 100% 0%, rgba(91, 190, 174, 0.17), transparent 72%),
+    linear-gradient(145deg, #173d47 0%, var(--sx-night) 78%);
+  --fit-mark: rgba(131, 214, 195, 0.72);
+}
+#solutions .solutions-project-fit .shell {
+  border-color: rgba(190, 224, 215, 0.22);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 26px 54px rgba(3, 14, 28, 0.24);
+}
+#solutions .solutions-project-fit .shell::before {
+  border-color: rgba(131, 214, 195, 0.35);
+  color: #a5e2d3;
+}
+#solutions .solutions-project-fit .heading {
+  color: #fff;
+}
+#solutions .solutions-project-fit .copy {
+  color: #d5e4e2;
+}
+#solutions .solutions-project-fit .light {
+  background: #fff;
+  color: var(--sx-deep);
+}
+#solutions .solutions-project-fit .light:hover {
+  background: #a5e2d3;
+  color: var(--sx-night);
+}
+
+@media (max-width: 760px) {
+  #solutions .solution-portfolio .section-head {
+    gap: 20px;
+  }
+  #solutions .solution-family .service-copy {
+    padding: 30px 26px;
+  }
+}
+@media (max-width: 600px) {
+  #solutions .solutions-hero {
+    background:
+      radial-gradient(ellipse at 100% 0%, rgba(91, 190, 174, 0.16), transparent 42%),
+      linear-gradient(145deg, #102b35 0%, #173d4c 100%);
+  }
+  #solutions .solutions-project-fit .shell {
+    background: rgba(255, 255, 255, 0.045);
+  }
+}
+
+.trust-introduction h2 {
+  max-width: 12ch;
+  margin-bottom: 16px;
+  font-size: clamp(34px, 3.3vw, 46px);
+}
+.trust-introduction .trust-lead {
+  max-width: 48ch;
+  margin: 0 0 20px;
+  color: var(--on-dark);
+  font-size: 17px;
+  line-height: 1.55;
+}
+.trust-evidence li {
+  padding-inline: 24px;
+}
+@media (min-width: 1101px) {
+  .enterprise-trust .trust-layout {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.65fr);
+    gap: 56px;
+  }
+}
+
+@media (max-width: 600px) {
+  .trust-evidence li {
+    padding-inline: 0;
   }
 }

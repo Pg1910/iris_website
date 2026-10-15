@@ -93,9 +93,9 @@ Fonts are locally hosted in `assets/fonts/` with their licenses. Barlow and Sour
 The shared maximum content width is 1240px. Geometry is owned by `--content`, `--gutter`, `--section-space` and `--header`. Desktop gutters are 56px, falling to 40px and 32px, then 20px on phones. Desktop sections use 96px vertical space; phones use 56px. The desktop header is 84px, tablet 80px and phone 76px. Navigation changes to a mobile disclosure at 1000px.
 
 - Home: a full-width photographic opening with a navy contrast overlay and manual field carousel; blue service links; static client marks; plain About Iris and vision/mission; one wide featured project followed by two paired projects; the three-stage survey workflow; imagery-analysis preview; contact details.
-- Solutions: white introduction with cobalt title and field photograph; sector jump links; one wide railway-survey case and four paired service panels; the five-stage survey sequence; project evidence and case-study download; a cobalt enquiry section.
-- Akshaa: its green/black opening with supplied logo and detection collage; sticky area navigation; framed, fully contained infrastructure evidence; defence comparisons and human review. The previous offset lime image shadow is removed.
-- Technology: a restrained aircraft introduction and method jump links; four methods in a two-column catalogue, with GIS/AI spanning the final row. Each has concise, consistently styled copy and contained media. GPR and Hydrography remain absent.
+- Solutions: a text-led navy opening; sticky sector jump links; five alternating image-and-copy sector panels on a muted sea-glass canvas; a dark survey workflow; project evidence and case-study download; a framed project enquiry.
+- Akshaa: its green/black opening with supplied logo and detection collage; hero actions linking directly to its two product areas; framed, fully contained infrastructure evidence; defence comparisons and human review. The previous offset lime image shadow is removed.
+- Technology: a restrained aircraft introduction and method jump links; six methods in a two-column catalogue covering LiDAR, photogrammetry, satellite sensing, ground survey, echo sounder/sonar, and GIS/AI. Each has concise, consistently styled copy and contained media. GPR remains absent.
 - Team: a title/description introduction above one wide group photograph; six equal 4:3 culture positions, including two reserved for upcoming images; three larger initial profiles followed by a four-column directory. Two-column portraits on phones.
 - Careers: a company exhibition photograph beside a cobalt page title; monochrome bordered job panels with native role disclosures, clear Apply actions and a sticky introduction on desktop; the existing email-draft application form, which asks for current city.
 
@@ -115,21 +115,21 @@ Navigation uses six hash routes, current-route links, route titles and heading f
 
 Actions use the same labels and emphasis everywhere. Company primary actions are blue, while actions on navy can use white. Akshaa actions use lime on dark green. Keyboard focus is visible and dark-surface contrast is preserved.
 
-The Home field gallery starts paused. Previous/next, selection dots and optional Play/Pause controls remain available. Arrow keys select while a gallery control has focus; manual changes are announced. The Team introduction uses a static lead photograph so its six-photo culture grid does not repeat a second carousel. There are no entrance reveals, hero parallax, flight effects, custom cursors, automatic logo motion or rocket animation. Content appears immediately. Reduced-motion preference disables nonessential shared transitions and pauses the field gallery.
+The Home field gallery starts paused. Previous/next, selection dots and optional Play/Pause controls remain available. Arrow keys select while a gallery control has focus; manual changes are announced. The Team introduction uses a static lead photograph so its culture grid does not repeat a second carousel. Page changes use a short fade-and-rise entrance; scroll reveals are reserved for section headings, featured projects and selected cards. Decorative motion follows the operating-system reduced-motion preference; there is no site-level motion toggle.
 
-The shared image viewer is a native modal with a complete image, descriptive caption, close control, Escape behavior, background isolation and focus restoration. Do not replace it with separate per-page overlays.
+The shared image viewer is a native modal with a complete image, centered descriptive caption, close control, Escape behavior, background isolation and focus restoration. Keep it centered and preserve the visible zoom cursor on image buttons.
 
-The careers form validates locally and prepares an email draft. It never claims to send an application. The selected role is carried into the form. The résumé picker accepts non-empty PDF/DOC/DOCX files up to 5MB and supports removal. Applicants must attach the selected résumé in their email app. Preserve input after validation errors and focus the first invalid field. The form is not a backend upload flow.
+The careers form validates locally and prepares an email draft. It never claims to send an application. The selected role is carried into the form, and “What would you like to build here?” is required. The résumé picker accepts non-empty PDF/DOC/DOCX files up to 5MB and supports removal. Applicants must attach the selected résumé in their email app. Preserve input after validation errors and focus the first invalid field. Role cards stay stationary on hover; the transparent aircraft design remains still. The form is not a backend upload flow.
 
 ## Motion
 
 Motion lives in `motion.css` and `motion.js` so the base layout stays readable without either. The rules:
 
-- **Drone cursor.** On Home only, with a fine pointer and no reduced-motion preference, the pointer becomes a small survey quad that trails the cursor, banks into its direction of travel and raises a scan ring over anything clickable. It is never the only cue for an interactive element.
 - **Home gallery.** Cross-fades every 2.5s with a slow drift on the active frame and a hairline progress bar. Hovering or tabbing into the gallery holds the frame; the existing Play/Pause control still owns the reel.
 - **Client rail.** One continuous right-to-left run built from the original logo set plus an `aria-hidden` clone. Hover or focus pauses it. Under reduced motion the clone is dropped and the rail scrolls by hand instead.
 - **Scroll reveal.** Figures and cards rise into place once, with a short stagger inside each group and a 2.5s settle on the image itself. The hiding attribute is applied by script, so content is always visible if the script does not run.
-- **Everything decorative stops under `prefers-reduced-motion: reduce`** — drone, confetti, starfield, orbit, progress bar and reveals — while colour, layout and hierarchy stay exactly as they are.
+- **Page and section transitions.** Route changes use a brief fade-and-rise entrance. Section headings and featured Home projects join the existing one-time scroll reveals, giving long pages clearer continuity without delaying native smooth scrolling.
+- **Reduced motion is respected by default.** Motion follows the operating-system setting without a navigation toggle. When reduced motion is active, confetti, starfield, contour drift, progress bar and reveals stop while colour, layout and hierarchy stay exactly as they are.
 
 The reveal pass must never strand content at `opacity: 0`. The hiding attribute is applied by script, and the re-check runs off a timer plus `visibilitychange`, never `requestAnimationFrame` — a background tab pauses the rendering loop, which also suspends IntersectionObserver delivery, so a frame-based fallback would never arrive.
 
@@ -159,7 +159,6 @@ The brief that produced this layer was that the site read as monotonous and mach
 - **Small type speaks like an instrument.** Technical kickers with survey ticks, uppercase coordinates, tabular numerals.
 - **The hero is the drone's point of view.** The headline assembles word by word over the field video. The coordinate and clock readout was removed at the user's request.
 - **Interactions reward poking.** Buttons lean toward the cursor, cards tip in 3D, images wipe rather than fade, and a left-click drops a survey benchmark that fades out.
-- **The drone cursor flies the whole site**, not just Home — but it stands down over anything you type into, and the real caret comes back.
 
 Two implementation notes that are easy to undo by accident:
 
@@ -181,7 +180,7 @@ Navy #081d36 stays as the dark ink: it is the ground under photography and the f
 
 ## Colour outside the company blue
 
-- **Akshaa green** opens the Akshaa page and the Home Akshaa teaser, and runs through the subnav.
+- **Akshaa green** opens the Akshaa page and the Home Akshaa teaser. The opening actions link directly to its two product areas without a duplicate sticky subnav.
 - **Akshaa Urban** breaks to daylight: white to pale blue, civic teal #0f7ea8, rounded cards, soft shadow. It is for planning authorities and project teams.
 - **Akshaa Defence** returns to Akshaa green (#13271c → #09180f) with lime #a0e66d. Because the hue is shared with the hero, the separation from Urban is carried by everything else: dark versus daylight, 2px corners versus rounded, uppercase technical labels, scanlines, numbered phases. It is for analysts working repeat captures.
 - **Pista green** (`--ak-pista` #dcebc5 → `--ak-pista-light` #edf4e2) carries the "Discuss Akshaa with our team" close-out above the site footer. Dark green `--ak-pista-ink` #203b28 and `--ak-pista-muted` #435e42 provide accessible text and button colours. `motion.css :root` owns these tokens.
@@ -190,7 +189,7 @@ The footer keeps Iris navy on every route, including Akshaa.
 
 ## Home sequence
 
-Hero → clients → about → projects → delivery → Akshaa teaser (green) → enterprise trust (compact navy panel) → testimonials (sky tint) → contact. The trust section pairs “Precision on site. Confidence in design.” with three short promises: measured right, ready for design, and one team all the way. Navy, sky-blue survey icons and fine dividers distinguish this compact panel. Evidence columns become compact icon-led rows on phones. `pages.css` owns this composition, using shared tokens from `styles.css` and `motion.css`.
+Hero → clients → about → projects → delivery → Akshaa teaser (green) → enterprise trust (compact navy panel) → testimonials (sky tint) → contact. The trust section leads with “Speed Meets Excellence” and a concise speed-and-quality promise, followed by three delivery strengths. Navy, sky-blue survey icons and fine dividers distinguish this compact panel. Evidence columns become compact icon-led rows on phones. `pages.css` owns this composition, using shared tokens from `styles.css` and `motion.css`.
 
 Home opens with the approved headline "Pioneering the Future with Geospatial Excellence." and the supplied survey and engineering consultancy introduction. The hero has extra copy width and responsive type to accommodate the longer text. The "Selected work" and "How we work" kickers are removed.
 

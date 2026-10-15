@@ -643,7 +643,7 @@ button:disabled,
 
 /* The footer is the shared anchor for company, contact, and navigation. */
 .site-footer {
-  padding: 60px 0 24px;
+  padding: 44px 0 18px;
   border-top: 1px solid var(--dark-line);
   background: var(--navy);
   color: var(--white);
@@ -722,8 +722,8 @@ button:disabled,
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding-top: 24px;
-  margin-top: 36px;
+  padding-top: 16px;
+  margin-top: 22px;
   border-top: 1px solid var(--dark-line);
   color: var(--on-dark);
   font-size: 13px;
@@ -841,17 +841,22 @@ button:disabled,
   box-shadow: inset 0 0 0 7px var(--white);
 }
 .image-viewer {
-  width: min(1400px, calc(100vw - 48px));
+  width: min(1240px, calc(100vw - 48px));
   max-width: none;
-  max-height: calc(100svh - 48px);
-  padding: 16px 24px 20px;
+  max-height: calc(100svh - 40px);
+  margin: auto;
+  padding: 64px 24px 20px;
   border: 1px solid var(--dark-line);
-  border-radius: 18px;
-  background: var(--navy);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 50% 0%, #16486b 0%, transparent 55%),
+    var(--navy);
   color: var(--white);
+  box-shadow: 0 28px 100px #0008;
+  overflow: auto;
 }
 .image-viewer[open] {
-  animation: viewer-open 0.24s ease-out;
+  animation: viewer-open 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .image-viewer::backdrop {
   background: #061a27e6;
@@ -859,27 +864,33 @@ button:disabled,
 .image-viewer figure {
   display: grid;
   justify-items: center;
-  gap: 16px;
+  gap: 14px;
+  margin: 0;
 }
 .image-viewer img {
+  display: block;
   width: auto;
   max-width: 100%;
   max-height: calc(100svh - 190px);
+  border-radius: 12px;
   object-fit: contain;
+  box-shadow: 0 16px 48px #0006;
 }
 .image-viewer figcaption {
-  width: 100%;
+  width: min(100%, 70ch);
   min-height: 28px;
   color: var(--on-dark);
   font-size: 16px;
   line-height: 1.45;
+  text-align: center;
+  margin-inline: auto;
 }
 .image-viewer-close {
-  position: sticky;
+  position: absolute;
   z-index: 2;
-  top: 0;
-  margin-left: auto;
-  margin-bottom: 14px;
+  top: 12px;
+  right: 12px;
+  margin: 0;
   display: grid;
   place-items: center;
   width: 44px;
@@ -1131,7 +1142,7 @@ button:disabled,
     gap: 36px 24px;
   }
   .site-footer {
-    padding-top: 46px;
+    padding-top: 32px;
   }
   .footer-bottom {
     font-size: 12px;
@@ -1139,7 +1150,7 @@ button:disabled,
   .image-viewer {
     width: calc(100vw - 24px);
     max-height: calc(100svh - 24px);
-    padding: 12px 12px 16px;
+    padding: 64px 12px 16px;
   }
   .image-viewer img {
     max-height: calc(100svh - 200px);
@@ -1172,15 +1183,24 @@ button:disabled,
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  html {
+  html:not([data-motion="full"]) {
     scroll-behavior: auto;
   }
-  *,
-  *::before,
-  *::after {
+  html:not([data-motion="full"]) *,
+  html:not([data-motion="full"]) *::before,
+  html:not([data-motion="full"]) *::after {
     animation: none !important;
     transition: none !important;
   }
+}
+html[data-motion="reduce"] {
+  scroll-behavior: auto;
+}
+html[data-motion="reduce"] *,
+html[data-motion="reduce"] *::before,
+html[data-motion="reduce"] *::after {
+  animation: none !important;
+  transition: none !important;
 }
 @media (forced-colors: active) {
   * {
@@ -1229,17 +1249,17 @@ button:disabled,
   font-size: 14px;
 }
 .footer-brand img {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 .footer-col h3 {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 .footer-bottom {
-  padding-top: 20px;
+  padding-top: 16px;
 }
 .socials {
   gap: 8px;
-  margin-top: 18px;
+  margin-top: 14px;
 }
 .socials a {
   display: grid;

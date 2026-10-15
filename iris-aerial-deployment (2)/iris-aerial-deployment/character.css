@@ -312,7 +312,6 @@ body::after {
 /* Cards tip in 3D toward the cursor. This drives the standalone `rotate`
    property rather than `transform`, so the hover lift each card already
    defines in `transform` keeps working alongside it. */
-.voices-grid,
 .ak-split-grid,
 .tech-method-list,
 .job-list {
@@ -435,6 +434,10 @@ body::after {
   left: auto;
   right: 30px;
 }
+#solutions .solution-portfolio {
+  --contour-ink: #0a7ab0;
+  --contour-opacity: 0.12;
+}
 
 /* ---------------------------------------------------------------------------
    8. Section rhythm
@@ -451,7 +454,6 @@ body::after {
 }
 
 .home-about,
-.voices,
 .people-section {
   --contour-ink: var(--cyan);
   --contour-opacity: 0.07;
@@ -555,7 +557,7 @@ body::after {
    --------------------------------------------------------------------------- */
 
 .team-moment .image-open {
-  cursor: grab;
+  cursor: zoom-in;
 }
 .person-row .person-portrait {
   position: relative;

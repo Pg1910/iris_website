@@ -7,9 +7,12 @@
 (() => {
   "use strict";
 
-  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  const systemReduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
   const finePointer = matchMedia("(pointer: fine)");
-  const calm = () => reduceMotion.matches;
+  const calm = () =>
+    document.documentElement.dataset.motion === "reduce" ||
+    (document.documentElement.dataset.motion !== "full" &&
+      systemReduceMotion.matches);
 
   const all = (selector, root = document) => [...root.querySelectorAll(selector)];
 
@@ -23,8 +26,8 @@
     ".client-band",
     ".home-about",
     ".enterprise-trust",
-    ".voices",
     ".solutions-hero",
+    "#solutions .solution-portfolio",
     ".ak-hero",
     ".ak-urban",
     ".ak-defence",
@@ -155,9 +158,46 @@
   /* Company figures supplied by Iris; these describe the organisation,
      rather than the subset of sectors, portraits and logos on this website. */
   function initTally() {
-    const counts = { sectors: "10+", people: "50+", clients: "10+" };
+    const counts = { sectors: 10, people: 50, clients: 10 };
     all("[data-count]").forEach((cell) => {
-      cell.textContent = counts[cell.dataset.count] || cell.textContent;
+      const target = counts[cell.dataset.count];
+      if (!target) return;
+
+      const finish = () => {
+        cell.textContent = `${target}+`;
+      };
+      const animate = () => {
+        if (calm()) {
+          finish();
+          return;
+        }
+        const duration = 850;
+        const startedAt = performance.now();
+        cell.textContent = "0+";
+        const frame = (now) => {
+          const progress = Math.min((now - startedAt) / duration, 1);
+          const eased = 1 - (1 - progress) ** 3;
+          cell.textContent = `${Math.floor(target * eased)}+`;
+          if (progress < 1) requestAnimationFrame(frame);
+          else finish();
+        };
+        requestAnimationFrame(frame);
+      };
+
+      cell.setAttribute("aria-live", "off");
+      if (!("IntersectionObserver" in window)) {
+        animate();
+        return;
+      }
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (!entries.some((entry) => entry.isIntersecting)) return;
+          observer.disconnect();
+          animate();
+        },
+        { threshold: 0.25 },
+      );
+      observer.observe(cell);
     });
   }
 
@@ -166,7 +206,7 @@
      ------------------------------------------------------------------------- */
 
   const MAGNETIC = ".button, .apply-button, .header-contact, .atlas-control";
-  const TILT = ".voice-card, .ak-split-card, .tech-method, .job-card";
+  const TILT = ".ak-split-card, .tech-method";
 
   function initMagnets() {
     if (calm() || !finePointer.matches) return;

@@ -7,165 +7,15 @@
 (() => {
   "use strict";
 
-  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
-  const finePointer = matchMedia("(pointer: fine)");
+  const systemReduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  const reduceMotion = () =>
+    document.documentElement.dataset.motion === "reduce" ||
+    (document.documentElement.dataset.motion !== "full" &&
+      systemReduceMotion.matches);
   const body = document.body;
 
   /* -------------------------------------------------------------------------
-     1. Drone cursor — the pointer becomes a survey drone on the home page
-     ------------------------------------------------------------------------- */
-
-  const DRONE_SVG = `
-<svg class="drone-cursor-body" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="droneShell" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#2f9fd0"/>
-      <stop offset="1" stop-color="#0a5d87"/>
-    </linearGradient>
-    <linearGradient id="droneTop" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#e8f1ff"/>
-      <stop offset="1" stop-color="#b9e4f3"/>
-    </linearGradient>
-  </defs>
-  <!-- arms -->
-  <g stroke="#064a6d" stroke-width="3.4" stroke-linecap="round">
-    <path d="M23 23 41 41M41 23 23 41"/>
-  </g>
-  <!-- rotor discs -->
-  <g>
-    <g class="drone-rotor"><circle cx="17" cy="17" r="10.5" fill="#0a7ab0" fill-opacity=".14"/><path d="M8 17h18" stroke="#0a7ab0" stroke-width="2.4" stroke-linecap="round"/><path d="M17 8v18" stroke="#42d2e7" stroke-width="1.8" stroke-linecap="round"/></g>
-    <g class="drone-rotor slow"><circle cx="47" cy="17" r="10.5" fill="#0a7ab0" fill-opacity=".14"/><path d="M38 17h18" stroke="#0a7ab0" stroke-width="2.4" stroke-linecap="round"/><path d="M47 8v18" stroke="#42d2e7" stroke-width="1.8" stroke-linecap="round"/></g>
-    <g class="drone-rotor slow"><circle cx="17" cy="47" r="10.5" fill="#0a7ab0" fill-opacity=".14"/><path d="M8 47h18" stroke="#0a7ab0" stroke-width="2.4" stroke-linecap="round"/><path d="M17 38v18" stroke="#42d2e7" stroke-width="1.8" stroke-linecap="round"/></g>
-    <g class="drone-rotor"><circle cx="47" cy="47" r="10.5" fill="#0a7ab0" fill-opacity=".14"/><path d="M38 47h18" stroke="#0a7ab0" stroke-width="2.4" stroke-linecap="round"/><path d="M47 38v18" stroke="#42d2e7" stroke-width="1.8" stroke-linecap="round"/></g>
-  </g>
-  <!-- motor hubs -->
-  <g fill="#0a293b">
-    <circle cx="17" cy="17" r="2.6"/><circle cx="47" cy="17" r="2.6"/>
-    <circle cx="17" cy="47" r="2.6"/><circle cx="47" cy="47" r="2.6"/>
-  </g>
-  <!-- body -->
-  <path d="M24.5 24.5h15a3 3 0 0 1 3 3v8.5a6 6 0 0 1-6 6h-9a6 6 0 0 1-6-6V27.5a3 3 0 0 1 3-3Z" fill="url(#droneShell)" stroke="#0a293b" stroke-width="1.4"/>
-  <path d="M26 26h12a2 2 0 0 1 2 2v2.6H24V28a2 2 0 0 1 2-2Z" fill="url(#droneTop)"/>
-  <!-- gimbal camera -->
-  <circle cx="32" cy="37" r="5.4" fill="#0a293b" stroke="#42d2e7" stroke-width="1.6"/>
-  <circle cx="32" cy="37" r="2.2" fill="#42d2e7"/>
-  <circle cx="30.6" cy="35.6" r=".9" fill="#eaf8fb"/>
-  <!-- status light -->
-  <circle class="drone-led" cx="40.4" cy="28.6" r="1.5" fill="#a0e66d"/>
-</svg>`;
-
-  function initDroneCursor() {
-    if (!finePointer.matches || reduceMotion.matches) return;
-
-    const drone = document.createElement("div");
-    drone.className = "drone-cursor";
-    drone.setAttribute("aria-hidden", "true");
-    drone.innerHTML = DRONE_SVG;
-
-    const scan = document.createElement("div");
-    scan.className = "drone-scan";
-    scan.setAttribute("aria-hidden", "true");
-    scan.innerHTML =
-      '<span class="drone-tick tl"></span><span class="drone-tick tr"></span>' +
-      '<span class="drone-tick bl"></span><span class="drone-tick br"></span>';
-
-    document.body.append(scan, drone);
-    const shell = drone.querySelector(".drone-cursor-body");
-
-    let pointerX = innerWidth / 2;
-    let pointerY = innerHeight / 2;
-    let x = pointerX;
-    let y = pointerY;
-    let scanX = pointerX;
-    let scanY = pointerY;
-    let tilt = 0;
-    let bob = 0;
-    let frame = 0;
-    let seen = false;
-
-    // Text entry keeps the real caret; a drone is no use for picking a
-    // character out of the middle of an email address.
-    const TYPING = "input, textarea, select, [contenteditable]";
-
-    function loop() {
-      frame = requestAnimationFrame(loop);
-      // The drone trails the pointer slightly — it flies to the target.
-      const dx = pointerX - x;
-      const dy = pointerY - y;
-      x += dx * 0.22;
-      y += dy * 0.22;
-      scanX += (pointerX - scanX) * 0.12;
-      scanY += (pointerY - scanY) * 0.12;
-      // Bank into the direction of travel, like a real quad.
-      tilt += (Math.max(-26, Math.min(26, dx * 0.9)) - tilt) * 0.12;
-      bob += 0.055;
-      const lift = Math.sin(bob) * 1.6;
-      drone.style.transform = `translate3d(${x}px, ${y + lift}px, 0)`;
-      scan.style.transform = `translate3d(${scanX}px, ${scanY}px, 0)`;
-      shell.style.rotate = `${tilt}deg`;
-    }
-
-    function activate() {
-      body.classList.add("drone-active");
-      drone.classList.add("ready");
-      if (!frame) loop();
-    }
-    function deactivate() {
-      body.classList.remove("drone-active", "drone-locked");
-      drone.classList.remove("ready");
-      cancelAnimationFrame(frame);
-      frame = 0;
-    }
-
-    addEventListener(
-      "pointermove",
-      (event) => {
-        if (event.pointerType !== "mouse") return;
-        pointerX = event.clientX;
-        pointerY = event.clientY;
-        if (!seen) {
-          seen = true;
-          x = pointerX;
-          y = pointerY;
-          scanX = pointerX;
-          scanY = pointerY;
-        }
-        const target = event.target instanceof Element ? event.target : null;
-        if (target?.closest(TYPING)) {
-          deactivate();
-          return;
-        }
-        activate();
-        const interactive = target?.closest(
-          "a, button, summary, label, [role='button']",
-        );
-        body.classList.toggle("drone-locked", Boolean(interactive));
-      },
-      { passive: true },
-    );
-
-    addEventListener("pointerdown", () => {
-      shell.animate(
-        [{ scale: "1" }, { scale: "0.84" }, { scale: "1" }],
-        { duration: 260, easing: "cubic-bezier(.34,1.56,.64,1)" },
-      );
-    });
-    addEventListener("blur", deactivate);
-    document.addEventListener("mouseleave", deactivate);
-    document.addEventListener("mouseenter", activate);
-
-
-    reduceMotion.addEventListener("change", (event) => {
-      if (event.matches) {
-        deactivate();
-        drone.remove();
-        scan.remove();
-      }
-    });
-  }
-
-  /* -------------------------------------------------------------------------
-     2. Client marquee — one continuous right-to-left run, paused on hover
+     1. Client marquee — one continuous right-to-left run, paused on hover
      ------------------------------------------------------------------------- */
 
   function initMarquee() {
@@ -206,6 +56,9 @@
 
   const REVEAL_GROUPS = [
     [".home-about .shell > *", ""],
+    [".page .section-head > *", ""],
+    [".page .ak-section-head > *", ""],
+    [".home-projects .project-story", "zoom"],
     [".delivery-section .shell > *", ""],
     [".change-copy", "left"],
     [".change-collage", "right"],
@@ -228,7 +81,7 @@
   ];
 
   function initReveal() {
-    if (reduceMotion.matches) return;
+    if (reduceMotion()) return;
     const targets = [];
     REVEAL_GROUPS.forEach(([selector, mode]) => {
       const nodes = [...document.querySelectorAll(selector)];
@@ -292,7 +145,7 @@
      ------------------------------------------------------------------------- */
 
   function scatter(host, count, build) {
-    if (!host || reduceMotion.matches) return;
+    if (!host || reduceMotion()) return;
     const fragment = document.createDocumentFragment();
     for (let index = 0; index < count; index += 1) {
       const node = document.createElement("i");
@@ -378,7 +231,6 @@
     initParticles();
     initPeopleColour();
     initScanTravel();
-    initDroneCursor();
   }
 
   if (document.readyState === "loading")

@@ -7,10 +7,10 @@ Deployment-ready static website for Iris Aerial Innovations Pvt. Ltd.
 - `index.html` — website content and page markup.
 - `styles.css` — shared design tokens, navigation, forms, image viewer, and responsive shell.
 - `pages.css` — distinct page compositions, typography roles, media geometry, and finite motion.
-- `site.js` — hash navigation, the Home gallery, team directory, and careers email form.
-- `motion.css` — the motion and character layer: drone cursor, client marquee, scroll reveals, and the Akshaa / team / careers treatments.
+- `site.js` — hash navigation and page transitions, the Home gallery, team directory, and careers email form.
+- `motion.css` — the motion layer: client marquee, scroll reveals, and the Akshaa / team / careers treatments.
 - `motion.js` — progressive enhancement for that layer. Every block checks for its own markup and exits quietly if absent.
-- `character.css` / `character.js` — the character pass: the topographic contour motif, hero instrument readout, live counters, magnetic buttons, tilting cards, image wipes and the drone cursor's survey marker.
+- `character.css` / `character.js` — the character pass: the topographic contour motif, hero instrument readout, live counters, magnetic buttons, tilting cards and image wipes.
 - `assets/` — brand artwork, client marks, case-study imagery, Akshaa visuals, and team photography.
 - `DESIGN.md` — the maintained visual and interaction guidelines for future edits.
 
@@ -53,7 +53,9 @@ For fully automatic résumé uploads and server-side email delivery, connect the
 
 The company pages use cobalt blue, navy and white. Akshaa has its own green/black palette. All company headings use Barlow, body and controls use Source Sans 3, and Akshaa headings use Space Grotesk. Fonts are locally hosted.
 
-Home uses a full-width field photograph, a manual gallery and a blue service bar. Solutions has a sector catalogue; Technology has a method catalogue. Both offer section jump links and support direct section fragments. Team uses a wide lead photograph, a six-position culture grid and an aligned portrait directory. Careers uses monochrome job panels with native role disclosures and a locally validated email-draft form. Image buttons open the complete source in a keyboard-accessible viewer. There are no flight effects, custom cursors or entrance animations.
+Home uses a full-width field photograph, a manual gallery and a blue service bar. Solutions has a sector catalogue; Technology has a method catalogue. Both offer section jump links and support direct section fragments. Team uses a wide lead photograph, a six-position culture grid and an aligned portrait directory. Careers uses monochrome job panels with native role disclosures and a locally validated email-draft form. Image buttons open the complete source in a keyboard-accessible viewer. Page changes and selected scroll sections use restrained entrance transitions; decorative motion respects reduced-motion preferences.
+
+Decorative motion remains enabled by default and respects the visitor's operating-system reduced-motion preference.
 
 Two of the six central Team photo positions and one Akshaa infrastructure position await additional supplied images. The markup uses `data-photo-slot` to identify these positions.
 
