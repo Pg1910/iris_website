@@ -17,6 +17,7 @@
   <link href="pages.css" rel="stylesheet" />
   <link href="motion.css" rel="stylesheet" />
   <link href="character.css" rel="stylesheet" />
+  <link href="team.css" rel="stylesheet" />
   <link href="assets/brand-symbol.png" rel="icon" type="image/png" />
 </head>
 
@@ -25,7 +26,7 @@
   <header class="site-header">
     <div class="shell header-inner">
       <a aria-label="Iris Aerial Innovations home" class="brand" data-page="home" href="#home">
-        <img alt="Iris Aerial Innovations" height="413" src="assets/brand-wordmark.png" width="1200" />
+        <img alt="Iris Aerial Innovations" height="778" src="assets/brand-logo.png" width="1400" />
       </a>
       <nav aria-label="Main navigation" class="desktop-nav">
         <a aria-current="page" class="nav-button" data-page="home" href="#home">
@@ -69,6 +70,45 @@
   </header>
   <main id="main-content">
     <section class="page" id="home">
+      <section aria-label="Iris Aerial highlights" aria-roledescription="carousel" class="home-carousel">
+        <article aria-roledescription="slide" class="home-carousel-slide is-active">
+          <img alt="" aria-hidden="true" class="home-carousel-image" fetchpriority="high"
+            src="assets/extra_images/mapping_the_future.jpg" />
+          <div class="home-carousel-copy">
+            <h2>Mapping the future with precision</h2>
+            <p>Geospatial insight and modern surveying for the projects shaping tomorrow.</p>
+          </div>
+        </article>
+        <article aria-hidden="true" aria-roledescription="slide" class="home-carousel-slide" inert>
+          <img alt="" aria-hidden="true" class="home-carousel-image" loading="lazy"
+            src="assets/akshaa/satellite-port.jpeg" />
+          <div class="home-carousel-copy">
+            <h2>Your challenge is our passion</h2>
+            <p>We bring accurate data, thoughtful engineering and dependable delivery to every site.</p>
+          </div>
+        </article>
+        <article aria-hidden="true" aria-roledescription="slide" class="home-carousel-slide" inert>
+          <img alt="" aria-hidden="true" class="home-carousel-image" loading="lazy"
+            src="assets/akshaa/urban-waterfront.jpg" />
+          <div class="home-carousel-copy">
+            <h2>Innovative solutions</h2>
+            <p>Empowering better decisions with aerial intelligence and geospatial technology.</p>
+          </div>
+        </article>
+        <button aria-label="Previous slide" class="home-carousel-arrow home-carousel-previous" type="button">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <button aria-label="Next slide" class="home-carousel-arrow home-carousel-next" type="button">
+          <span aria-hidden="true">›</span>
+        </button>
+        <div aria-label="Carousel controls" class="home-carousel-controls">
+          <div aria-label="Choose a slide" class="home-carousel-dots" role="group"></div>
+          <button aria-label="Pause slideshow" aria-pressed="false" class="home-carousel-toggle" type="button">
+            Pause
+          </button>
+        </div>
+        <span aria-live="polite" class="visually-hidden home-carousel-status" role="status"></span>
+      </section>
       <div class="hero">
         <div class="shell hero-grid">
           <div class="hero-copy">
@@ -76,17 +116,11 @@
             <p>
               A modern survey &amp; engineering consultancy organization having expertise in various survey technology and engineering design for various sectors including infrastructure, railways, roads, mining, agriculture, telecom, energy, etc. We are highly professional and one of the most rated and recommended survey and engineering consultancy organizations in India.
             </p>
-            <div class="hero-actions">
-              <a class="button primary" data-page="solutions" href="#solutions">
-                View solutions
-                <span aria-hidden="true" class="arrow"> → </span>
-              </a>
-            </div>
           </div>
           <div aria-label="Iris Aerial drone survey field background video" class="project-atlas">
             <video autoplay muted loop playsinline preload="auto" class="hero-video"
               style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 50%;">
-              <source src="assets/hero-video.mp4" type="video/mp4" />
+              <source src="assets/home_video/home-hero.mp4" type="video/mp4" />
             </video>
           </div>
           <div aria-hidden="true" class="scroll-cue">
@@ -95,268 +129,44 @@
           </div>
         </div>
       </div>
-      <nav aria-label="Explore Iris services" class="home-services">
+      <section aria-labelledby="enterprise-trust-title" class="section enterprise-trust">
         <div class="shell">
-          <a data-page="solutions" href="#solutions">Survey &amp; mapping services
-            <span aria-hidden="true">↗</span></a>
-          <a data-page="technology" href="#technology">Our technology <span aria-hidden="true">↗</span></a>
-          <a data-page="akshaa" href="#akshaa">Explore Akshaa <span aria-hidden="true">↗</span></a>
-        </div>
-      </nav>
-      <section aria-label="Selected Iris Aerial clientele" class="client-band">
-        <div class="client-title kicker">Trusted by</div>
-        <div class="marquee">
-          <div class="client-set">
-            <div class="client-logo">
-              <img alt="Anand Raj logo" height="104" src="assets/clients/anand-raj.png" width="153" />
-              <span> Anand Raj </span>
-            </div>
-            <div class="client-logo">
-              <img alt="CEG logo" height="139" src="assets/clients/ceg.png" width="342" />
-              <span> CEG </span>
-            </div>
-            <div class="client-logo">
-              <img alt="Central Railway logo" height="218" src="assets/clients/central-railway.png" width="178" />
-              <span> Central Railway </span>
-            </div>
-            <div class="client-logo">
-              <img alt="Eastern Railway logo" height="246" src="assets/clients/eastern-railway.png" width="205" />
-              <span> Eastern Railway </span>
-            </div>
-            <div class="client-logo">
-              <img alt="50Hertz logo" height="162" src="assets/clients/50hertz.png" width="449" />
-              <span> 50Hertz </span>
-            </div>
-            <div class="client-logo">
-              <img alt="Northern Railway logo" height="194" src="assets/clients/northern-railway.png" width="162" />
-              <span> Northern Railway </span>
-            </div>
-            <div class="client-logo">
-              <img alt="Vedanta logo" height="89" src="assets/clients/vedanta.png" width="233" />
-              <span> Vedanta </span>
-            </div>
-            <div class="client-logo">
-              <img alt="Royal client logo" height="124" loading="lazy" src="assets/clients/royal.png" width="369" />
-              <span> Royal </span>
-            </div>
-            <div class="client-logo">
-              <img alt="DMIA client logo" height="116" loading="lazy" src="assets/clients/dmia.png" width="200" />
-              <span> DMIA </span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section aria-labelledby="home-about-title" class="section home-about" id="home-about">
-        <div class="shell">
-          <div class="about-heading">
-            <span class="kicker">About Iris</span>
-            <h2 id="home-about-title" tabindex="-1">
-              Surveyors who build <span class="hl">their own tools</span>
+          <div class="enterprise-trust-head">
+            <h2 class="heading" id="enterprise-trust-title">
+              Why enterprises <span class="hl">trust us</span>
             </h2>
           </div>
-          <div class="company-introduction">
-            <div>
-              <p class="about-lead">
-                Iris is a Government of India-recognized Startup India venture
-                working in surveying, mapping and monitoring through drone
-                technology, AI-driven systems and modern survey techniques.
-              </p>
-              <p>
-                We serve agriculture, construction, real estate and
-                environmental monitoring, with expertise in topographical
-                surveys, LiDAR mapping, GIS, hydrology and satellite
-                photogrammetry. Our AI-powered AVSM (Aerial Video Smart
-                Monitor) supports precise aerial monitoring and actionable
-                insights.
-              </p>
-              <p>
-                We focus on accuracy, sustainability and cost-effective,
-                real-time geospatial solutions, helping industries improve
-                data collection, make better decisions and optimise
-                operations.
-              </p>
-            </div>
-            <div class="company-vision">
-              <h3>Vision and mission</h3>
-              <p>
-                We use advanced drones for surveying, monitoring, mapping, GIS
-                and detailed design consultancy to provide precise,
-                cost-effective and efficient aerial survey solutions.
-              </p>
-              <p>
-                Our aim is to be a leading provider of aerial survey and GIS
-                services, known for our own AI and hardware technology,
-                quality work and commitment to safer, more sustainable
-                infrastructure and resource management.
-              </p>
-              <p>
-                We develop our own AI and hardware alongside the survey and
-                design work we deliver.
-              </p>
-              <a class="text-link" data-page="team" href="#team">
-                Meet the team
-                <span aria-hidden="true"> ↗ </span>
-              </a>
-            </div>
-          </div>
-          <div class="tally" data-tally>
-            <div>
-              <b data-count="sectors">10+</b>
-              <span>Sectors we survey</span>
-            </div>
-            <div>
-              <b data-count="people">50+</b>
-              <span>People at Iris</span>
-            </div>
-            <div>
-              <b data-count="clients">10+</b>
-              <span>Client organisations</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section aria-labelledby="home-projects-title" class="section home-projects">
-        <div class="shell">
-          <div class="section-head">
-            <div>
-              <h2 class="heading" id="home-projects-title">
-                Projects, <span class="hl">surveyed and served</span>
-              </h2>
-            </div>
-            <a class="text-link" data-page="solutions" href="#solutions">
-              View our solutions
-              <span aria-hidden="true"> ↗ </span>
-            </a>
-          </div>
-          <div class="project-grid">
-            <article class="project-story">
-              <figure>
-                <button aria-label="Enlarge Mountain road and river in Chamba, Himachal Pradesh" class="image-open"
-                  onclick="irisPreviewImage(this)" type="button">
-                  <img alt="Mountain road and river in Chamba, Himachal Pradesh" height="301" loading="lazy"
-                    src="assets/extra_images/NH_154A.jpeg" width="691" />
-                </button>
-              </figure>
-              <div class="project-body">
-                <span class="project-location">
-                  Chamba, Himachal Pradesh
-                </span>
-                <h3>NH 154A highway rehabilitation</h3>
-                <p>
-                  Drone photogrammetry survey of NH 154A, supporting feasibility studies and detailed engineering for the highway's rehabilitation and upgradation.
-                </p>
-                <span class="project-type"> Roads &amp; highways </span>
-              </div>
+          <div class="enterprise-trust-grid">
+            <article class="trust-card trust-card-accuracy">
+              <span aria-hidden="true" class="enterprise-trust-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="16" />
+                  <circle cx="24" cy="24" r="8" />
+                  <circle cx="24" cy="24" r="2" />
+                  <path d="M24 3v5m0 32v5M3 24h5m32 0h5" />
+                </svg>
+              </span>
+              <h3>Engineer-grade accuracy for confident decisions</h3>
             </article>
-            <article class="project-story">
-              <figure class="terrain-study">
-                <button aria-label="Enlarge LiDAR terrain model for the proposed Aizawl road alignment"
-                  class="image-open" onclick="irisPreviewImage(this)" type="button">
-                  <img alt="LiDAR terrain model for the proposed Aizawl road alignment" height="535" loading="lazy"
-                    src="assets/extra_images/aizawl_road_alignment.jpeg" width="357" />
-                </button>
-              </figure>
-              <div class="project-body">
-                <span class="project-location"> Aizawl, Mizoram </span>
-                <h3>Aizawl road alignment</h3>
-                <p>
-                  Drone LiDAR survey of about 50 km of proposed road alignment, covering a 200-metre right of way for feasibility and engineering design.
-                </p>
-                <span class="project-type"> LiDAR survey </span>
-              </div>
+            <article class="trust-card trust-card-insight">
+              <span aria-hidden="true" class="enterprise-trust-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <path d="M8 38V10h32v28H8Z" />
+                  <path d="m13 32 8-9 6 5 8-11" />
+                  <path d="M29 17h6v6" />
+                </svg>
+              </span>
+              <h3>Turn imagery into clear project insight</h3>
             </article>
-            <article class="project-story">
-              <figure>
-                <button aria-label="Enlarge Orthorectified imagery of the Dhansiri–Naojan railway corridor"
-                  class="image-open" onclick="irisPreviewImage(this)" type="button">
-                  <img alt="Orthorectified imagery of the Dhansiri–Naojan railway corridor" height="478" loading="lazy"
-                    src="assets/case-studies/dhansiri-rail.png" width="1045" />
-                </button>
-              </figure>
-              <div class="project-body">
-                <span class="project-location">
-                  Dhansiri–Naojan, Nagaland
-                </span>
-                <h3>Dhansiri–Naojan railway doubling</h3>
-                <p>
-                  Aerial and ground topographical survey for the EPC doubling of the Dhansiri–Naojan track under Northeast Frontier Railway.
-                </p>
-                <span class="project-type"> Railway engineering </span>
-              </div>
+            <article class="trust-card trust-card-speed">
+              <span aria-hidden="true" class="enterprise-trust-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="25" r="17" />
+                  <path d="M24 14v11l8 5M17 4h14" />
+                </svg>
+              </span>
+              <h3>Coverage at your project’s pace</h3>
             </article>
-          </div>
-        </div>
-      </section>
-      <section class="section delivery-section">
-        <div class="shell">
-          <div class="section-head">
-            <div>
-              <h2 class="heading">
-                <span class="hl">Control first.</span>
-                Everything else follows.
-              </h2>
-            </div>
-            <p class="copy">
-              Benchmarks and checkpoints go in before a drone leaves the case.
-              That is what makes the capture repeatable, the terrain model
-              checkable, and the drawing something your design team can sign
-              off on.
-            </p>
-          </div>
-          <div class="delivery-board">
-            <figure class="field-frame">
-              <button aria-label="Enlarge Iris Aerial field colleagues coordinating a survey" class="image-open"
-                onclick="irisPreviewImage(this)" type="button">
-                <img alt="Iris Aerial field colleagues coordinating a survey" class="capture-photo" height="900"
-                  loading="lazy" src="assets/extra_images/dgps1.jpeg" width="550" />
-              </button>
-              <div class="output-proof">
-                <button aria-label="Enlarge Aerial survey output showing the railway corridor and surrounding terrain"
-                  class="image-open" onclick="irisPreviewImage(this)" type="button">
-                  <img alt="Aerial survey output showing the railway corridor and surrounding terrain" height="478"
-                    loading="lazy" src="assets/extra_images/control_points.jpeg" width="1200" />
-                </button>
-              </div>
-              <figcaption class="field-caption">
-                <small>Data forged from your site</small>
-                <strong> Survey data prepared for engineering design </strong>
-              </figcaption>
-            </figure>
-            <div class="delivery-flow">
-              <article class="delivery-stage">
-                <span class="stage-mark"> 01 </span>
-                <div>
-                  <h3>Establish ground control</h3>
-                  <p>
-                    Reconnaissance, datum, benchmarks, GCPs, checkpoints, and
-                    corridor limits are planned before the primary acquisition
-                    begins.
-                  </p>
-                </div>
-              </article>
-              <article class="delivery-stage">
-                <span class="stage-mark"> 02 </span>
-                <div>
-                  <h3>Capture the site</h3>
-                  <p>
-                    RGB photogrammetry, LiDAR, satellite stereo, or ground
-                    survey is selected around visibility, access, coverage,
-                    and required detail.
-                  </p>
-                </div>
-              </article>
-              <article class="delivery-stage">
-                <span class="stage-mark"> 03 </span>
-                <div>
-                  <h3>Check and deliver</h3>
-                  <p>
-                    Point clouds are calibrated and classified, imagery is
-                    orthorectified, terrain models are checked, and outputs
-                    are prepared for CAD and GIS review.
-                  </p>
-                </div>
-              </article>
-            </div>
           </div>
         </div>
       </section>
@@ -418,41 +228,46 @@
           </div>
         </div>
       </section>
-      <section aria-labelledby="trust-title" class="enterprise-trust section">
-        <div class="shell trust-layout">
-          <div class="trust-introduction">
-            <span class="kicker">Why enterprises trust Iris</span>
-            <h2 id="trust-title">Speed Meets Excellence:</h2>
-            <p class="trust-lead">
-              Experience lightning-fast mapping and surveying services from
-              Iris Aerial that outperform traditional methods, saving you time
-              and resources without compromising quality.
-            </p>
-            <a class="text-link" onclick="irisOpenContact('Project enquiry for Iris Aerial'); return false;" href="#contact">Build with Iris <span aria-hidden="true">↗</span></a>
+      <section aria-label="Selected Iris Aerial clientele" class="client-band">
+        <div class="marquee">
+          <div class="client-set">
+            <div class="client-logo">
+              <img alt="Anand Raj logo" height="104" src="assets/clients/anand-raj.png" width="153" />
+              <span> Anand Raj </span>
+            </div>
+            <div class="client-logo">
+              <img alt="CEG logo" height="139" src="assets/clients/ceg.png" width="342" />
+              <span> CEG </span>
+            </div>
+            <div class="client-logo">
+              <img alt="Central Railway logo" height="218" src="assets/clients/central-railway.png" width="178" />
+              <span> Central Railway </span>
+            </div>
+            <div class="client-logo">
+              <img alt="Eastern Railway logo" height="246" src="assets/clients/eastern-railway.png" width="205" />
+              <span> Eastern Railway </span>
+            </div>
+            <div class="client-logo">
+              <img alt="50Hertz logo" height="162" src="assets/clients/50hertz.png" width="449" />
+              <span> 50Hertz </span>
+            </div>
+            <div class="client-logo">
+              <img alt="Northern Railway logo" height="194" src="assets/clients/northern-railway.png" width="162" />
+              <span> Northern Railway </span>
+            </div>
+            <div class="client-logo">
+              <img alt="Vedanta logo" height="89" src="assets/clients/vedanta.png" width="233" />
+              <span> Vedanta </span>
+            </div>
+            <div class="client-logo">
+              <img alt="Royal client logo" height="124" loading="lazy" src="assets/clients/royal.png" width="369" />
+              <span> Royal </span>
+            </div>
+            <div class="client-logo">
+              <img alt="DMIA client logo" height="116" loading="lazy" src="assets/clients/dmia.png" width="200" />
+              <span> DMIA </span>
+            </div>
           </div>
-          <ul class="trust-evidence">
-            <li>
-              <svg class="trust-symbol" aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="16" cy="16" r="10"/><circle cx="16" cy="16" r="3"/><path d="M16 1v8m0 14v8M1 16h8m14 0h8"/>
-              </svg>
-              <h3>Measured right.</h3>
-              <p>Ground control and checked data give you accuracy you can verify, with outputs ready for confident decisions.</p>
-            </li>
-            <li>
-              <svg class="trust-symbol" aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
-                <path d="m3 11 13-7 13 7-13 7-13-7Zm0 6 13 7 13-7M3 23l13 7 13-7"/>
-              </svg>
-              <h3>Ready for design.</h3>
-              <p>Terrain models, drawings and GIS layers arrive in formats your engineering team can use straight away.</p>
-            </li>
-            <li>
-              <svg class="trust-symbol" aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                <circle cx="11" cy="10" r="4"/><path d="M3 27v-4a8 8 0 0 1 16 0v4M22 6a4 4 0 0 1 0 8m0 5a7 7 0 0 1 7 7"/>
-              </svg>
-              <h3>One team. All the way.</h3>
-              <p>One connected team carries your work from the first site survey through engineering handoff.</p>
-            </li>
-          </ul>
         </div>
       </section>
       <section class="section visit-home" id="contact">
@@ -469,7 +284,6 @@
               </div>
             </div>
             <div class="visit-copy">
-              <span class="kicker">Get in touch</span>
               <h2 tabindex="-1">
                 Tell us <span class="hl">where the site is.</span>
               </h2>
@@ -489,16 +303,16 @@
                 </address>
               </div>
               <div class="visit-actions">
-                <a class="button primary"
+                <a class="contact-text-link"
                   href="mailto:info@irisaerial.in?subject=Project%20enquiry%20for%20Iris%20Aerial"
                   id="project-email-link">
                   Email us
-                  <span aria-hidden="true" class="arrow"> ↗ </span>
+                  <span aria-hidden="true"> ↗ </span>
                 </a>
-                <a class="button secondary" href="https://www.google.com/maps?cid=3752678949204386964" rel="noreferrer"
+                <a class="contact-text-link" href="https://www.google.com/maps?cid=3752678949204386964" rel="noreferrer"
                   target="_blank">
                   Open directions
-                  <span aria-hidden="true" class="arrow"> ↗ </span>
+                  <span aria-hidden="true"> ↗ </span>
                 </a>
               </div>
             </div>
@@ -510,54 +324,14 @@
       <header class="solutions-hero">
         <div class="shell solutions-hero-grid">
           <div class="solutions-hero-copy">
-            <span class="kicker">Survey · Mapping · Geospatial intelligence</span>
-            <h1 tabindex="-1">Survey and mapping services</h1>
-            <p>
-              Aerial surveys, ground measurements and geospatial analysis for
-              infrastructure and land projects. We plan the survey, capture
-              the site and prepare the outputs your team needs.
-            </p>
-            <button class="button light" onclick="irisOpenContact('Survey programme enquiry')" type="button">
-              Discuss your survey
-              <span aria-hidden="true" class="arrow"> ↗ </span>
-            </button>
-            <ol aria-label="Our survey delivery approach" class="solutions-hero-steps">
-              <li><span>01</span><strong>Plan the survey</strong></li>
-              <li><span>02</span><strong>Capture the site</strong></li>
-              <li><span>03</span><strong>Deliver clear outputs</strong></li>
-            </ol>
+            <h1 tabindex="-1">Survey and mapping<br />services</h1>
           </div>
         </div>
       </header>
-      <nav aria-label="Survey sectors" class="page-jumps">
-        <div class="shell">
-          <a href="#solution-rail" onclick="
-                event.preventDefault();
-                irisScrollTo('solution-rail');
-              ">Railways</a>
-          <a href="#solution-road" onclick="
-                event.preventDefault();
-                irisScrollTo('solution-road');
-              ">Roads &amp; highways</a>
-          <a href="#solution-city" onclick="
-                event.preventDefault();
-                irisScrollTo('solution-city');
-              ">Cities</a>
-          <a href="#solution-mine" onclick="
-                event.preventDefault();
-                irisScrollTo('solution-mine');
-              ">Mining</a>
-          <a href="#solution-water" onclick="
-                event.preventDefault();
-                irisScrollTo('solution-water');
-              ">Water &amp; land</a>
-        </div>
-      </nav>
       <section class="section solution-portfolio">
         <div class="shell">
           <div class="section-head">
             <div>
-              <span class="kicker">Five disciplines</span>
               <h2 class="heading">Sectors we <span class="hl">work in</span></h2>
             </div>
             <p class="copy">
@@ -583,20 +357,8 @@
                   lines, doubling, and detailed engineering.
                 </p>
                 <div class="solution-spec">
-                  <div>
-                    <strong> Methods </strong>
-                    <span>
-                      UAV photogrammetry · DGPS/RTK · total station ·
-                      levelling · GPR
-                    </span>
-                  </div>
-                  <div>
-                    <strong> Outputs </strong>
-                    <span>
-                      Alignment plans · L-sections · cross-sections · ESP/yard
-                      plans · orthomosaics
-                    </span>
-                  </div>
+                  <p><strong>Methods:</strong> UAV photogrammetry · DGPS/RTK · total station · levelling · GPR</p>
+                  <p><strong>Outputs:</strong> Alignment plans · L-sections · cross-sections · ESP/yard plans · orthomosaics</p>
                 </div>
               </div>
             </article>
@@ -616,52 +378,29 @@
                   design accuracy.
                 </p>
                 <div class="solution-spec">
-                  <div>
-                    <strong> Methods </strong>
-                    <span>
-                      RGB UAV · UAV LiDAR · GNSS/IMU · stereo satellite
-                    </span>
-                  </div>
-                  <div>
-                    <strong> Outputs </strong>
-                    <span>
-                      DTM/DSM · contours · orthophoto · profiles · route
-                      constraints
-                    </span>
-                  </div>
+                  <p><strong>Methods:</strong> RGB UAV · UAV LiDAR · GNSS/IMU · stereo satellite</p>
+                  <p><strong>Outputs:</strong> DTM/DSM · contours · orthophoto · profiles · route constraints</p>
                 </div>
               </div>
             </article>
             <article class="solution-family city" id="solution-city">
               <div class="service-media">
-                <button aria-label="Enlarge Urban and railway features identified in aerial imagery" class="image-open"
+                <button aria-label="Enlarge Infra and railway features identified in aerial imagery" class="image-open"
                   onclick="irisPreviewImage(this)" type="button">
-                  <img alt="Urban and railway features identified in aerial imagery" height="2160" loading="lazy"
+                  <img alt="Infra and railway features identified in aerial imagery" height="2160" loading="lazy"
                     src="assets/extra_images/urban_mapping.jpeg" width="3840" />
                 </button>
               </div>
               <div class="service-copy">
-                <h2>Urban &amp; land mapping</h2>
+                <h2>Infra &amp; land mapping</h2>
                 <p>
                   Reality capture, feature extraction, and GIS-ready layers
                   help planners read land use, infrastructure, drainage, and
                   change without separating the map from its source.
                 </p>
                 <div class="solution-spec">
-                  <div>
-                    <strong> Best suited to </strong>
-                    <span>
-                      Master plans · campuses · SEZs · utility and asset
-                      inventories
-                    </span>
-                  </div>
-                  <div>
-                    <strong> Outputs </strong>
-                    <span>
-                      Base maps · 3D context · land-use layers · planning
-                      exhibits
-                    </span>
-                  </div>
+                  <p><strong>Best suited to:</strong> Master plans · campuses · SEZs · utility and asset inventories</p>
+                  <p><strong>Outputs:</strong> Base maps · 3D context · land-use layers · planning exhibits</p>
                 </div>
               </div>
             </article>
@@ -681,18 +420,8 @@
                   comparisons.
                 </p>
                 <div class="solution-spec">
-                  <div>
-                    <strong> Methods </strong>
-                    <span>
-                      UAV mapping · LiDAR · point clouds · surface comparison
-                    </span>
-                  </div>
-                  <div>
-                    <strong> Outputs </strong>
-                    <span>
-                      Volumes · terrain surfaces · contours · change packages
-                    </span>
-                  </div>
+                  <p><strong>Methods:</strong> UAV mapping · LiDAR · point clouds · surface comparison</p>
+                  <p><strong>Outputs:</strong> Volumes · terrain surfaces · contours · change packages</p>
                 </div>
               </div>
             </article>
@@ -712,20 +441,8 @@
                   flood-sensitive landscapes.
                 </p>
                 <div class="solution-spec">
-                  <div>
-                    <strong> Methods </strong>
-                    <span>
-                      Bathymetry · UAV survey · GNSS control · watershed
-                      analysis
-                    </span>
-                  </div>
-                  <div>
-                    <strong> Outputs </strong>
-                    <span>
-                      Depth surfaces · sections · capacity · drainage and
-                      catchment maps
-                    </span>
-                  </div>
+                  <p><strong>Methods:</strong> Bathymetry · UAV survey · GNSS control · watershed analysis</p>
+                  <p><strong>Outputs:</strong> Depth surfaces · sections · capacity · drainage and catchment maps</p>
                 </div>
               </div>
             </article>
@@ -842,7 +559,7 @@
             </p>
             <div class="ak-hero-actions">
               <button class="button ak-primary" onclick="irisScrollTo('akshaa-urban')" type="button">
-                Urban development
+                Infra
                 <span aria-hidden="true"> ↓ </span>
               </button>
               <button class="button ak-secondary" onclick="irisScrollTo('akshaa-defence')" type="button">
@@ -874,8 +591,7 @@
           </h2>
           <div class="ak-split-grid">
             <article class="ak-split-card urban">
-              <span class="ak-split-tag">Civil &amp; urban</span>
-              <h3>Akshaa for urban development</h3>
+              <h3>Akshaa for Infra</h3>
               <p>
                 For planning authorities, infrastructure owners and project
                 teams who need to know what has been built, what has moved and
@@ -889,7 +605,6 @@
               </ul>
             </article>
             <article class="ak-split-card defence">
-              <span class="ak-split-tag">Defence &amp; ISR</span>
               <h3>Akshaa for defence</h3>
               <p>
                 For analysts working repeat captures of the same scene, where
@@ -910,8 +625,7 @@
         <div class="shell">
           <div class="ak-section-head">
             <div>
-              <span class="ak-area-tag">Civil &amp; urban</span>
-              <h2>Urban development</h2>
+              <h2>Infra</h2>
             </div>
             <p>
               The civil side of Akshaa works in daylight optical imagery over
@@ -929,29 +643,35 @@
                 place, a date and an image.
               </p>
             </article>
-            <article class="ak-how">
-              <div class="ak-how-step">
-                <b> Add imagery </b>
-                <p>
-                  Bring in georeferenced drone, aerial, satellite, and project
-                  imagery with time and area context.
-                </p>
-              </div>
-              <div class="ak-how-step">
-                <b> Find changes </b>
-                <p>
-                  Use task-specific models and spatial rules to locate
-                  objects, conditions, and change candidates.
-                </p>
-              </div>
-              <div class="ak-how-step">
-                <b> Review results </b>
-                <p>
-                  Keep the source visible while reviewers accept, reject,
-                  annotate, and export observations.
-                </p>
-              </div>
-            </article>
+            <ol aria-label="Akshaa AI workflow" class="ak-how">
+              <li class="ak-how-step">
+                <div>
+                  <b>Load imagery</b>
+                  <p>
+                    Ingest georeferenced drone, aerial, satellite, and project
+                    imagery with location and capture-date context.
+                  </p>
+                </div>
+              </li>
+              <li class="ak-how-step">
+                <div>
+                  <b>Detect changes</b>
+                  <p>
+                    AI models identify assets and flag new, missing, or altered
+                    features across aligned survey dates.
+                  </p>
+                </div>
+              </li>
+              <li class="ak-how-step">
+                <div>
+                  <b>Review with context</b>
+                  <p>
+                    Inspect findings against source imagery, refine detections,
+                    and export verified GIS-ready results.
+                  </p>
+                </div>
+              </li>
+            </ol>
           </div>
           <figure class="ak-evidence">
             <div class="evidence-views">
@@ -967,9 +687,9 @@
                 <img alt="Waterfront infrastructure segmentation in aerial imagery" height="1530" loading="lazy"
                   src="assets/akshaa/urban-waterfront.jpg" width="2720" />
               </button>
-              <button aria-label="Enlarge Urban building and infrastructure segmentation in aerial imagery"
+              <button aria-label="Enlarge Infra building and infrastructure segmentation in aerial imagery"
                 class="image-open" onclick="irisPreviewImage(this)" type="button">
-                <img alt="Urban building and infrastructure segmentation in aerial imagery" height="1080" loading="lazy"
+                <img alt="Infra building and infrastructure segmentation in aerial imagery" height="1080" loading="lazy"
                   src="assets/akshaa/urban-buildings.jpg" width="1920" />
               </button>
               <button aria-label="Enlarge Akshaa segmentation identifying railway tracks, buildings, roads, and trees"
@@ -986,43 +706,12 @@
               </span>
             </figcaption>
           </figure>
-          <div class="ak-feature-ribbon">
-            <article>
-              <span> Asset intelligence </span>
-              <p>
-                Locate and organise roads, buildings, utilities, vegetation,
-                and project-specific features.
-              </p>
-            </article>
-            <article>
-              <span> Temporal change </span>
-              <p>
-                Compare aligned captures and keep new, missing, or altered
-                observations tied to time.
-              </p>
-            </article>
-            <article>
-              <span> Progress evidence </span>
-              <p>
-                Review construction and site change against the previous
-                capture or planned context.
-              </p>
-            </article>
-            <article>
-              <span> GIS-ready handoff </span>
-              <p>
-                Move confirmed observations into maps, inventories, reports,
-                and operating workflows.
-              </p>
-            </article>
-          </div>
         </div>
       </section>
       <section class="ak-defence" id="akshaa-defence">
         <div class="shell">
           <div class="ak-section-head defence">
             <div>
-              <span class="ak-area-tag">Defence &amp; ISR</span>
               <h2>Defence imagery analysis</h2>
             </div>
             <p>
@@ -1118,15 +807,6 @@
               </p>
             </article>
           </div>
-          <div class="hil-note">
-            <strong> Reviewed by people </strong>
-            <p>
-              Akshaa accelerates visual review and structures evidence; it
-              does not replace authorised judgement. Findings remain connected
-              to source imagery and should be corroborated before operational
-              use.
-            </p>
-          </div>
         </div>
       </section>
       <section class="ak-contact">
@@ -1155,40 +835,8 @@
               that matter . Every project is powered by the right technology for accurate insights and dependable results.
             </p>
           </div>
-          <figure class="technology-aircraft">
-            <img alt="Drone platform for aerial data capture" height="712" loading="eager"
-              src="assets/technology/drone.png" width="810" />
-          </figure>
         </div>
       </header>
-      <nav aria-label="Survey technologies" class="page-jumps">
-        <div class="shell">
-          <a href="#tech-method-1" onclick="
-                event.preventDefault();
-                irisScrollTo('tech-method-1');
-              ">LiDAR</a>
-          <a href="#tech-method-2" onclick="
-                event.preventDefault();
-                irisScrollTo('tech-method-2');
-              ">Photogrammetry</a>
-          <a href="#tech-method-3" onclick="
-                event.preventDefault();
-                irisScrollTo('tech-method-3');
-              ">Satellite imagery</a>
-          <a href="#tech-method-4" onclick="
-                event.preventDefault();
-                irisScrollTo('tech-method-4');
-              ">Ground survey</a>
-          <a href="#tech-method-5" onclick="
-                event.preventDefault();
-                irisScrollTo('tech-method-5');
-              ">Echo sounder &amp; sonar</a>
-          <a href="#tech-method-6" onclick="
-                event.preventDefault();
-                irisScrollTo('tech-method-6');
-              ">GIS &amp; AI</a>
-        </div>
-      </nav>
       <section class="section">
         <div class="shell">
           <div class="technology-overview">
@@ -1265,9 +913,9 @@
                 </div>
               </div>
               <figure class="method-media">
-                <button aria-label="Enlarge Supplied aerial imagery of urban terrain" class="image-open"
+                <button aria-label="Enlarge Supplied aerial imagery of Infra terrain" class="image-open"
                   onclick="irisPreviewImage(this)" type="button">
-                  <img alt="Supplied aerial imagery of urban terrain" height="400" loading="lazy"
+                  <img alt="Supplied aerial imagery of Infra terrain" height="400" loading="lazy"
                     src="assets/extra_images/satellite-airport.jpeg" width="711" />
                 </button>
               </figure>
@@ -1292,7 +940,7 @@
                 <button aria-label="Enlarge Iris Aerial field team checking a survey approach" class="image-open"
                   onclick="irisPreviewImage(this)" type="button">
                   <img alt="Iris Aerial field team checking a survey approach" height="900" loading="lazy"
-                    src="assets/extra_images/DGPS.webp" width="1350" />
+                    src="assets/extra_images/control_points.jpeg" width="1350" />
                 </button>
               </figure>
             </article>
@@ -1337,9 +985,9 @@
                 </div>
               </div>
               <figure class="method-media">
-                <button aria-label="Enlarge Mapped park, roads and urban features in Akshaa imagery" class="image-open"
+                <button aria-label="Enlarge Mapped park, roads and Infra features in Akshaa imagery" class="image-open"
                   onclick="irisPreviewImage(this)" type="button">
-                  <img alt="Mapped park, roads and urban features in Akshaa imagery" height="2160" loading="lazy"
+                  <img alt="Mapped park, roads and Infra features in Akshaa imagery" height="2160" loading="lazy"
                     src="assets/akshaa/urban-park.jpg" width="3840" />
                 </button>
               </figure>
@@ -1348,141 +996,38 @@
         </div>
       </section>
     </section>
-    <section class="page" hidden="" id="team">
-      <header class="team-stage team-happening">
-        <div aria-hidden="true" class="confetti"></div>
-        <div class="shell team-stage-grid">
-          <div class="team-stage-copy">
-            <div>
-              <h1 tabindex="-1">
-                Our team
-                <svg aria-hidden="true" class="squiggle" fill="none" viewBox="0 0 190 16">
-                  <path d="M3 11c22-9 44 5 66-2s44-9 66 0 36 6 52-2" stroke="currentColor" stroke-linecap="round"
-                    stroke-width="5" />
-                </svg>
-              </h1>
-            </div>
-            <div>
-              <p>
-                Big minds, warm hearts. Get to know the incredible people who transform daily collaborations and coffee chats into extraordinary results.
-              </p>
-              <div class="team-cheer">
-                <span>Cricket nights</span>
-                <span>Holi in the office</span>
-                <span>Expo road trips</span>
-                <span>Far too much chai</span>
-              </div>
-            </div>
-          </div>
-          <figure class="team-hero-photo">
-            <button aria-label="Enlarge Iris Aerial team after an indoor cricket match" class="image-open"
-              onclick="irisPreviewImage(this)" type="button">
-              <img alt="Iris Aerial team smiling together after an indoor cricket match" height="1200" loading="lazy"
-                src="assets/team/cricket-night-01.jpg" width="1600" />
-            </button>
-            <figcaption>
-              Cricket night.
-            </figcaption>
-          </figure>
-        </div>
-      </header>
-      <section class="team-moments">
-        <div class="shell">
-          <div class="moments-heading">
-            <span>Life at Iris</span>
-            <h2>Good work. Great people. <em>Great stories.</em></h2>
-            <p>A little look at the fun between the field days.</p>
-          </div>
-          <div class="moments-grid">
-          <figure class="team-moment">
-            <button aria-label="Enlarge Iris Aerial team enjoying a football night" class="image-open"
-              onclick="irisPreviewImage(this)" type="button">
-              <img alt="Iris Aerial team enjoying a football night" height="1200" loading="lazy"
-                src="assets/team/football-night-01.jpg" width="1600" />
-            </button>
-            <figcaption>
-              <strong>Football</strong>
-            </figcaption>
-          </figure>
-          <figure class="team-moment">
-            <button aria-label="Enlarge Iris Aerial office Holi celebration" class="image-open"
-              onclick="irisPreviewImage(this)" type="button">
-              <img alt="Iris Aerial office Holi celebration" height="1600" loading="lazy"
-                src="assets/team/holi-office-01.jpg" width="1200" />
-            </button>
-            <figcaption>
-              <strong>Holi</strong>
-            </figcaption>
-          </figure>
-          <figure class="team-moment">
-            <button aria-label="Enlarge Iris Aerial team at an exhibition" class="image-open"
-              onclick="irisPreviewImage(this)" type="button">
-              <img alt="Iris Aerial team at an exhibition" height="1201" loading="lazy"
-                src="assets/team/expo-booth-02.jpg" width="1600" />
-            </button>
-            <figcaption>
-              <strong>Expo day</strong>
-            </figcaption>
-          </figure>
-          <figure class="team-moment">
-            <button aria-label="Enlarge Iris Aerial colleagues at an innovation pavilion" class="image-open"
-              onclick="irisPreviewImage(this)" type="button">
-              <img alt="Iris Aerial colleagues at an innovation pavilion" height="900" loading="lazy"
-                src="assets/team/e96206adfb4eaf76.webp" width="1350" />
-            </button>
-            <figcaption>
-              <strong>At the pavilion</strong>
-            </figcaption>
-          </figure>
-          <figure class="team-moment">
-            <button aria-label="Enlarge Iris Aerial colleagues playing UNO together in the office" class="image-open"
-              onclick="irisPreviewImage(this)" type="button">
-              <img alt="Iris Aerial colleagues playing UNO together in the office" height="960" loading="lazy"
-                src="assets/team/iris_fun23.jpeg" width="1280" />
-            </button>
-            <figcaption>
-              <strong>UNO time</strong>
-            </figcaption>
-          </figure>
-          <figure class="team-moment">
-            <button aria-label="Enlarge Iris Aerial team at the exhibition booth" class="image-open"
-              onclick="irisPreviewImage(this)" type="button">
-              <img alt="Iris Aerial team at the exhibition booth" height="1200" loading="lazy"
-                src="assets/team/expo-booth-01.jpg" width="1600" />
-            </button>
-            <figcaption>
-              <strong>On the road</strong>
-            </figcaption>
-          </figure>
-          <figure class="team-moment">
-            <button aria-label="Enlarge Vaishno Devi" class="image-open"
-              onclick="irisPreviewImage(this)" type="button">
-              <img alt="Vaishno Devi" height="1200" loading="lazy"
-                src="assets/extra_images/vaishnodevi.jpeg" width="1600" />
-            </button>
-            <figcaption>
-              <strong>Vaishno Devi</strong>
-            </figcaption>
-          </figure>
-          </div>
-        </div>
-      </section>
-      <section class="section people-section">
-        <div class="shell">
-          <div class="section-head">
-            <div>
-              <span class="kicker">Meet the crew</span>
-              <h2 class="heading">The people who make <span class="hl">Iris, Iris</span></h2>
-            </div>
-            <p class="copy">
-              A cross-functional team bringing together survey, engineering,
-              business, and technology expertise.
-            </p>
-          </div>
-          <div class="people-grid" id="team-grid"></div>
-        </div>
-      </section>
-    </section>
+<section class="page team-scrapbook" hidden="" id="team">
+  <header class="crew-hero">
+    <div class="shell crew-opening">
+      <div class="crew-copy"><p class="crew-eyebrow">THE IRIS TEAM</p><h1 tabindex="-1">Great work.<br />Even better <span>company.</span></h1><p>From field surveys to final maps, we work side by side—and celebrate the wins along the way.</p><a class="crew-link" href="#team-people">Meet our people <span aria-hidden="true">↘</span></a></div>
+      <div class="crew-snapshots" aria-label="Celebrations with the Iris team"><figure class="scrap-photo" style="--photo-turn:-4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Good company. Great memories."><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.35%20PM.jpeg" alt="Good company. Great memories." loading="eager" width="4080" height="3072" /></button><figcaption>The good days</figcaption></figure>
+<figure class="scrap-photo" style="--photo-turn:3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Good company. Great memories."><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.36%20PM%20(1).jpeg" alt="Good company. Great memories." loading="lazy" width="1201" height="1600" /></button><figcaption>All smiles</figcaption></figure>
+<figure class="scrap-photo" style="--photo-turn:-2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Good company. Great memories."><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.36%20PM.jpeg" alt="Good company. Great memories." loading="lazy" width="4080" height="3072" /></button><figcaption>Our kind of team</figcaption></figure>
+<figure class="scrap-photo" style="--photo-turn:4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Good company. Great memories."><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.37%20PM%20(1).jpeg" alt="Good company. Great memories." loading="lazy" width="1201" height="1600" /></button><figcaption>Together, always</figcaption></figure>
+<figure class="scrap-photo" style="--photo-turn:-3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Good company. Great memories."><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.37%20PM%20(2).jpeg" alt="Good company. Great memories." loading="lazy" width="1201" height="1600" /></button><figcaption>More than colleagues</figcaption></figure>
+<figure class="scrap-photo" style="--photo-turn:2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Good company. Great memories."><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.38%20PM.jpeg" alt="Good company. Great memories." loading="lazy" width="1280" height="960" /></button><figcaption>Made of moments</figcaption></figure><span class="crew-sticker" aria-hidden="true">Better<br />together ✳</span></div>
+    </div>
+    <div class="crew-ribbon" aria-hidden="true"><span>FIELD DAYS <b>✳</b> CHAI BREAKS <b>✳</b> BIG IDEAS <b>✳</b> UNO NIGHTS <b>✳</b> ONE TEAM <b>✳</b> FIELD DAYS <b>✳</b> CHAI BREAKS</span></div>
+  </header>
+  <section class="section people-section" id="team-people"><div class="shell"><div class="crew-section-heading"><div><p class="crew-eyebrow">FAMILIAR FACES. DIFFERENT SUPERPOWERS.</p><h2>The people who<br />make <span>Iris, Iris.</span></h2></div><p>Meet the people bringing their ideas, expertise and everyday energy to every project.</p></div><div class="people-grid" id="team-grid"></div></div></section>
+  <section class="crew-album section" aria-labelledby="crew-album-title"><div class="shell"><div class="crew-section-heading"><div><p class="crew-eyebrow">LIFE, BETWEEN THE DEADLINES</p><h2 id="crew-album-title">A little work.<br /><span>A lot of us.</span></h2></div><p>Chai breaks, cricket, Holi and expo trips. The moments that make us a team. Tap a photo for a closer look.</p></div><div class="crew-photo-wall"><figure class="album-photo" style="--photo-turn:-4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge On site with the survey crew"><img src="assets/team/1dc4800c8d9a5e20.png" alt="On site with the survey crew" loading="lazy" width="1350" height="900" /></button><figcaption>On site with the survey crew</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge A day along the railway"><img src="assets/team/2f252ea940bb9266.png" alt="A day along the railway" loading="lazy" width="1350" height="900" /></button><figcaption>A day along the railway</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:-2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Ready for the next flight"><img src="assets/team/39445f45f58600c1.png" alt="Ready for the next flight" loading="lazy" width="1350" height="900" /></button><figcaption>Ready for the next flight</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Taking Iris to the expo"><img src="assets/team/3e1364431e53f40d.webp" alt="Taking Iris to the expo" loading="lazy" width="1350" height="900" /></button><figcaption>Taking Iris to the expo</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:-3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Out in the field, together"><img src="assets/team/5ce2b499e359e801.png" alt="Out in the field, together" loading="lazy" width="1350" height="900" /></button><figcaption>Out in the field, together</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge A team day out"><img src="assets/team/81d71adfcda1d4e1.png" alt="A team day out" loading="lazy" width="1350" height="900" /></button><figcaption>A team day out</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:-4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Celebrating in full colour"><img src="assets/team/ae6199057d4f4ab5.png" alt="Celebrating in full colour" loading="lazy" width="1350" height="900" /></button><figcaption>Celebrating in full colour</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge After-hours innings"><img src="assets/team/cricket-night-01.jpg" alt="After-hours innings" loading="lazy" width="1600" height="1200" /></button><figcaption>After-hours innings</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:-2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Sharing ideas beyond the office"><img src="assets/team/e87c7603498ffcc7.png" alt="Sharing ideas beyond the office" loading="lazy" width="1350" height="900" /></button><figcaption>Sharing ideas beyond the office</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge New faces, new conversations"><img src="assets/team/e96206adfb4eaf76.webp" alt="New faces, new conversations" loading="lazy" width="1350" height="900" /></button><figcaption>New faces, new conversations</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:-3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Iris, out in the world"><img src="assets/team/expo-booth-01.jpg" alt="Iris, out in the world" loading="lazy" width="1600" height="1200" /></button><figcaption>Iris, out in the world</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Meeting beyond the office"><img src="assets/team/expo-booth-02.jpg" alt="Meeting beyond the office" loading="lazy" width="1600" height="1201" /></button><figcaption>Meeting beyond the office</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:-4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Making plans on the ground"><img src="assets/team/f278a052b852ee6b.png" alt="Making plans on the ground" loading="lazy" width="1350" height="900" /></button><figcaption>Making plans on the ground</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge A different kind of fieldwork"><img src="assets/team/football-night-01.jpg" alt="A different kind of fieldwork" loading="lazy" width="1600" height="1200" /></button><figcaption>A different kind of fieldwork</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:-2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge A little more colour"><img src="assets/team/holi-office-01.jpg" alt="A little more colour" loading="lazy" width="1200" height="1600" /></button><figcaption>A little more colour</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge One more round of UNO"><img src="assets/team/iris_fun23.jpeg" alt="One more round of UNO" loading="lazy" width="1280" height="960" /></button><figcaption>One more round of UNO</figcaption></figure>
+<figure class="album-photo" style="--photo-turn:-3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Between the busy days"><img src="assets/team/office-conversation.jpeg" alt="Between the busy days" loading="lazy" width="580" height="1280" /></button><figcaption>Between the busy days</figcaption></figure></div><div class="crew-close"><p>Your next team photo<br />could be with us.</p><a class="crew-link" href="#careers">Explore careers <span aria-hidden="true">↗</span></a></div></div></section>
+</section>
     <section class="page" hidden="" id="careers">
       <header class="page-hero">
         <div aria-hidden="true" class="careers-starfield"></div>
@@ -1796,7 +1341,7 @@
     <div class="shell">
       <div class="footer-top">
         <div class="footer-brand">
-          <img alt="Iris Aerial Innovations" height="413" src="assets/brand-wordmark.png" width="1200" />
+          <img alt="Iris Aerial Innovations" height="778" src="assets/brand-logo.png" width="1400" />
           <p>
             Aerial and ground surveying, engineering mapping, and geospatial
             intelligence. Based in New Delhi, working wherever the project

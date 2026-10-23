@@ -400,24 +400,6 @@ body::after {
   user-select: none;
 }
 
-/* Delivery stages: the 01/02/03 becomes the loudest thing in the row. */
-.delivery-stage {
-  position: relative;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.delivery-stage:hover {
-  transform: translateX(8px);
-}
-.delivery-stage .stage-mark {
-  font: 700 54px/0.85 var(--font-display) !important;
-  letter-spacing: -0.05em;
-  color: var(--sky-line);
-  transition: color 0.4s ease;
-}
-.delivery-stage:hover .stage-mark {
-  color: var(--cyan);
-}
-
 /* Solutions: each sector carries its own index, set off the image edge. */
 .solution-family {
   position: relative;
@@ -453,7 +435,6 @@ body::after {
   opacity: 0.55;
 }
 
-.home-about,
 .people-section {
   --contour-ink: var(--cyan);
   --contour-opacity: 0.07;

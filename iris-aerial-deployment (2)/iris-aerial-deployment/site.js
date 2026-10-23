@@ -21,6 +21,129 @@
   const mainContent = document.querySelector("main");
   const footer = document.querySelector(".site-footer");
 
+  function initHomeCarousel() {
+    const carousel = document.querySelector(".home-carousel");
+    if (!carousel) return;
+    const slides = [...carousel.querySelectorAll(".home-carousel-slide")];
+    const dotsContainer = carousel.querySelector(".home-carousel-dots");
+    const previousButton = carousel.querySelector(".home-carousel-previous");
+    const nextButton = carousel.querySelector(".home-carousel-next");
+    const toggleButton = carousel.querySelector(".home-carousel-toggle");
+    const status = carousel.querySelector(".home-carousel-status");
+    if (slides.length < 2 || !dotsContainer || !previousButton || !nextButton || !toggleButton || !status) return;
+
+    let activeIndex = 0;
+    let timer;
+    let userPaused = false;
+    let pointerInside = false;
+    let focusInside = false;
+    let playbackRequested = false;
+    let onScreen = false;
+    const dots = slides.map((slide, index) => {
+      slide.setAttribute("role", "group");
+      slide.setAttribute("aria-label", `${index + 1} of ${slides.length}`);
+      const dot = document.createElement("button");
+      dot.className = "home-carousel-dot";
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Show slide ${index + 1}`);
+      dot.addEventListener("click", () => showSlide(index, true));
+      dotsContainer.append(dot);
+      return dot;
+    });
+
+    function showSlide(index, announce = false) {
+      activeIndex = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        const active = slideIndex === activeIndex;
+        slide.classList.toggle("is-active", active);
+        slide.setAttribute("aria-hidden", String(!active));
+        slide.inert = !active;
+      });
+      dots.forEach((dot, dotIndex) => {
+        if (dotIndex === activeIndex) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+      if (announce) {
+        const heading = slides[activeIndex].querySelector("h2");
+        status.textContent = `Slide ${activeIndex + 1} of ${slides.length}: ${heading?.textContent || ""}`;
+      }
+      restartTimer();
+    }
+
+    function updateToggle() {
+      const reduced = motionReduced();
+      const paused = userPaused || reduced;
+      toggleButton.hidden = reduced;
+      toggleButton.textContent = paused ? "Play" : "Pause";
+      toggleButton.setAttribute("aria-label", paused ? "Play slideshow" : "Pause slideshow");
+      toggleButton.setAttribute("aria-pressed", String(paused));
+    }
+
+    function restartTimer() {
+      clearTimeout(timer);
+      if (
+        userPaused ||
+        motionReduced() ||
+        ((pointerInside || focusInside) && !playbackRequested) ||
+        !onScreen ||
+        document.hidden
+      )
+        return;
+      timer = setTimeout(() => {
+        showSlide(activeIndex + 1);
+      }, 6000);
+    }
+
+    previousButton.addEventListener("click", () => showSlide(activeIndex - 1, true));
+    nextButton.addEventListener("click", () => showSlide(activeIndex + 1, true));
+    toggleButton.addEventListener("click", () => {
+      userPaused = !userPaused;
+      playbackRequested = !userPaused;
+      updateToggle();
+      restartTimer();
+    });
+    carousel.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      showSlide(activeIndex + (event.key === "ArrowRight" ? 1 : -1), true);
+    });
+    carousel.addEventListener("pointerenter", () => {
+      pointerInside = true;
+      playbackRequested = false;
+      restartTimer();
+    });
+    carousel.addEventListener("pointerleave", () => {
+      pointerInside = false;
+      restartTimer();
+    });
+    carousel.addEventListener("focusin", () => {
+      focusInside = true;
+      playbackRequested = false;
+      restartTimer();
+    });
+    carousel.addEventListener("focusout", (event) => {
+      if (!carousel.contains(event.relatedTarget)) {
+        focusInside = false;
+        playbackRequested = false;
+        restartTimer();
+      }
+    });
+    document.addEventListener("visibilitychange", restartTimer);
+    systemReduceMotion.addEventListener("change", () => {
+      if (motionReduced()) userPaused = true;
+      updateToggle();
+      restartTimer();
+    });
+    const observer = new IntersectionObserver(([entry]) => {
+      onScreen = entry.isIntersecting;
+      restartTimer();
+    });
+    observer.observe(carousel);
+    showSlide(0);
+    updateToggle();
+  }
+  initHomeCarousel();
+
   systemReduceMotion.addEventListener("change", () => {
     pageTransition?.cancel();
     pageTransition = null;
@@ -366,9 +489,9 @@
     ["Sahil", "MLE intern", "sahil.jpeg"],
   ];
   const teamGrid = document.querySelector("#team-grid");
-  team.forEach(([name, role, photo]) => {
+  team.forEach(([name, role, photo], index) => {
     const article = document.createElement("article");
-    article.className = "person-row";
+    article.className = `person-row${index < 2 ? " person-row-lead" : ""}`;
     const portrait = document.createElement("div");
     portrait.className = "person-portrait";
     const image = document.createElement("img");

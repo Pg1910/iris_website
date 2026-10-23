@@ -24,8 +24,6 @@
 
   const CONTOUR_SECTIONS = [
     ".client-band",
-    ".home-about",
-    ".enterprise-trust",
     ".solutions-hero",
     "#solutions .solution-portfolio",
     ".ak-hero",
@@ -319,7 +317,6 @@
     ".team-moment .image-open",
     ".solution-family .service-media .image-open",
     ".case-visual > .image-open",
-    ".delivery-board .field-frame > .image-open",
     ".team-hero-photo .image-open",
   ];
 

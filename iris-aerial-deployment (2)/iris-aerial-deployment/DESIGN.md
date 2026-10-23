@@ -82,7 +82,7 @@ Global scrollbars use `--scroll-thumb`, `--scroll-track`, `--scroll-hover`, and 
 ## Typography
 
 - Barlow 600 owns all company headings, including profiles and jobs. Desktop page titles are 60–76px; phone titles are 40–48px. Section headings are 32–46px and article headings 25–34px. Tracking is restrained and phrases wrap naturally.
-- Source Sans 3 owns body text, actions, form labels and captions. Body copy is 17–20px, with a larger 22–24px opening paragraph in About Iris. It uses comfortable line lengths and a 1.6 line height.
+- Source Sans 3 owns body text, actions, form labels and captions. Body copy is 17–20px, with comfortable line lengths and a 1.6 line height.
 - Space Grotesk 500 is reserved for Akshaa headings. Its product introduction is 44–66px.
 - No serif inserts, ornamental italics, mixed-font phrases, artificially split words or decorative small headings. Headings describe their section without slogan pairs. Do not add numbered labels unless they describe a real ordered workflow.
 
@@ -92,18 +92,18 @@ Fonts are locally hosted in `assets/fonts/` with their licenses. Barlow and Sour
 
 The shared maximum content width is 1240px. Geometry is owned by `--content`, `--gutter`, `--section-space` and `--header`. Desktop gutters are 56px, falling to 40px and 32px, then 20px on phones. Desktop sections use 96px vertical space; phones use 56px. The desktop header is 84px, tablet 80px and phone 76px. Navigation changes to a mobile disclosure at 1000px.
 
-- Home: a full-width photographic opening with a navy contrast overlay and manual field carousel; blue service links; static client marks; plain About Iris and vision/mission; one wide featured project followed by two paired projects; the three-stage survey workflow; imagery-analysis preview; contact details.
+- Home: a full-width field-footage opening with centered copy; a client-logo strip; a single enterprise trust bar with three concise icon-led reasons; the Akshaa preview; contact details.
 - Solutions: a text-led navy opening; sticky sector jump links; five alternating image-and-copy sector panels on a muted sea-glass canvas; a dark survey workflow; project evidence and case-study download; a framed project enquiry.
 - Akshaa: its green/black opening with supplied logo and detection collage; hero actions linking directly to its two product areas; framed, fully contained infrastructure evidence; defence comparisons and human review. The previous offset lime image shadow is removed.
 - Technology: a restrained aircraft introduction and method jump links; six methods in a two-column catalogue covering LiDAR, photogrammetry, satellite sensing, ground survey, echo sounder/sonar, and GIS/AI. Each has concise, consistently styled copy and contained media. GPR remains absent.
-- Team: a title/description introduction above one wide group photograph; six equal 4:3 culture positions, including two reserved for upcoming images; three larger initial profiles followed by a four-column directory. Two-column portraits on phones.
+- Team: a straightforward introduction beside a candid six-photo team grid; two larger lead profiles followed by a four-column directory. Portraits use two columns on narrow screens and one column on small phones.
 - Careers: a company exhibition photograph beside a cobalt page title; monochrome bordered job panels with native role disclosures, clear Apply actions and a sticky introduction on desktop; the existing email-draft application form, which asks for current city.
 
 At narrow widths, split layouts stack in reading order, jobs retain their Apply action, team portraits become two columns, and technical evidence remains fully visible. Reserved photo positions have no fake image, upload action or invented project caption. The Akshaa infrastructure gallery has one reserved additional image position.
 
 ## Elevation & Depth
 
-Hierarchy comes from large field imagery, a consistent heading family, white/pale/cobalt/navy sections and purposeful catalogue panels. No image arches, circles, floating photo piles, ambient orbit art, ornamental grids or drop-shadow cards. The Home contrast overlay protects the text while showing the actual field site. Shared photo controls and the image dialog are functional affordances.
+Hierarchy comes from large field imagery, a consistent heading family, white/pale/cobalt/navy sections and purposeful catalogue panels. Avoid image arches, circles, ambient orbit art, ornamental grids and drop-shadow cards; the animated Team photo deck is an intentional photo-stack exception. The Home contrast overlay protects the text while showing the actual field site. Shared photo controls and the image dialog are functional affordances.
 
 ## Shapes
 
@@ -115,7 +115,7 @@ Navigation uses six hash routes, current-route links, route titles and heading f
 
 Actions use the same labels and emphasis everywhere. Company primary actions are blue, while actions on navy can use white. Akshaa actions use lime on dark green. Keyboard focus is visible and dark-surface contrast is preserved.
 
-The Home field gallery starts paused. Previous/next, selection dots and optional Play/Pause controls remain available. Arrow keys select while a gallery control has focus; manual changes are announced. The Team introduction uses a static lead photograph so its culture grid does not repeat a second carousel. Page changes use a short fade-and-rise entrance; scroll reveals are reserved for section headings, featured projects and selected cards. Decorative motion follows the operating-system reduced-motion preference; there is no site-level motion toggle.
+The Home field gallery starts paused. Previous/next, selection dots and optional Play/Pause controls remain available. Arrow keys select while a gallery control has focus; manual changes are announced. Team uses a six-photo animated collage alongside the introduction; reduced motion presents the collage as a static stack. Page changes use a short fade-and-rise entrance; scroll reveals are reserved for section headings, featured projects and selected cards. Decorative motion follows the operating-system reduced-motion preference; there is no site-level motion toggle.
 
 The shared image viewer is a native modal with a complete image, centered descriptive caption, close control, Escape behavior, background isolation and focus restoration. Keep it centered and preserve the visible zoom cursor on image buttons.
 
@@ -189,9 +189,9 @@ The footer keeps Iris navy on every route, including Akshaa.
 
 ## Home sequence
 
-Hero → clients → about → projects → delivery → Akshaa teaser (green) → enterprise trust (compact navy panel) → testimonials (sky tint) → contact. The trust section leads with “Speed Meets Excellence” and a concise speed-and-quality promise, followed by three delivery strengths. Navy, sky-blue survey icons and fine dividers distinguish this compact panel. Evidence columns become compact icon-led rows on phones. `pages.css` owns this composition, using shared tokens from `styles.css` and `motion.css`.
+Hero with centered copy → one enterprise trust bar with three icon-led reasons → Akshaa teaser (green) → client-logo marquee → contact. The trust bar highlights engineering-grade accuracy, imagery insight and project-paced coverage. The client marquee sits immediately above “Tell us where the site is.” The hero keeps its full-bleed field footage, with the copy centered over it. `pages.css` owns this composition, using shared tokens from `styles.css` and `motion.css`.
 
-Home opens with the approved headline "Pioneering the Future with Geospatial Excellence." and the supplied survey and engineering consultancy introduction. The hero has extra copy width and responsive type to accommodate the longer text. The "Selected work" and "How we work" kickers are removed.
+Home opens with the approved headline "Pioneering the Future with Geospatial Excellence." and centered survey and engineering consultancy copy. The vision-and-mission and flagship-project sections have been removed from Home.
 
 > **The three testimonials on Home are placeholders.** Names, roles, organisations and quotes are invented for layout. An HTML comment above the block says so. Replace every one with an approved client reference, or delete the section, before this page goes live.
 
@@ -213,7 +213,7 @@ Sectors are full-width rows that alternate: copy left / image right, then image 
 
 ## Business and interaction evidence
 
-The latest user prompt owns the blue-versus-Akshaa-green palette and broader design changes. The previous prompt owns the six team photo positions, forthcoming Akshaa imagery, About Iris / vision / mission content and role corrections. Index content, source imagery and existing contact destinations own the remaining business facts.
+The latest user prompt owns the blue-versus-Akshaa-green palette and broader design changes. The team page uses candid team photography and the updated informal introduction. Index content, source imagery and existing contact destinations own the remaining business facts.
 
 Team roles: Nikhil Saini — Founder & CEO; Aditya Raj — Business analyst; Ashish — Project manager; Hitesh — Lead survey expert; Vikas — Surveyor. Piyush appears before Vikas after their requested swap. Other roles are preserved.
 
@@ -227,7 +227,7 @@ The renewed redesign request supersedes the earlier flat split-screen compositio
 
 The Team culture grid now uses all six positions: its final two photographs show office UNO (`iris_fun23.jpeg`) and the exhibition booth (`expo-booth-01.jpg`). The Urban development evidence gallery includes the supplied `_12_masked.jpg` segmentation. The subsequently added `_182157.png` aircraft detection was removed at the user’s request. The analyst-review image remains a direct gallery item. The remaining additions use the existing accessible full-image viewer and explicit source dimensions. Technology uses `lidar-uav.png` in the LiDAR method panel.
 
-The Technology header drone runs a single 4.8-second hover-and-bank flight whenever its route opens, then rests. `motion.css` owns this effect, which uses transforms without changing layout and is disabled by reduced-motion preference. Vikas's directory title is Surveyor; `site.js` owns the directory data.
+The Technology hero uses the `3-_Drone_Mapping_-_Windover_Construction_at_FMUV_Project.jpg` aerial image as a full-bleed background behind centered copy. `motion.css` gives the image a slow drift while the route is visible and disables that animation for reduced-motion preferences. Vikas's directory title is Surveyor; `site.js` owns the directory data.
 
 ## October 8 copy, trust and culture update
 
@@ -235,6 +235,16 @@ The current user request supplies the company introduction, company totals and e
 
 Team copy focuses on shared chai breaks, UNO, cricket, Holi and expo trips using existing photography. Team images reuse the shared native dialog: `site.js` sets `team-photo-viewer`, and `motion.css` adds a short photo-print bounce and backdrop fade. Reduced motion disables both effects; Escape, focus trapping and focus restoration retain the shared viewer behavior. Careers removes the four pitch badges and the Open roles kicker while preserving job disclosures and applications.
 
+## October 22 Team refresh
+
+The Team hero layers a ten-photo pinboard from `assets/team/` and `assets/fun_team/` around the rotating featured photograph. At phone widths, the pinboard is simplified to two background snapshots so the copy and featured photo remain clear. The portrait directory remains data-driven. Keep foreground photos keyboard-accessible through the shared image viewer and retain the static stack fallback for reduced-motion visitors.
+
 ## October 8 compact trust and Akshaa close-out refinement
 
 The user requested a shorter, sleeker enterprise section and a pista Akshaa closing section. `pages.css` owns the compact navy trust panel, shared sky accents and three evidence columns; it uses the existing Barlow/Source Sans typography and stacks at narrow widths. Copy is intentionally brief and retains verifiable survey, deliverable and team capabilities. `motion.css` replaces the violet close-out styling and removes its ambient rotating wash. The recently added bomber detection figure is removed from the Defence gallery; its source asset remains available in the project.
+
+## October 23 Team scrapbook redesign
+
+The user's new brief authorizes a vibrant, playful Team exception to the restrained company layouts. The team page uses a cobalt scrapbook opening, six overlapping celebration prints, warm yellow and coral accents, and a complete candid photo wall. Barlow remains the display face; Source Sans 3 remains the body and caption face. Employee names, roles, order and the two lead profiles are preserved in site.js. All image files from assets/team and assets/fun_team appear, either as the existing named portraits or candid album images.
+
+Runtime ownership: team.css owns the route-scoped --crew-blue (#1959d1), --crew-yellow (#ffdf70), --crew-coral (#ff947e), --crew-paper (#f1f5ff), and --crew-ink (#14243b). These expressive accents do not change shared company or Akshaa tokens. The scrapbook composition is the signature; the directory keeps an orderly hierarchy. Each image uses the existing keyboard-accessible full-image viewer. Photo hover movement and a finite entrance respect reduced motion; all photos remain available without animation or hover. The album stacks into two columns on phones and one on small phones, with no horizontal scrolling.

@@ -55,11 +55,8 @@
      ------------------------------------------------------------------------- */
 
   const REVEAL_GROUPS = [
-    [".home-about .shell > *", ""],
     [".page .section-head > *", ""],
     [".page .ak-section-head > *", ""],
-    [".home-projects .project-story", "zoom"],
-    [".delivery-section .shell > *", ""],
     [".change-copy", "left"],
     [".change-collage", "right"],
     [".visit-grid > *", ""],
@@ -68,13 +65,10 @@
     [".ak-split-card", ""],
     [".ak-story-grid > *", ""],
     [".ak-evidence", "zoom"],
-    [".ak-feature-ribbon article", ""],
     [".defence-collage figure", "zoom"],
     [".defence-need", "right"],
     [".defence-phase", ""],
-    [".hil-note", ""],
     [".tech-method", ""],
-    [".team-moment", ""],
     [".person-row", ""],
     [".job-card", ""],
     [".careers-pitch span", ""],

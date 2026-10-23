@@ -643,9 +643,12 @@ button:disabled,
 
 /* The footer is the shared anchor for company, contact, and navigation. */
 .site-footer {
+  --on-dark: var(--white);
+  --accent: var(--white);
+  --dark-line: rgba(255, 255, 255, 0.28);
   padding: 44px 0 18px;
   border-top: 1px solid var(--dark-line);
-  background: var(--navy);
+  background: var(--cyan);
   color: var(--white);
   font-size: 15px;
 }
