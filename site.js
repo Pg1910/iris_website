@@ -30,7 +30,7 @@
     const nextButton = carousel.querySelector(".home-carousel-next");
     const toggleButton = carousel.querySelector(".home-carousel-toggle");
     const status = carousel.querySelector(".home-carousel-status");
-    if (slides.length < 2 || !dotsContainer || !previousButton || !nextButton || !toggleButton || !status) return;
+    if (slides.length < 2 || !dotsContainer || !previousButton || !nextButton || !status) return;
 
     let activeIndex = 0;
     let timer;
@@ -68,6 +68,7 @@
     }
 
     function updateToggle() {
+      if (!toggleButton) return;
       toggleButton.textContent = userPaused ? "Play" : "Pause";
       toggleButton.setAttribute("aria-label", userPaused ? "Play slideshow" : "Pause slideshow");
       toggleButton.setAttribute("aria-pressed", String(userPaused));
@@ -83,11 +84,13 @@
 
     previousButton.addEventListener("click", () => showSlide(activeIndex - 1, true));
     nextButton.addEventListener("click", () => showSlide(activeIndex + 1, true));
-    toggleButton.addEventListener("click", () => {
-      userPaused = !userPaused;
-      updateToggle();
-      restartTimer();
-    });
+    if (toggleButton) {
+      toggleButton.addEventListener("click", () => {
+        userPaused = !userPaused;
+        updateToggle();
+        restartTimer();
+      });
+    }
     carousel.addEventListener("keydown", (event) => {
       if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
       event.preventDefault();

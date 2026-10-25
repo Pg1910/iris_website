@@ -103,9 +103,6 @@
         </button>
         <div aria-label="Carousel controls" class="home-carousel-controls">
           <div aria-label="Choose a slide" class="home-carousel-dots" role="group"></div>
-          <button aria-label="Pause slideshow" aria-pressed="false" class="home-carousel-toggle" type="button">
-            Pause
-          </button>
         </div>
         <span aria-live="polite" class="visually-hidden home-carousel-status" role="status"></span>
       </section>
@@ -180,48 +177,6 @@
         </div>
       </section>
 
-      <!-- ═══════════ Why Enterprises Trust Us (from old website) ═══════════ -->
-      <section aria-labelledby="enterprise-trust-title" class="section enterprise-trust">
-        <div class="shell">
-          <h2 class="heading enterprise-trust-heading" id="enterprise-trust-title">
-            Why Enterprises <span class="hl">Trust Us</span>
-          </h2>
-          <div class="enterprise-trust-grid">
-            <article class="trust-item">
-              <span class="trust-emoji" aria-hidden="true">🎯</span>
-              <h3>Precision Redefined:</h3>
-              <p>
-                Iris Aerial employs state-of-the-art technology to deliver unparalleled accuracy
-                in data capture, ensuring your enterprise's requirements are met with unmatched precision.
-              </p>
-            </article>
-            <article class="trust-item">
-              <span class="trust-emoji" aria-hidden="true">⏳</span>
-              <h3>Speed Meets Excellence:</h3>
-              <p>
-                Experience lightning-fast mapping and surveying services from Iris Aerial that
-                outperform traditional methods, saving you time and resources without compromising quality.
-              </p>
-            </article>
-            <article class="trust-item">
-              <span class="trust-emoji" aria-hidden="true">🏅</span>
-              <h3>Efficiency Amplified:</h3>
-              <p>
-                Harness the power of advanced drone technology and streamlined processes with
-                Iris Aerial to achieve faster project turnarounds and elevated operational efficiency.
-              </p>
-            </article>
-            <article class="trust-item">
-              <span class="trust-emoji" aria-hidden="true">💰</span>
-              <h3>Cost-Effective Solutions:</h3>
-              <p>
-                With extensive industry experience, Iris Aerial ensures you get exceptional results
-                tailored to your project's needs, maximizing value without breaking the budget.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
       <section class="section change-section">
         <div class="shell change-story">
           <div class="change-copy">
@@ -267,11 +222,6 @@
                   <img alt="Aerial vehicle detections in snow terrain" height="525" loading="lazy"
                     src="assets/akshaa/akshaa_tanks_snow.jpg" width="517" />
                 </button>
-                <button aria-label="Enlarge Municipal orthomosaic and aerial land use" class="image-open"
-                  onclick="irisPreviewImage(this)" type="button">
-                  <img alt="Municipal orthomosaic and aerial land use" height="305" loading="lazy"
-                    src="assets/akshaa/akshaa_urban_residential.jpg" width="542" />
-                </button>
                 <button aria-label="Enlarge Highway corridor traffic and vehicle tracking" class="image-open"
                   onclick="irisPreviewImage(this)" type="button">
                   <img alt="Highway corridor traffic and vehicle tracking" height="345" loading="lazy"
@@ -282,16 +232,103 @@
                   <img alt="Harbor cargo ship maritime bounding box detection" height="542" loading="lazy"
                     src="assets/akshaa/akshaa_port_vessel.jpg" width="542" />
                 </button>
-                <button aria-label="Enlarge High-density urban aerial imagery" class="image-open"
-                  onclick="irisPreviewImage(this)" type="button">
-                  <img alt="High-density urban aerial imagery" height="557" loading="lazy"
-                    src="assets/akshaa/akshaa_dense_urban.jpg" width="418" />
-                </button>
               </div>
               <figcaption>
                 Object detection / automated multi-sensor imagery intelligence
               </figcaption>
             </figure>
+          </div>
+        </div>
+      </section>
+      <!-- ═══════════ Solutions (Industry Verticals) Section ═══════════ -->
+      <section aria-labelledby="home-solutions-title" class="section home-technologies home-solutions-verticals">
+        <div class="shell">
+          <h2 class="heading home-tech-heading" id="home-solutions-title">SOLUTIONS</h2>
+          <div class="home-tech-grid">
+            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Railway Solutions">
+              <div class="home-tech-card-img">
+                <img alt="Railway surveying and infrastructure solutions" height="518" loading="lazy"
+                  src="assets/verticals/railway.webp" width="1024" />
+              </div>
+              <div class="home-tech-card-label">Railway</div>
+            </a>
+            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Road Solutions">
+              <div class="home-tech-card-img">
+                <img alt="Road condition monitoring and highway engineering surveys" height="518" loading="lazy"
+                  src="assets/verticals/road.webp" width="1024" />
+              </div>
+              <div class="home-tech-card-label">Road</div>
+            </a>
+            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Rural and Urban Solutions">
+              <div class="home-tech-card-img">
+                <img alt="Rural and urban GIS digitization, 3D digital twins and cadastral mapping" height="518" loading="lazy"
+                  src="assets/verticals/rural_urban.webp" width="1024" />
+              </div>
+              <div class="home-tech-card-label">Rural &amp; Urban</div>
+            </a>
+            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Agriculture Solutions">
+              <div class="home-tech-card-img">
+                <img alt="Agriculture and irrigation planning, crop health and watershed management" height="518" loading="lazy"
+                  src="assets/verticals/agriculture.webp" width="1024" />
+              </div>
+              <div class="home-tech-card-label">Agriculture</div>
+            </a>
+            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Mining Solutions">
+              <div class="home-tech-card-img">
+                <img alt="Mine pit and dump management, volume surveys and slope stability" height="518" loading="lazy"
+                  src="assets/verticals/mine.webp" width="1024" />
+              </div>
+              <div class="home-tech-card-label">Mine</div>
+            </a>
+            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Water Solutions">
+              <div class="home-tech-card-img">
+                <img alt="Water surveying, dam inspections, flood monitoring and hydrology" height="518" loading="lazy"
+                  src="assets/verticals/water.webp" width="1024" />
+              </div>
+              <div class="home-tech-card-label">Water</div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- ═══════════ Why Enterprises Trust Us ═══════════ -->
+      <section aria-labelledby="enterprise-trust-title" class="section enterprise-trust">
+        <div class="shell">
+          <h2 class="heading enterprise-trust-heading" id="enterprise-trust-title">
+            Why Enterprises <span class="hl">Trust Us</span>
+          </h2>
+          <div class="enterprise-trust-grid">
+            <article class="trust-item">
+              <span class="trust-emoji" aria-hidden="true">🎯</span>
+              <h3>Precision Redefined:</h3>
+              <p>
+                Iris Aerial employs state-of-the-art technology to deliver unparalleled accuracy
+                in data capture, ensuring your enterprise's requirements are met with unmatched precision.
+              </p>
+            </article>
+            <article class="trust-item">
+              <span class="trust-emoji" aria-hidden="true">⏳</span>
+              <h3>Speed Meets Excellence:</h3>
+              <p>
+                Experience lightning-fast mapping and surveying services from Iris Aerial that
+                outperform traditional methods, saving you time and resources without compromising quality.
+              </p>
+            </article>
+            <article class="trust-item">
+              <span class="trust-emoji" aria-hidden="true">🏅</span>
+              <h3>Efficiency Amplified:</h3>
+              <p>
+                Harness the power of advanced drone technology and streamlined processes with
+                Iris Aerial to achieve faster project turnarounds and elevated operational efficiency.
+              </p>
+            </article>
+            <article class="trust-item">
+              <span class="trust-emoji" aria-hidden="true">💰</span>
+              <h3>Cost-Effective Solutions:</h3>
+              <p>
+                With extensive industry experience, Iris Aerial ensures you get exceptional results
+                tailored to your project's needs, maximizing value without breaking the budget.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -401,11 +438,6 @@
             <div>
               <h2 class="heading">Sectors we <span class="hl">work in</span></h2>
             </div>
-            <p class="copy">
-              Railways, roads, cities, mines and water systems each call for a
-              different survey plan. Explore the methods and outputs for your
-              sector.
-            </p>
           </div>
           <div class="solution-families">
             <article class="solution-family rail" id="solution-rail">
@@ -521,12 +553,8 @@
         <div class="shell">
           <div class="section-head">
             <div>
-              <h2 class="heading">Project work</h2>
+              <h2 class="heading">Case Studies</h2>
             </div>
-            <p class="copy">
-              A look at the sites, survey methods, and outputs behind our
-              work.
-            </p>
           </div>
           <div class="case-visual-grid">
             <article class="case-visual chamba">

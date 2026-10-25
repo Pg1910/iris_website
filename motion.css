@@ -123,6 +123,7 @@
 .marquee {
   position: relative;
   overflow: hidden;
+  padding-block: 18px;
   -webkit-mask-image: linear-gradient(
     90deg,
     transparent,
@@ -140,6 +141,7 @@
 }
 .marquee-track {
   display: flex;
+  align-items: center;
   width: max-content;
   animation: marquee-left var(--marquee-duration, 42s) linear infinite;
 }
@@ -160,21 +162,35 @@
   width: 164px;
   height: 64px;
   padding-inline: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   filter: grayscale(1);
-  opacity: 0.62;
+  opacity: 0.52;
+  transform: scale(1);
+  transform-origin: center center;
+  will-change: transform, filter, opacity;
   transition:
-    filter 0.4s ease,
-    opacity 0.4s ease,
-    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter 0.45s ease,
+    opacity 0.45s ease,
+    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.client-band .client-logo.is-center {
+  filter: grayscale(0) drop-shadow(0 6px 18px rgba(25, 89, 209, 0.28));
+  opacity: 1;
+  transform: scale(1.28) translateY(-2px);
+  z-index: 10;
 }
 .client-band .client-logo:hover {
   filter: grayscale(0);
   opacity: 1;
-  transform: translateY(-4px) scale(1.06);
+  transform: scale(1.24) translateY(-2px);
+  z-index: 10;
 }
 .client-band .client-logo img {
   max-width: 120px;
   max-height: 50px;
+  object-fit: contain;
 }
 @keyframes marquee-left {
   from {
@@ -553,19 +569,17 @@
   border-radius: 0;
   background: transparent;
   padding: 0;
-  margin-bottom: 24px;
+  margin-bottom: clamp(36px, 4vw, 54px);
   font-family: var(--font-display);
-  font-size: clamp(42px, 5.8vw, 92px);
+  font-size: clamp(44px, 5.6vw, 84px);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -0.035em;
   text-transform: none;
   white-space: nowrap;
-  color: var(--ak-lime);
+  color: var(--white);
   text-decoration: none;
-  text-shadow:
-    0 0 8px rgba(160, 230, 109, 0.65),
-    0 0 22px rgba(160, 230, 109, 0.35);
+  text-shadow: none;
 }
 .ak-intro-headline::before,
 .ak-kicker.ak-intro-headline::before {
@@ -594,7 +608,7 @@
   line-height: 1.1;
   letter-spacing: -0.035em;
   max-width: 14ch;
-  color: var(--white);
+  color: var(--ak-lime);
 }
 .change-copy h2 em {
   font-style: normal;
@@ -656,7 +670,7 @@
 }
 .change-section .akshaa-grid-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
 .change-section .akshaa-grid-gallery .image-open {
@@ -1700,10 +1714,12 @@
   }
   .ak-intro-headline,
   .ak-kicker.ak-intro-headline {
-    font-size: clamp(24px, 6.5vw, 42px);
+    font-size: clamp(28px, 6.8vw, 44px);
     white-space: nowrap;
+    color: var(--white);
     text-decoration: none;
-    margin-bottom: 18px;
+    text-shadow: none;
+    margin-bottom: 24px;
   }
   /* The zoom affordance is half the width of these tiles at phone sizes. */
   .change-section .detection-triptych .image-open::after,

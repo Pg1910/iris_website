@@ -135,13 +135,7 @@
   transform: scale(1.25);
 }
 .home-carousel-toggle {
-  padding: 5px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 999px;
-  color: var(--white);
-  background: rgba(5, 20, 34, 0.34);
-  font: 600 12px/1.3 var(--font-body);
-  cursor: pointer;
+  display: none !important;
 }
 .home-carousel :focus-visible {
   outline: 3px solid var(--white);
@@ -2384,30 +2378,8 @@ body[data-route="akshaa"] {
   padding: 52px 48px;
 }
 #solutions .solution-family .service-copy::before {
-  align-self: flex-start;
-  margin-bottom: 18px;
-  padding: 7px 14px;
-  border-radius: 999px;
-  background: var(--sky-tint);
-  color: var(--cyan2);
-  font: 700 12.5px/1 var(--font-technical);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-#solutions .solution-family.rail .service-copy::before {
-  content: "Railways";
-}
-#solutions .solution-family.road .service-copy::before {
-  content: "Roads & highways";
-}
-#solutions .solution-family.city .service-copy::before {
-  content: "Cities & land";
-}
-#solutions .solution-family.mine .service-copy::before {
-  content: "Mining";
-}
-#solutions .solution-family.water .service-copy::before {
-  content: "Water & agriculture";
+  display: none !important;
+  content: none !important;
 }
 #solutions .solution-family h2 {
   font-size: 38px;
@@ -3565,14 +3537,6 @@ body[data-route="solutions"] .site-footer .footer-bottom {
 }
 #solutions .solution-family .service-copy {
   padding: clamp(28px, 4vw, 52px);
-}
-#solutions .solution-family .service-copy::before {
-  background: #e8f3ef;
-  color: #26766f;
-}
-#solutions .solution-family:nth-child(even) .service-copy::before {
-  background: #f8f0e4;
-  color: #916325;
 }
 #solutions .solution-family h2 {
   color: var(--sx-deep);

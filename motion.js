@@ -48,6 +48,65 @@
     setDuration();
     addEventListener("resize", setDuration, { passive: true });
     if (document.fonts?.ready) document.fonts.ready.then(setDuration);
+
+    // Center spotlight: colorize & zoom whichever logo is currently passing through the middle
+    let isVisible = false;
+    let rafId = null;
+    let activeCenterLogo = null;
+
+    function updateCenter() {
+      if (!isVisible) return;
+      const marqueeRect = marquee.getBoundingClientRect();
+      const centerX = marqueeRect.left + marqueeRect.width / 2;
+      const allLogos = track.querySelectorAll(".client-logo");
+
+      let closestLogo = null;
+      let minDistance = Infinity;
+
+      for (let i = 0; i < allLogos.length; i++) {
+        const logo = allLogos[i];
+        const rect = logo.getBoundingClientRect();
+        if (rect.width === 0) continue;
+        const logoCenterX = rect.left + rect.width / 2;
+        const dist = Math.abs(logoCenterX - centerX);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closestLogo = logo;
+        }
+      }
+
+      // Spotlight zone: within 90px of marquee horizontal center
+      const threshold = 90;
+      const targetLogo = (closestLogo && minDistance < threshold) ? closestLogo : null;
+
+      if (targetLogo !== activeCenterLogo) {
+        if (activeCenterLogo) {
+          activeCenterLogo.classList.remove("is-center");
+        }
+        if (targetLogo) {
+          targetLogo.classList.add("is-center");
+        }
+        activeCenterLogo = targetLogo;
+      }
+
+      rafId = requestAnimationFrame(updateCenter);
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+      isVisible = entry.isIntersecting;
+      if (isVisible) {
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(updateCenter);
+      } else {
+        cancelAnimationFrame(rafId);
+        if (activeCenterLogo) {
+          activeCenterLogo.classList.remove("is-center");
+          activeCenterLogo = null;
+        }
+      }
+    }, { threshold: 0.05 });
+
+    observer.observe(marquee);
   }
 
   /* -------------------------------------------------------------------------
