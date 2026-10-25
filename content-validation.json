@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-08",
+  "checks": {
+    "requested_content": "passed",
+    "duplicate_ids": "passed",
+    "local_asset_references": "passed",
+    "javascript_syntax": "passed",
+    "premium_static_audit": "passed",
+    "pista_contrast": {
+      "#203b28 on #dcebc5": 9.74,
+      "#203b28 on #edf4e2": 10.85,
+      "#435e42 on #dcebc5": 5.73,
+      "#435e42 on #edf4e2": 6.39
+    }
+  },
+  "browser_verification": "Unavailable: no connected browser or local browser executable in this session."
+}

@@ -1,0 +1,115 @@
+/* Team scrapbook. Route-local expression; employee hierarchy stays in site.js. */
+#team.team-scrapbook {
+  --crew-blue: #1959d1;
+  --crew-yellow: #ffdf70;
+  --crew-coral: #ff947e;
+  --crew-paper: #f1f5ff;
+  --crew-ink: #14243b;
+  background: var(--crew-paper);
+  color: var(--crew-ink);
+  overflow: clip;
+}
+.crew-hero { background: var(--crew-blue); color: white; position: relative; }
+.crew-hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .17; background-image: radial-gradient(white 1px, transparent 1px); background-size: 24px 24px; mask-image: linear-gradient(90deg,transparent,black); }
+.crew-opening { display: grid; grid-template-columns: 1fr 1.12fr; gap: 60px; align-items: center; padding-block: 88px 100px; }
+.crew-copy { position: relative; z-index: 2; }
+#team .crew-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .13em; margin: 0 0 22px; line-height: 1.5; }
+#team .crew-hero .crew-eyebrow { color: var(--crew-yellow); }
+#team .crew-copy h1 { font-family: Barlow, sans-serif; font-size: clamp(54px,5.8vw,88px); line-height: .99; letter-spacing: -.035em; color: white; margin: 0 0 28px; max-width: 620px; }
+.crew-copy h1 span { color: var(--crew-yellow); position: relative; }
+.crew-copy h1 span::after { content: ''; position: absolute; left: 0; right: 0; bottom: -8px; height: 6px; border-radius: 50%; background: var(--crew-yellow); transform: rotate(-3deg); }
+#team .crew-copy > p:not(.crew-eyebrow) { color: white; opacity: .92; max-width: 410px; font-size: 20px; line-height: 1.6; margin-bottom: 30px; }
+#team .crew-link { display: inline-flex; gap: 32px; align-items: center; padding: 13px 20px; background: var(--crew-yellow); color: var(--crew-ink); border: 2px solid transparent; border-radius: 6px; font-weight: 650; text-decoration: none; transition: transform .2s, background .2s; cursor: pointer; }
+#team .crew-link:hover { background: white; transform: translateY(-3px); }
+#team .crew-link:active { transform: translateY(0); }
+#team :is(a,button):focus-visible { outline: 3px solid var(--crew-ink); outline-offset: 5px; }
+#team .crew-hero :is(a,button):focus-visible { outline-color: var(--crew-yellow); }
+.crew-snapshots { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; position: relative; padding-block: 18px; }
+#team .scrap-photo { margin: 0 -10px; padding: 8px 8px 0; background: white; box-shadow: 0 12px 28px #082b6a40; transform: rotate(var(--photo-turn)); transition: transform .3s; position: relative; min-width: 0; }
+#team .scrap-photo:nth-child(2) { margin-top: -30px; margin-bottom: 30px; }
+#team .scrap-photo:nth-child(5) { margin-top: 20px; margin-bottom: -20px; }
+#team .scrap-photo:hover, #team .scrap-photo:focus-within { z-index: 4; transform: rotate(0) translateY(-8px) scale(1.04); }
+#team .scrap-photo .image-open { display: block; width: 100%; aspect-ratio: 4/5; border-radius: 0; overflow: hidden; cursor: zoom-in; }
+#team .scrap-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+#team .scrap-photo figcaption { font-size: 12px; font-weight: 600; color: var(--crew-ink); padding: 10px 2px; line-height: 1.3; text-align: center; }
+.crew-sticker { position: absolute; right: -15px; bottom: -38px; width: 112px; height: 112px; border-radius: 50%; display: grid; place-content: center; text-align: center; line-height: 1.05; font: 600 23px/1.05 Barlow,sans-serif; background: var(--crew-coral); color: var(--crew-ink); transform: rotate(12deg); border: 2px dashed var(--crew-ink); box-shadow: 0 0 0 6px var(--crew-coral); z-index: 5; }
+.crew-ribbon { overflow: hidden; border-block: 1px solid #14243b20; background: var(--crew-yellow); color: var(--crew-ink); padding: 18px 0; }
+.crew-ribbon span { display: block; width: max-content; word-spacing: 9px; font: 600 18px/1.2 Barlow,sans-serif; letter-spacing: .06em; transform: translateX(-30px); }
+.crew-ribbon b { margin-inline: 26px; font-size: 25px; vertical-align: middle; }
+#team .people-section { background: var(--crew-paper); padding-block: 100px; }
+.crew-section-heading { display: grid; grid-template-columns: 1.5fr 1fr; align-items: end; gap: 60px; margin-bottom: 52px; }
+#team .crew-section-heading h2 { font: 600 clamp(38px,4.4vw,62px)/1.04 Barlow,sans-serif; letter-spacing: -.025em; margin: 0; color: var(--crew-ink); }
+#team .crew-section-heading h2 span { color: var(--crew-blue); }
+#team .crew-section-heading > p { color: var(--crew-ink); font-size: 19px; line-height: 1.6; max-width: 360px; margin: 0 0 3px; }
+#team .people-grid { grid-template-columns: repeat(12,minmax(0,1fr)); gap: 42px 28px; }
+#team .people-grid .person-row { grid-column: span 3; padding: 0; border: 0; background: transparent; }
+#team .people-grid .person-row:nth-child(-n+2) { grid-column: span 6; }
+#team .person-portrait { border: 9px solid white; border-top-color: var(--crew-yellow); border-radius: 12px; background: white; box-shadow: 0 5px 0 #14243b12; transition: transform .25s; }
+#team .person-row:nth-child(3n+2) .person-portrait { border-top-color: var(--crew-coral); }
+#team .person-row:nth-child(3n) .person-portrait { border-top-color: #b9d8ff; }
+#team .person-portrait::after { display: none; }
+#team .people-grid .person-portrait .image-open { display: block; width: 100%; height: 280px; border-radius: 4px; background: transparent; cursor: zoom-in; }
+#team .people-grid .person-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; mix-blend-mode: normal; }
+#team .people-grid .person-row:nth-child(-n+2) .person-portrait .image-open { height: 390px; }
+#team .people-grid .person-row:nth-child(-n+2) .person-portrait img { height: 100%; }
+#team .person-row:hover .person-portrait, #team .person-row:focus-within .person-portrait { transform: translateY(-5px) rotate(-1deg); }
+#team .person-copy { padding: 19px 2px 0; }
+#team .person-copy h3 { font: 600 25px/1.15 Barlow,sans-serif; color: var(--crew-ink); margin: 0 0 7px; }
+#team .person-row:nth-child(-n+2) h3 { font-size: 33px; }
+#team .member-role { font-size: 16px; color: #465775; line-height: 1.45; }
+.crew-album { background: #fff; }
+.crew-photo-wall { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: start; gap: 38px 28px; padding: 12px 8px 30px; }
+#team .album-photo { margin: 0; padding: 10px 10px 0; border: 1px solid #dce3ed; background: white; box-shadow: 0 7px 20px #14243b12; transform: rotate(var(--photo-turn)); transition: transform .25s,box-shadow .25s; min-width: 0; }
+#team .album-photo:nth-child(3n+2) { margin-top: 26px; }
+#team .album-photo .image-open { display: block; width: 100%; aspect-ratio: 4/3; border-radius: 2px; overflow: hidden; cursor: zoom-in; }
+#team .album-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+#team .album-photo figcaption { padding: 13px 4px 15px; color: var(--crew-ink); font-size: 15px; line-height: 1.4; }
+#team .album-photo:hover, #team .album-photo:focus-within { transform: rotate(0) translateY(-6px); box-shadow: 0 12px 30px #14243b20; z-index: 1; }
+.crew-close { margin-top: 70px; border-top: 2px solid var(--crew-ink); padding-top: 35px; display: flex; justify-content: space-between; gap: 25px; align-items: center; }
+#team .crew-close p { font: 600 clamp(30px,3vw,44px)/1.12 Barlow,sans-serif; color: var(--crew-ink); margin: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  #team:not([hidden]) .crew-copy { animation: crew-arrive .7s both; }
+  #team:not([hidden]) .crew-snapshots { animation: crew-arrive .9s .12s both; }
+  @keyframes crew-arrive { from { opacity: 0; translate: 0 22px; } to { opacity: 1; translate: 0 0; } }
+}
+@media (max-width: 1100px) {
+  .crew-opening { gap: 35px; padding-block: 70px 90px; }
+  #team .crew-copy h1 { font-size: 64px; }
+  #team .people-grid .person-row { grid-column: span 4; }
+  #team .people-grid .person-row:nth-child(-n+2) { grid-column: span 6; }
+  #team .people-grid .person-row:last-child { grid-column: span 4; }
+}
+@media (max-width: 760px) {
+  .crew-opening { grid-template-columns: 1fr; gap: 52px; padding-block: 56px 85px; }
+  #team .crew-copy h1 { font-size: clamp(54px,10vw,76px); max-width: 560px; }
+  .crew-snapshots { margin: 0 12px; gap: 18px; }
+  #team .scrap-photo .image-open { aspect-ratio: 1; }
+  .crew-sticker { width: 90px; height: 90px; font-size: 20px; right: 0; }
+  .crew-section-heading { grid-template-columns: 1fr; gap: 24px; margin-bottom: 34px; }
+  #team .people-section { padding-block: 62px; }
+  #team .people-grid { gap: 32px 18px; }
+  #team .people-grid .person-row, #team .people-grid .person-row:nth-child(-n+2), #team .people-grid .person-row:last-child { grid-column: span 6; }
+  #team .people-grid .person-portrait .image-open, #team .people-grid .person-row:nth-child(-n+2) .person-portrait .image-open { height: 260px; }
+  #team .person-copy h3, #team .person-row:nth-child(-n+2) h3 { font-size: 25px; }
+  .crew-photo-wall { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 25px 20px; }
+  #team .album-photo:nth-child(3n+2) { margin-top: 0; }
+  .crew-close { align-items: flex-start; flex-direction: column; margin-top: 40px; }
+}
+@media (max-width: 430px) {
+  #team .crew-copy h1 { font-size: 55px; }
+  #team .crew-copy > p:not(.crew-eyebrow) { font-size: 18px; }
+  .crew-snapshots { gap: 10px; }
+  #team .scrap-photo { padding: 5px 5px 0; margin-inline: -5px; }
+  #team .scrap-photo figcaption { font-size: 10px; min-height: 37px; display: grid; place-content: center; }
+  #team .people-grid { gap: 30px 14px; }
+  #team .person-portrait { border-width: 6px; }
+  #team .people-grid .person-portrait .image-open, #team .people-grid .person-row:nth-child(-n+2) .person-portrait .image-open { height: 200px; }
+  #team .person-copy h3, #team .person-row:nth-child(-n+2) h3 { font-size: 22px; }
+  #team .member-role { font-size: 14px; }
+  .crew-photo-wall { grid-template-columns: 1fr; gap: 30px; padding-inline: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #team :is(.scrap-photo,.album-photo,.person-portrait,.crew-link) { transition: none; }
+  #team :is(.scrap-photo,.album-photo):hover, #team :is(.scrap-photo,.album-photo):focus-within { transform: rotate(var(--photo-turn)); }
+  #team .person-row:hover .person-portrait, #team .person-row:focus-within .person-portrait, #team .crew-link:hover { transform: none; }
+}

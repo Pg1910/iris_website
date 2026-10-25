@@ -1,0 +1,101 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "documentWidth": 1430,
+      "photos": 36,
+      "broken": [],
+      "people": [
+        "Nikhil Saini",
+        "Deep Kumar",
+        "Manjeet Singh Dhillon",
+        "Saumya J. Verma",
+        "Aditya Raj",
+        "Ashish",
+        "Hitesh",
+        "Piyush",
+        "Vikas",
+        "Arko",
+        "Lakshay",
+        "Parth",
+        "Sahil"
+      ]
+    },
+    {
+      "width": 768,
+      "documentWidth": 758,
+      "photos": 36,
+      "broken": [],
+      "people": [
+        "Nikhil Saini",
+        "Deep Kumar",
+        "Manjeet Singh Dhillon",
+        "Saumya J. Verma",
+        "Aditya Raj",
+        "Ashish",
+        "Hitesh",
+        "Piyush",
+        "Vikas",
+        "Arko",
+        "Lakshay",
+        "Parth",
+        "Sahil"
+      ]
+    },
+    {
+      "width": 390,
+      "documentWidth": 380,
+      "photos": 36,
+      "broken": [],
+      "people": [
+        "Nikhil Saini",
+        "Deep Kumar",
+        "Manjeet Singh Dhillon",
+        "Saumya J. Verma",
+        "Aditya Raj",
+        "Ashish",
+        "Hitesh",
+        "Piyush",
+        "Vikas",
+        "Arko",
+        "Lakshay",
+        "Parth",
+        "Sahil"
+      ]
+    },
+    {
+      "width": 320,
+      "documentWidth": 320,
+      "photos": 36,
+      "broken": [],
+      "people": [
+        "Nikhil Saini",
+        "Deep Kumar",
+        "Manjeet Singh Dhillon",
+        "Saumya J. Verma",
+        "Aditya Raj",
+        "Ashish",
+        "Hitesh",
+        "Piyush",
+        "Vikas",
+        "Arko",
+        "Lakshay",
+        "Parth",
+        "Sahil"
+      ]
+    }
+  ],
+  "errors": [],
+  "viewerOpens": true,
+  "viewerCloses": true,
+  "focusRestored": true,
+  "reducedMotion": "none",
+  "directSection": true,
+  "homeWorks": true,
+  "staticAuditReview": {
+    "note": "The three static audit findings refer to existing Home carousel controls wired through addEventListener in site.js.",
+    "nextWorks": true,
+    "previousWorks": true,
+    "pauseWorks": true
+  }
+}
