@@ -448,13 +448,14 @@ body::after {
   --contour-opacity: 0.1;
 }
 .ak-hero,
+.ak-infra,
 .ak-defence {
   --contour-ink: var(--ak-lime);
   --contour-opacity: 0.09;
 }
-.ak-urban {
-  --contour-ink: var(--ub-accent);
-  --contour-opacity: 0.08;
+.ak-infra {
+  --contour-ink: #579044;
+  --contour-opacity: 0.12;
 }
 #careers .page-hero {
   --contour-ink: #8fd8f5;

@@ -27,7 +27,7 @@
     ".solutions-hero",
     "#solutions .solution-portfolio",
     ".ak-hero",
-    ".ak-urban",
+    ".ak-infra",
     ".ak-defence",
     "#technology .page-hero",
     ".team-stage",

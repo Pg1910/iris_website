@@ -829,51 +829,6 @@
   color: var(--white);
 }
 
-/* Subnav is the last green element — it reads as the lid on the opening view */
-.ak-subnav {
-  background: var(--ak-deep);
-  border-block-color: var(--ak-line);
-}
-.ak-subnav > div {
-  gap: 0;
-}
-.ak-subnav button {
-  position: relative;
-  padding-inline: 22px;
-  font-family: var(--font-technical);
-  font-size: 15px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  transition: color 0.3s ease;
-}
-.ak-subnav button:first-child {
-  padding-left: 0;
-}
-.ak-subnav button::after {
-  content: "";
-  position: absolute;
-  left: 22px;
-  right: 22px;
-  bottom: -1px;
-  height: 2px;
-  background: var(--ak-lime);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.ak-subnav button:first-child::after {
-  left: 0;
-}
-.ak-subnav button:hover::after,
-.ak-subnav button[aria-current="location"]::after {
-  transform: scaleX(1);
-}
-.ak-subnav button:hover,
-.ak-subnav button[aria-current="location"] {
-  border-bottom-color: transparent;
-  color: var(--ak-lime);
-}
-
 /* --- Dividing band: states plainly that these are two different products --- */
 .ak-split {
   border-bottom: 1px solid var(--ub-line);
@@ -900,8 +855,8 @@
 }
 .ak-split-card.urban {
   background:
-    radial-gradient(ellipse at 14% 0%, rgba(160, 230, 109, 0.24), transparent 44%),
-    linear-gradient(145deg, #f2f8ec, #e4f0da 78%);
+    radial-gradient(ellipse at 14% 0%, rgba(160, 230, 109, 0.28), transparent 48%),
+    linear-gradient(145deg, #f4faed, #e3f1d7 78%);
   color: #263c2d;
 }
 .ak-split-card.defence {
@@ -940,10 +895,6 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-.ak-split-card.urban .ak-split-tag {
-  background: rgba(12, 35, 24, 0.42);
-  color: #d9edb6;
-}
 .ak-split-card.defence .ak-split-tag {
   background: rgba(12, 35, 24, 0.42);
   color: #d9edb6;
@@ -974,154 +925,62 @@
 }
 .ak-split-card.urban .ak-split-list li::before {
   border-radius: 50%;
-  background: var(--ak-lime);
+  background: #79b94f;
 }
 .ak-split-card.defence .ak-split-list li::before {
   background: #70583a;
   clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 }
+.ak-split-card.urban .ak-split-list {
+  color: #425a48;
+}
 .ak-split-card.defence .ak-split-list {
   color: #e0ebd8;
 }
 
-/* --- Akshaa Urban: daylight, rounded, civic ------------------------------- */
-
-.ak-urban {
-  position: relative;
-  background: linear-gradient(180deg, #f4f9ef, #eaf3e2);
-  color: var(--ink);
+#akshaa .image-open:hover img {
+  transform: scale(1.03);
 }
-.ak-urban::before {
+
+/* --- Akshaa Infra: bright mapping studio --------------------------------- */
+.ak-infra {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 92% 14%, rgba(159, 219, 115, 0.28), transparent 38%),
+    linear-gradient(145deg, #f4faed, #e8f3df 62%, #f7faef);
+}
+.ak-infra::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.18;
   background-image:
-    linear-gradient(rgba(40, 88, 61, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(40, 88, 61, 0.12) 1px, transparent 1px);
-  background-size: 48px 48px;
-  -webkit-mask-image: linear-gradient(180deg, #000, transparent 46%);
-  mask-image: linear-gradient(180deg, #000, transparent 46%);
+    linear-gradient(rgba(45, 94, 50, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 94, 50, 0.14) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(110deg, #000, transparent 82%);
 }
-.ak-urban > .shell {
+.ak-infra > .shell {
   position: relative;
   z-index: 1;
 }
-.ak-area-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
-  font: 600 13px/1 var(--font-technical);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.ak-infra .ak-section-head > p {
+  color: #4b6353;
 }
-.ak-urban .ak-area-tag {
-  color: #28583d;
+.ak-infra .image-open::after {
+  background: #2e6339;
+  color: #f3f9e9;
 }
-.ak-urban .ak-area-tag::before {
-  content: "";
-  width: 28px;
-  height: 2px;
-  background: #28583d;
-}
-.ak-urban h2 {
-  color: #214a33;
-  font-weight: 700;
-}
-#akshaa .ak-urban h2 {
-  font-weight: 700;
-}
-.ak-urban h3 {
-  color: var(--ub-ink);
-}
-.ak-urban .ak-how {
-  position: relative;
-  display: grid;
-  gap: 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: ai-step;
-}
-.ak-urban .ak-how::before {
-  content: "";
-  position: absolute;
-  top: 28px;
-  bottom: 28px;
-  left: 14px;
-  width: 1px;
-  background: linear-gradient(var(--ak-lime), rgba(40, 88, 61, 0.2));
-}
-.ak-urban .ak-how-step {
-  position: relative;
-  display: grid;
-  grid-template-columns: 30px minmax(0, 1fr);
-  align-items: start;
-  gap: 16px;
-  margin: 0;
-  padding: 14px 0 18px;
-  border: 0;
-  border-radius: 0;
-  background: none;
-  counter-increment: ai-step;
-}
-.ak-urban .ak-how-step::before {
-  content: counter(ai-step, decimal-leading-zero);
-  z-index: 1;
-  display: grid;
-  width: 30px;
-  height: 30px;
-  place-items: center;
-  border: 1px solid rgba(40, 88, 61, 0.28);
-  border-radius: 50%;
-  background: #edf4e2;
-  color: #28583d;
-  font: 600 11px/1 var(--font-technical);
-}
-.ak-urban .ak-how-step > div {
-  grid-column: 2;
-}
-.ak-urban .ak-how-step b {
-  display: block;
-  margin-bottom: 4px;
-  color: #28583d;
-  font: 600 17px/1.3 var(--font-technical);
-}
-.ak-urban .ak-how-step p {
-  margin: 0;
-  color: #46564b;
-  font-size: 16px;
-  line-height: 1.5;
-}
-.ak-urban .evidence-views .image-open {
-  background: var(--white);
-  border: 1px solid var(--ub-line);
-  border-radius: 12px;
+.ak-infra .ak-infra-image .image-open {
   transition:
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
-.ak-urban .evidence-views .image-open:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 44px rgba(13, 42, 63, 0.14);
-}
-.ak-urban .ak-photo-slot .reserved-photo {
-  background: var(--ub-tint);
-  border-color: var(--ub-line);
-  border-radius: 12px;
-  color: var(--muted);
-}
-.ak-urban .ak-evidence figcaption span {
-  color: var(--muted);
-}
-.ak-urban .image-open::after {
-  background: var(--ub-accent);
-  color: var(--white);
-}
-#akshaa .image-open:hover img {
-  transform: scale(1.03);
+.ak-infra .ak-infra-image .image-open:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 32px rgba(35, 80, 43, 0.18);
 }
 
 /* --- Akshaa Defence: operations room -------------------------------------- */
@@ -1848,7 +1707,6 @@
   }
   /* The zoom affordance is half the width of these tiles at phone sizes. */
   .change-section .detection-triptych .image-open::after,
-  .ak-urban .evidence-views .image-open::after,
   .source-contact-sheet .image-open::after {
     width: 24px;
     height: 24px;
@@ -1858,6 +1716,13 @@
   }
   .team-stage-copy h1 .squiggle {
     width: 140px;
+  }
+  .ak-defence .defence-collage {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+  }
+  .ak-defence .defence-image.primary {
+    grid-row: auto;
   }
   .person-copy {
     padding: 14px 14px 0;

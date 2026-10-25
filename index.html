@@ -626,11 +626,11 @@
             </p>
             <div class="ak-hero-actions">
               <button class="button ak-primary" onclick="irisScrollTo('akshaa-urban')" type="button">
-                Infra
+                Explore Infra
                 <span aria-hidden="true"> ↓ </span>
               </button>
               <button class="button ak-secondary" onclick="irisScrollTo('akshaa-defence')" type="button">
-                Defence
+                Explore Defence
                 <span aria-hidden="true"> ↓ </span>
               </button>
             </div>
@@ -660,15 +660,13 @@
             <article class="ak-split-card urban">
               <h3>Akshaa for Infra</h3>
               <p>
-                For planning authorities, infrastructure owners and project
-                teams who need to know what has been built, what has moved and
-                where a site stands against the last survey.
+                For planning authorities and project teams who need to see what
+                has been built, what has changed, and where progress stands.
               </p>
               <ul class="ak-split-list">
-                <li>Asset inventories drawn straight from imagery</li>
-                <li>Construction progress across repeat survey dates</li>
-                <li>Encroachment, vegetation and land-use change</li>
-                <li>GIS-ready layers that drop into planning workflows</li>
+                <li>Infrastructure mapped from aerial imagery</li>
+                <li>Construction progress across repeat surveys</li>
+                <li>GIS-ready outputs linked to source imagery</li>
               </ul>
             </article>
             <article class="ak-split-card defence">
@@ -688,91 +686,79 @@
           </div>
         </div>
       </section>
-      <section class="ak-urban" id="akshaa-urban">
+      <section class="ak-infra" id="akshaa-urban">
         <div class="shell">
           <div class="ak-section-head">
             <div>
-              <h2>Infra</h2>
+              <span class="ak-infra-kicker">Akshaa / Infrastructure</span>
+              <h2>See the shape of progress.</h2>
             </div>
             <p>
-              The civil side of Akshaa works in daylight optical imagery over
-              places that are being built. It maps infrastructure, compares
-              survey dates and turns site progress into layers a planning or
-              project team can act on.
+              Turn aerial imagery into a clear view of roads, rail, buildings
+              and land change. Compare surveys over time and keep every mapped
+              feature tied to its location and source.
             </p>
           </div>
-          <div class="ak-story-grid">
-            <article class="ak-why">
-              <h3>Compare sites over time</h3>
+          <div class="ak-infra-grid">
+            <div class="ak-infra-copy">
+              <h3>From site imagery to spatial insight</h3>
               <p>
-                Review new construction, changing assets and project progress
-                across repeat surveys. Each observation stays connected to a
-                place, a date and an image.
+                Give project teams a consistent way to inspect what is on the
+                ground and what has changed between captures.
               </p>
-            </article>
-            <ol aria-label="Akshaa AI workflow" class="ak-how">
-              <li class="ak-how-step">
-                <div>
-                  <b>Load imagery</b>
-                  <p>
-                    Ingest georeferenced drone, aerial, satellite, and project
-                    imagery with location and capture-date context.
-                  </p>
-                </div>
-              </li>
-              <li class="ak-how-step">
-                <div>
-                  <b>Detect changes</b>
-                  <p>
-                    AI models identify assets and flag new, missing, or altered
-                    features across aligned survey dates.
-                  </p>
-                </div>
-              </li>
-              <li class="ak-how-step">
-                <div>
-                  <b>Review with context</b>
-                  <p>
-                    Inspect findings against source imagery, refine detections,
-                    and export verified GIS-ready results.
-                  </p>
-                </div>
-              </li>
-            </ol>
-          </div>
-          <figure class="ak-evidence">
-            <div class="evidence-views">
-              <button
-                aria-label="Enlarge Akshaa infrastructure segmentation identifying roads, railway tracks, buildings, trees, and ponds"
-                class="image-open" onclick="irisPreviewImage(this)" type="button">
-                <img
-                  alt="Akshaa infrastructure segmentation identifying roads, railway tracks, buildings, trees, and ponds"
-                  height="2160" loading="lazy" src="assets/akshaa/infrastructure-segmentation.jpg" width="3840" />
-              </button>
-              <button aria-label="Enlarge Waterfront infrastructure segmentation in aerial imagery" class="image-open"
-                onclick="irisPreviewImage(this)" type="button">
-                <img alt="Waterfront infrastructure segmentation in aerial imagery" height="1530" loading="lazy"
-                  src="assets/akshaa/urban-waterfront.jpg" width="2720" />
-              </button>
-              <button aria-label="Enlarge Infra building and infrastructure segmentation in aerial imagery"
-                class="image-open" onclick="irisPreviewImage(this)" type="button">
-                <img alt="Infra building and infrastructure segmentation in aerial imagery" height="1080" loading="lazy"
-                  src="assets/akshaa/urban-buildings.jpg" width="1920" />
-              </button>
-              <button aria-label="Enlarge Akshaa segmentation identifying railway tracks, buildings, roads, and trees"
-                class="image-open" onclick="irisPreviewImage(this)" type="button">
-                <img alt="Akshaa segmentation identifying railway tracks, buildings, roads, and trees" height="1080"
-                  loading="lazy" src="assets/akshaa/drive-download-20260605T085116Z-3-001_12_masked.jpg" width="1920" />
-              </button>
+              <ol aria-label="Infrastructure imagery workflow" class="ak-infra-steps">
+                <li>
+                  <span>01</span>
+                  <div>
+                    <strong>Bring imagery together</strong>
+                    <p>Use georeferenced drone, aerial or satellite captures.</p>
+                  </div>
+                </li>
+                <li>
+                  <span>02</span>
+                  <div>
+                    <strong>Map what matters</strong>
+                    <p>Identify transport, buildings, vegetation and water.</p>
+                  </div>
+                </li>
+                <li>
+                  <span>03</span>
+                  <div>
+                    <strong>Review change over time</strong>
+                    <p>Compare survey dates and export checked GIS layers.</p>
+                  </div>
+                </li>
+              </ol>
             </div>
-            <figcaption>
-              <strong> Infrastructure segmentation </strong>
-              <span>
-                Roads, railways, buildings, vegetation, and water features in
-                one spatial view.
-              </span>
-            </figcaption>
-          </figure>
+            <div aria-label="Akshaa infrastructure imagery examples" class="ak-infra-gallery">
+              <figure class="ak-infra-image featured">
+                <button
+                  aria-label="Enlarge Akshaa infrastructure segmentation of roads, rail, buildings, trees, and water"
+                  class="image-open" onclick="irisPreviewImage(this)" type="button">
+                  <img
+                    alt="Akshaa infrastructure segmentation of roads, rail, buildings, trees, and water"
+                    height="2160" loading="lazy" src="assets/akshaa/infrastructure-segmentation.jpg" width="3840" />
+                </button>
+                <figcaption>Transport corridor / multi-class mapping</figcaption>
+              </figure>
+              <figure class="ak-infra-image">
+                <button aria-label="Enlarge mapped waterfront settlement" class="image-open"
+                  onclick="irisPreviewImage(this)" type="button">
+                  <img alt="Aerial view of a waterfront settlement with mapped roads, buildings, and vegetation"
+                    height="1530" loading="lazy" src="assets/akshaa/urban-waterfront.jpg" width="2720" />
+                </button>
+                <figcaption>Waterfront / land-use detail</figcaption>
+              </figure>
+              <figure class="ak-infra-image">
+                <button aria-label="Enlarge mapped buildings and infrastructure" class="image-open"
+                  onclick="irisPreviewImage(this)" type="button">
+                  <img alt="Aerial view of buildings identified in an infrastructure map" height="1080"
+                    loading="lazy" src="assets/akshaa/urban-buildings.jpg" width="1920" />
+                </button>
+                <figcaption>Built environment / asset detail</figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
       </section>
       <section class="ak-defence" id="akshaa-defence">
@@ -814,11 +800,11 @@
                 <figcaption>Comparison / temporal change</figcaption>
               </figure>
               <figure class="defence-image">
-                  <button aria-label="Enlarge Model review surface highlighting detected changes" class="image-open"
-                    onclick="irisPreviewImage(this)" type="button">
-                    <img alt="Model review surface highlighting detected changes" height="815" loading="lazy"
-                      src="assets/akshaa/change-detection.png" width="1605" />
-                  </button>
+                <button aria-label="Enlarge Model review surface highlighting detected changes" class="image-open"
+                  onclick="irisPreviewImage(this)" type="button">
+                  <img alt="Model review surface highlighting detected changes" height="815" loading="lazy"
+                    src="assets/akshaa/change-detection.png" width="1605" />
+                </button>
                 <figcaption>Detection / analyst review</figcaption>
               </figure>
             </div>
@@ -830,9 +816,9 @@
                 each model result before using it.
               </p>
               <div class="source-contact-sheet">
-                <button aria-label="Enlarge Aerial source imagery showing an aircraft area" class="image-open"
+                <button aria-label="Enlarge aerial source imagery with detected tanks" class="image-open"
                   onclick="irisPreviewImage(this)" type="button">
-                  <img alt="Aerial source imagery showing an aircraft area" height="754" loading="lazy"
+                  <img alt="Aerial source imagery with detected tanks" height="754" loading="lazy"
                     src="assets/akshaa/tank.jpeg" width="1280" />
                 </button>
                 <button aria-label="Enlarge Source imagery of ships near a harbour" class="image-open"

@@ -208,24 +208,8 @@
     if (event.matches) closeMenu();
   });
   const header = document.querySelector(".site-header");
-  const areaLinks = [...document.querySelectorAll(".ak-subnav button")];
-  const areaIds = ["akshaa-urban", "akshaa-defence"];
   const updateHeader = () => {
     header.classList.toggle("scrolled", scrollY > 12);
-    let currentArea = -1;
-    if (!document.querySelector("#akshaa").hidden) {
-      areaIds.forEach((id, index) => {
-        if (
-          document.getElementById(id).getBoundingClientRect().top <=
-          header.offsetHeight + 160
-        )
-          currentArea = index;
-      });
-    }
-    areaLinks.forEach((link, index) => {
-      if (index === currentArea) link.setAttribute("aria-current", "location");
-      else link.removeAttribute("aria-current");
-    });
   };
   let headerFrame = 0;
   addEventListener(
