@@ -3,7 +3,9 @@
 
   const systemReduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
   const root = document.documentElement;
-  const motionReduced = () => systemReduceMotion.matches;
+  const motionReduced = () =>
+    root.dataset.motion === "reduce" ||
+    (root.dataset.motion !== "full" && systemReduceMotion.matches);
   const scrollBehavior = () => (motionReduced() ? "auto" : "smooth");
   const pageNames = {
     home: "Surveying, mapping & geospatial intelligence",
@@ -415,8 +417,9 @@
     if (document.hidden) atlas.pause();
     else if (document.body.dataset.route === "home") atlas.play();
   });
+  if (document.body.dataset.route === "home" || !document.body.dataset.route) atlas.play();
   systemReduceMotion.addEventListener("change", () => {
-    atlas.pause();
+    if (motionReduced()) atlas.pause();
     updateHeader();
   });
 

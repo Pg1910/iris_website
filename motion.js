@@ -131,6 +131,11 @@
     [".person-row", ""],
     [".job-card", ""],
     [".careers-pitch span", ""],
+    [".page-hero-grid > div > *", ""],
+    [".home-tech-card", "zoom"],
+    [".client-band .section-head > *", ""],
+    [".footer-top > *", ""],
+    [".akshaa-grid-gallery .image-open", "zoom"],
   ];
 
   function initReveal() {
@@ -153,8 +158,20 @@
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
+        // Everything entering together cascades in DOM order on one shared beat.
+        const batch = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) =>
+            a.target.compareDocumentPosition(b.target) &
+            Node.DOCUMENT_POSITION_FOLLOWING
+              ? -1
+              : 1,
+          );
+        batch.forEach((entry, i) => {
+          entry.target.style.setProperty(
+            "--reveal-delay",
+            `${Math.min(i, 8) * 90}ms`,
+          );
           entry.target.classList.add("in-view");
           observer.unobserve(entry.target);
         });

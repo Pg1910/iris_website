@@ -8,6 +8,10 @@
     content="Iris Aerial Innovations delivers UAV surveying, geospatial intelligence, engineering-grade mapping, and Akshaa AI solutions."
     name="description" />
   <meta content="#0b2a46" name="theme-color" />
+  <script>
+    // Previewers often report "reduce motion" from the OS; default to full motion unless set explicitly.
+    if (!document.documentElement.dataset.motion) document.documentElement.dataset.motion = "full";
+  </script>
   <title>
     Iris Aerial Innovations | Surveying, mapping &amp; geospatial intelligence
   </title>
@@ -17,7 +21,7 @@
   <link href="pages.css" rel="stylesheet" />
   <link href="motion.css" rel="stylesheet" />
   <link href="character.css" rel="stylesheet" />
-  <link href="team.css" rel="stylesheet" />
+  <link href="team.css?v=2" rel="stylesheet" />
   <link href="assets/brand-symbol.png" rel="icon" type="image/png" />
 </head>
 
@@ -89,7 +93,7 @@
         </article>
         <article aria-hidden="true" aria-roledescription="slide" class="home-carousel-slide" inert>
           <img alt="" aria-hidden="true" class="home-carousel-image" loading="lazy"
-            src="assets/akshaa/urban-waterfront.jpg" />
+            src="assets/extra_images/dragon-capsule-snowy-earth.png" />
           <div class="home-carousel-copy">
             <h2>Innovative solutions</h2>
             <p>Empowering better decisions with aerial intelligence and geospatial technology.</p>
@@ -141,7 +145,7 @@
             <article class="home-tech-card">
               <div class="home-tech-card-img">
                 <img alt="Drone photogrammetry aerial surveying and field mapping" height="518" loading="lazy"
-                  src="assets/technology/photogrammetry-drone-survey.png" width="1024" />
+                  src="assets/extra_images/photogram_2.jpeg" width="1024" />
               </div>
               <div class="home-tech-card-label">Photogrammetry</div>
             </article>
@@ -155,14 +159,14 @@
             <article class="home-tech-card">
               <div class="home-tech-card-img">
                 <img alt="Artificial Intelligence (AI) drone system for real-time object detection and geospatial analysis" height="600" loading="lazy"
-                  src="assets/extra_images/avsm.jpg" width="800" />
+                  src="assets/akshaa/urban-park.jpg" width="800" />
               </div>
               <div class="home-tech-card-label">Artificial Intelligence (AI)</div>
             </article>
             <article class="home-tech-card">
               <div class="home-tech-card-img">
                 <img alt="Differential GPS (DGPS) satellite constellation and base station correction workflow" height="308" loading="lazy"
-                  src="assets/technology/dgps-system-diagram.png" width="486" />
+                  src="assets/extra_images/DGPS.webp" width="486" />
               </div>
               <div class="home-tech-card-label">DGPS/ETS</div>
             </article>
@@ -212,25 +216,25 @@
           <div class="change-collage">
             <figure class="change-frame">
               <div class="akshaa-grid-gallery">
-                <button aria-label="Enlarge SAR satellite vessel detections" class="image-open"
+                <button aria-label="Enlarge urban buildings segmentation" class="image-open"
                   onclick="irisPreviewImage(this)" type="button">
-                  <img alt="SAR satellite vessel detections" height="542" loading="lazy"
-                    src="assets/akshaa/akshaa_sar_ship.jpg" width="542" />
+                  <img alt="Urban buildings segmentation" height="1080" loading="lazy"
+                    src="assets/akshaa/urban-buildings.jpg" width="1920" />
                 </button>
-                <button aria-label="Enlarge Aerial vehicle detections in snow terrain" class="image-open"
+                <button aria-label="Enlarge urban rail corridor analysis" class="image-open"
                   onclick="irisPreviewImage(this)" type="button">
-                  <img alt="Aerial vehicle detections in snow terrain" height="525" loading="lazy"
-                    src="assets/akshaa/akshaa_tanks_snow.jpg" width="517" />
+                  <img alt="Urban rail corridor analysis" height="2160" loading="lazy"
+                    src="assets/akshaa/urban-rail.jpg" width="3840" />
                 </button>
-                <button aria-label="Enlarge Highway corridor traffic and vehicle tracking" class="image-open"
+                <button aria-label="Enlarge tank detections" class="image-open"
                   onclick="irisPreviewImage(this)" type="button">
-                  <img alt="Highway corridor traffic and vehicle tracking" height="345" loading="lazy"
-                    src="assets/akshaa/akshaa_traffic_tracking.jpg" width="542" />
+                  <img alt="Tank detections" height="280" loading="lazy"
+                    src="assets/akshaa/tank-detections.jpeg" width="260" />
                 </button>
-                <button aria-label="Enlarge Harbor cargo ship maritime bounding box detection" class="image-open"
+                <button aria-label="Enlarge defence object detection" class="image-open"
                   onclick="irisPreviewImage(this)" type="button">
-                  <img alt="Harbor cargo ship maritime bounding box detection" height="542" loading="lazy"
-                    src="assets/akshaa/akshaa_port_vessel.jpg" width="542" />
+                  <img alt="Defence object detection" height="883" loading="lazy"
+                    src="assets/akshaa/defence-object-detection.jpeg" width="878" />
                 </button>
               </div>
               <figcaption>
@@ -248,14 +252,14 @@
             <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Railway Solutions">
               <div class="home-tech-card-img">
                 <img alt="Railway surveying and infrastructure solutions" height="518" loading="lazy"
-                  src="assets/verticals/railway.webp" width="1024" />
+                  src="assets/extra_images/rail_survey.jpg" width="1024" />
               </div>
               <div class="home-tech-card-label">Railway</div>
             </a>
             <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Road Solutions">
               <div class="home-tech-card-img">
                 <img alt="Road condition monitoring and highway engineering surveys" height="518" loading="lazy"
-                  src="assets/verticals/road.webp" width="1024" />
+                  src="assets/extra_images/one_design.jpeg" width="1024" />
               </div>
               <div class="home-tech-card-label">Road</div>
             </a>
@@ -973,7 +977,7 @@
                 <button aria-label="Enlarge Iris Aerial colleague with a drone for photographic survey"
                   class="image-open" onclick="irisPreviewImage(this)" type="button">
                   <img alt="Iris Aerial colleague with a drone for photographic survey" height="900" loading="lazy"
-                    src="assets/extra_images/photogram_2.jpeg" width="1350" />
+                    src="assets/extra_images/photo_grammatry.jpeg" width="1350" />
                 </button>
               </figure>
             </article>
@@ -1021,7 +1025,7 @@
                 <button aria-label="Enlarge Differential GPS (DGPS) satellite constellation and base station correction workflow" class="image-open"
                   onclick="irisPreviewImage(this)" type="button">
                   <img alt="Differential GPS (DGPS) satellite constellation and base station correction workflow" height="308" loading="lazy"
-                    src="assets/technology/dgps-system-diagram.png" width="486" />
+                    src="assets/extra_images/control-points-cutout.png" width="486" />
                 </button>
               </figure>
             </article>
@@ -1045,7 +1049,7 @@
                 <button aria-label="Enlarge hydrographic survey vessel mapping seabed bathymetry with multibeam echo sounder"
                   class="image-open" onclick="irisPreviewImage(this)" type="button">
                   <img alt="Hydrographic survey vessel mapping seabed bathymetry with multibeam echo sounder" height="539"
-                    loading="lazy" src="assets/technology/hydrography-multibeam-sonar.jpg" width="1024" />
+                    loading="lazy" src="assets/extra_images/echosounder.jpeg" width="1024" />
                 </button>
               </figure>
             </article>
@@ -1081,33 +1085,32 @@
   <header class="crew-hero">
     <div class="shell crew-opening">
       <div class="crew-copy"><p class="crew-eyebrow">THE IRIS TEAM</p><h1 tabindex="-1">Great work.<br />Even better <span>company.</span></h1><p>From field surveys to final maps, we work side by side—and celebrate the wins along the way.</p><a class="crew-link" href="#team-people">Meet our people <span aria-hidden="true">↘</span></a></div>
-      <div class="crew-snapshots" aria-label="Celebrations with the Iris team"><figure class="scrap-photo" style="--photo-turn:-4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Good company. Great memories."><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.35%20PM.jpeg" alt="Good company. Great memories." loading="eager" width="4080" height="3072" /></button><figcaption>The good days</figcaption></figure>
-<figure class="scrap-photo" style="--photo-turn:3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Good company. Great memories."><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.36%20PM%20(1).jpeg" alt="Good company. Great memories." loading="lazy" width="1201" height="1600" /></button><figcaption>All smiles</figcaption></figure>
-<figure class="scrap-photo" style="--photo-turn:-2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Good company. Great memories."><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.36%20PM.jpeg" alt="Good company. Great memories." loading="lazy" width="4080" height="3072" /></button><figcaption>Our kind of team</figcaption></figure>
-<figure class="scrap-photo" style="--photo-turn:4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Good company. Great memories."><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.37%20PM%20(1).jpeg" alt="Good company. Great memories." loading="lazy" width="1201" height="1600" /></button><figcaption>Together, always</figcaption></figure>
-<figure class="scrap-photo" style="--photo-turn:-3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Good company. Great memories."><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.37%20PM%20(2).jpeg" alt="Good company. Great memories." loading="lazy" width="1201" height="1600" /></button><figcaption>More than colleagues</figcaption></figure>
-<figure class="scrap-photo" style="--photo-turn:2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Good company. Great memories."><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.38%20PM.jpeg" alt="Good company. Great memories." loading="lazy" width="1280" height="960" /></button><figcaption>Made of moments</figcaption></figure><span class="crew-sticker" aria-hidden="true">Better<br />together ✳</span></div>
+      <div class="crew-snapshots" aria-label="Celebrations with the Iris team">            <figure class="scrap-photo" style="--photo-turn:-4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge All smiles"><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.36%20PM%20(1).jpeg" alt="All smiles" loading="eager" width="1201" height="1600" /></button><figcaption>All smiles</figcaption></figure>
+      <figure class="scrap-photo" style="--photo-turn:3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge A day along the railway"><img src="assets/team/2f252ea940bb9266.png" alt="A day along the railway" loading="lazy" width="1350" height="900" /></button><figcaption>A day along the railway</figcaption></figure>
+      <figure class="scrap-photo" style="--photo-turn:2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge A little more colour"><img src="assets/team/holi-office-01.jpg" alt="A little more colour" loading="lazy" width="1200" height="1600" /></button><figcaption>A little more colour</figcaption></figure>
+      <figure class="scrap-photo" style="--photo-turn:-3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Ready for the next flight"><img src="assets/team/39445f45f58600c1.png" alt="Ready for the next flight" loading="lazy" width="1350" height="900" /></button><figcaption>Ready for the next flight</figcaption></figure>
+      <figure class="scrap-photo" style="--photo-turn:3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Together, always"><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.37%20PM%20(1).jpeg" alt="Together, always" loading="lazy" width="1201" height="1600" /></button><figcaption>Together, always</figcaption></figure>
+      <figure class="scrap-photo" style="--photo-turn:-2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge After-hours innings"><img src="assets/team/cricket-night-01.jpg" alt="After-hours innings" loading="lazy" width="1600" height="1200" /></button><figcaption>After-hours innings</figcaption></figure>
+      <figure class="scrap-photo" style="--photo-turn:4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge The good days"><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.35%20PM.jpeg" alt="The good days" loading="lazy" width="4080" height="3072" /></button><figcaption>The good days</figcaption></figure>
+      <figure class="scrap-photo" style="--photo-turn:-3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Celebrating in full colour"><img src="assets/team/ae6199057d4f4ab5.png" alt="Celebrating in full colour" loading="lazy" width="1350" height="900" /></button><figcaption>Celebrating in full colour</figcaption></figure>
+      <span class="crew-sticker" aria-hidden="true">Better<br />together ✳</span></div>
     </div>
-    <div class="crew-ribbon" aria-hidden="true"><span>FIELD DAYS <b>✳</b> CHAI BREAKS <b>✳</b> BIG IDEAS <b>✳</b> UNO NIGHTS <b>✳</b> ONE TEAM <b>✳</b> FIELD DAYS <b>✳</b> CHAI BREAKS</span></div>
   </header>
   <section class="section people-section" id="team-people"><div class="shell"><div class="crew-section-heading"><div><p class="crew-eyebrow">FAMILIAR FACES. DIFFERENT SUPERPOWERS.</p><h2>The people who<br />make <span>Iris, Iris.</span></h2></div><p>Meet the people bringing their ideas, expertise and everyday energy to every project.</p></div><div class="people-grid" id="team-grid"></div></div></section>
-  <section class="crew-album section" aria-labelledby="crew-album-title"><div class="shell"><div class="crew-section-heading"><div><p class="crew-eyebrow">LIFE, BETWEEN THE DEADLINES</p><h2 id="crew-album-title">A little work.<br /><span>A lot of us.</span></h2></div><p>Chai breaks, cricket, Holi and expo trips. The moments that make us a team. Tap a photo for a closer look.</p></div><div class="crew-photo-wall"><figure class="album-photo" style="--photo-turn:-4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge On site with the survey crew"><img src="assets/team/1dc4800c8d9a5e20.png" alt="On site with the survey crew" loading="lazy" width="1350" height="900" /></button><figcaption>On site with the survey crew</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge A day along the railway"><img src="assets/team/2f252ea940bb9266.png" alt="A day along the railway" loading="lazy" width="1350" height="900" /></button><figcaption>A day along the railway</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:-2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Ready for the next flight"><img src="assets/team/39445f45f58600c1.png" alt="Ready for the next flight" loading="lazy" width="1350" height="900" /></button><figcaption>Ready for the next flight</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Taking Iris to the expo"><img src="assets/team/3e1364431e53f40d.webp" alt="Taking Iris to the expo" loading="lazy" width="1350" height="900" /></button><figcaption>Taking Iris to the expo</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:-3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Out in the field, together"><img src="assets/team/5ce2b499e359e801.png" alt="Out in the field, together" loading="lazy" width="1350" height="900" /></button><figcaption>Out in the field, together</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge A team day out"><img src="assets/team/81d71adfcda1d4e1.png" alt="A team day out" loading="lazy" width="1350" height="900" /></button><figcaption>A team day out</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:-4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Celebrating in full colour"><img src="assets/team/ae6199057d4f4ab5.png" alt="Celebrating in full colour" loading="lazy" width="1350" height="900" /></button><figcaption>Celebrating in full colour</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge After-hours innings"><img src="assets/team/cricket-night-01.jpg" alt="After-hours innings" loading="lazy" width="1600" height="1200" /></button><figcaption>After-hours innings</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:-2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Sharing ideas beyond the office"><img src="assets/team/e87c7603498ffcc7.png" alt="Sharing ideas beyond the office" loading="lazy" width="1350" height="900" /></button><figcaption>Sharing ideas beyond the office</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge New faces, new conversations"><img src="assets/team/e96206adfb4eaf76.webp" alt="New faces, new conversations" loading="lazy" width="1350" height="900" /></button><figcaption>New faces, new conversations</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:-3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Iris, out in the world"><img src="assets/team/expo-booth-01.jpg" alt="Iris, out in the world" loading="lazy" width="1600" height="1200" /></button><figcaption>Iris, out in the world</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Meeting beyond the office"><img src="assets/team/expo-booth-02.jpg" alt="Meeting beyond the office" loading="lazy" width="1600" height="1201" /></button><figcaption>Meeting beyond the office</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:-4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Making plans on the ground"><img src="assets/team/f278a052b852ee6b.png" alt="Making plans on the ground" loading="lazy" width="1350" height="900" /></button><figcaption>Making plans on the ground</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge A different kind of fieldwork"><img src="assets/team/football-night-01.jpg" alt="A different kind of fieldwork" loading="lazy" width="1600" height="1200" /></button><figcaption>A different kind of fieldwork</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:-2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge A little more colour"><img src="assets/team/holi-office-01.jpg" alt="A little more colour" loading="lazy" width="1200" height="1600" /></button><figcaption>A little more colour</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge One more round of UNO"><img src="assets/team/iris_fun23.jpeg" alt="One more round of UNO" loading="lazy" width="1280" height="960" /></button><figcaption>One more round of UNO</figcaption></figure>
-<figure class="album-photo" style="--photo-turn:-3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Between the busy days"><img src="assets/team/office-conversation.jpeg" alt="Between the busy days" loading="lazy" width="580" height="1280" /></button><figcaption>Between the busy days</figcaption></figure></div><div class="crew-close"><p>Your next team photo<br />could be with us.</p><a class="crew-link" href="#careers">Explore careers <span aria-hidden="true">↗</span></a></div></div></section>
+  <section class="crew-album section" aria-labelledby="crew-album-title"><div class="shell"><div class="crew-section-heading"><div><p class="crew-eyebrow">LIFE, BETWEEN THE DEADLINES</p><h2 id="crew-album-title">A little work.<br /><span>A lot of us.</span></h2></div><p>Chai breaks, cricket, Holi and expo trips. The moments that make us a team. Tap a photo for a closer look.</p></div>      <div class="crew-photo-wall"><figure class="album-photo" style="--photo-turn:-4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Meeting beyond the office"><img src="assets/team/expo-booth-02.jpg" alt="Meeting beyond the office" loading="lazy" width="1600" height="1201" /></button><figcaption>Meeting beyond the office</figcaption></figure>
+  <figure class="album-photo" style="--photo-turn:-2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge One more round of UNO"><img src="assets/team/iris_fun23.jpeg" alt="One more round of UNO" loading="lazy" width="1280" height="960" /></button><figcaption>One more round of UNO</figcaption></figure>
+  <figure class="album-photo" style="--photo-turn:4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Making plans on the ground"><img src="assets/team/f278a052b852ee6b.png" alt="Making plans on the ground" loading="lazy" width="1350" height="900" /></button><figcaption>Making plans on the ground</figcaption></figure>
+  <figure class="album-photo" style="--photo-turn:-4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Iris, out in the world"><img src="assets/team/expo-booth-01.jpg" alt="Iris, out in the world" loading="lazy" width="1600" height="1200" /></button><figcaption>Iris, out in the world</figcaption></figure>
+  <figure class="album-photo" style="--photo-turn:3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge New faces, new conversations"><img src="assets/team/e96206adfb4eaf76.webp" alt="New faces, new conversations" loading="lazy" width="1350" height="900" /></button><figcaption>New faces, new conversations</figcaption></figure>
+  <figure class="album-photo" style="--photo-turn:-2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Out in the field, together"><img src="assets/team/5ce2b499e359e801.png" alt="Out in the field, together" loading="lazy" width="1350" height="900" /></button><figcaption>Out in the field, together</figcaption></figure>
+  <figure class="album-photo" style="--photo-turn:-3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge More than colleagues"><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.37%20PM%20(2).jpeg" alt="More than colleagues" loading="lazy" width="1201" height="1600" /></button><figcaption>More than colleagues</figcaption></figure>
+  <figure class="album-photo" style="--photo-turn:2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Made of moments"><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.38%20PM.jpeg" alt="Made of moments" loading="lazy" width="1280" height="960" /></button><figcaption>Made of moments</figcaption></figure>
+  <figure class="album-photo" style="--photo-turn:-4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Taking Iris to the expo"><img src="assets/team/3e1364431e53f40d.webp" alt="Taking Iris to the expo" loading="lazy" width="1350" height="900" /></button><figcaption>Taking Iris to the expo</figcaption></figure>
+  <figure class="album-photo" style="--photo-turn:3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Sharing ideas beyond the office"><img src="assets/team/e87c7603498ffcc7.png" alt="Sharing ideas beyond the office" loading="lazy" width="1350" height="900" /></button><figcaption>Sharing ideas beyond the office</figcaption></figure>
+  <figure class="album-photo" style="--photo-turn:-2deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge A different kind of fieldwork"><img src="assets/team/football-night-01.jpg" alt="A different kind of fieldwork" loading="lazy" width="1600" height="1200" /></button><figcaption>A different kind of fieldwork</figcaption></figure>
+  <figure class="album-photo" style="--photo-turn:4deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge A team day out"><img src="assets/team/81d71adfcda1d4e1.png" alt="A team day out" loading="lazy" width="1350" height="900" /></button><figcaption>A team day out</figcaption></figure>
+  <figure class="album-photo" style="--photo-turn:-3deg"><button class="image-open" type="button" onclick="irisPreviewImage(this)" aria-label="Enlarge Our kind of team"><img src="assets/fun_team/WhatsApp%20Image%202026-10-22%20at%2012.13.36%20PM.jpeg" alt="Our kind of team" loading="lazy" width="4080" height="3072" /></button><figcaption>Our kind of team</figcaption></figure>
+  </div><div class="crew-close"><p>Your next team photo<br />could be with us.</p><a class="crew-link" href="#careers">Explore careers <span aria-hidden="true">↗</span></a></div></div></section>
 </section>
     <section class="page" hidden="" id="careers">
       <header class="page-hero">
@@ -1513,6 +1516,12 @@
           Iris Aerial Innovations Pvt. Ltd. · Established 2023
         </span>
         <span> Mapping · Monitoring · Engineering · GIS · AI </span>
+        <a class="credit-button" href="https://github.com/Pg1910" rel="noreferrer" target="_blank">
+          <svg aria-hidden="true" fill="currentColor" height="16" viewBox="0 0 24 24" width="16">
+            <path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.3 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.300-5.3-5.700 0-1.300.5-2.300 1.200-3.100-.1-.3-.5-1.500.1-3.100 0 0 1-.3 3.200 1.200a11 11 0 0 1 5.800 0C17 5.300 18 5.600 18 5.600c.6 1.600.2 2.800.1 3.100.8.800 1.200 1.800 1.200 3.100 0 4.400-2.700 5.400-5.300 5.700.4.400.8 1.100.8 2.200v3.300c0 .3.2.7.8.6A11.500 11.500 0 0 0 12 .5Z"></path>
+          </svg>
+          Crafted by Piyush · Pg1910
+        </a>
       </div>
     </div>
   </footer>
