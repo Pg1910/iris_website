@@ -658,11 +658,14 @@ button:disabled,
   gap: 60px;
 }
 .footer-brand img {
-  width: 148px;
+  display: block;
+  width: 190px;
+  max-width: 100%;
   height: auto;
-  padding: 12px;
-  border-radius: var(--r);
-  background: var(--white);
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
   margin-bottom: 24px;
 }
 .footer-brand p {
@@ -1280,3 +1283,44 @@ html[data-motion="reduce"] *::after {
 .socials svg {
   display: block;
 }
+
+/* Small association logos sit with the company details. */
+.association-group { margin-top: 16px; }
+.footer-brand .association-label {
+  margin: 0 0 8px;
+  color: var(--on-dark);
+  font: 600 14px/1.4 var(--font-body);
+}
+.association-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.association-link {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  padding: 4px;
+  border-radius: var(--button-radius);
+  background: var(--white);
+  cursor: pointer;
+}
+.footer-brand .association-link img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 31px;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  object-fit: contain;
+}
+.association-link-wordmark { width: 83px; }
+.association-link-wide { width: 119px; }
+.association-link:hover { outline: 2px solid var(--accent); outline-offset: 2px; }
+.association-link:active { opacity: .8; }

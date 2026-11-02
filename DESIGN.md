@@ -215,7 +215,7 @@ Sectors are full-width rows that alternate: copy left / image right, then image 
 
 The latest user prompt owns the blue-versus-Akshaa-green palette and broader design changes. The team page uses candid team photography and the updated informal introduction. Index content, source imagery and existing contact destinations own the remaining business facts.
 
-Team roles: Nikhil Saini — Founder & CEO; Aditya Raj — Business analyst; Ashish — Project manager; Hitesh — Lead survey expert; Vikas — Surveyor. Piyush appears before Vikas after their requested swap. Other roles are preserved.
+Team roles: Nikhil Saini — Founder & CEO; Aditya Raj — Business analyst; Ashish — Project manager; Hitesh — Lead survey expert; Vikas — Assistant Surveyor. Piyush appears before Vikas after their requested swap. Other roles are preserved.
 
 Contact destinations: general enquiries `info@irisaerial.in`; global enquiries `global@irisaerial.in`; applications `careers@irisaerial.in`; product enquiries `akshaa@irisaerial.in`. The office address remains B-142, Sector 8, Dwarka, opposite Pathway Library, New Delhi 110077. Solutions enquiries open Home contact with a relevant email subject. Case studies remain a direct PDF download.
 
@@ -227,7 +227,7 @@ The renewed redesign request supersedes the earlier flat split-screen compositio
 
 The Team culture grid now uses all six positions: its final two photographs show office UNO (`iris_fun23.jpeg`) and the exhibition booth (`expo-booth-01.jpg`). The Urban development evidence gallery includes the supplied `_12_masked.jpg` segmentation. The subsequently added `_182157.png` aircraft detection was removed at the user’s request. The analyst-review image remains a direct gallery item. The remaining additions use the existing accessible full-image viewer and explicit source dimensions. Technology uses `lidar-uav.png` in the LiDAR method panel.
 
-The Technology hero uses the `3-_Drone_Mapping_-_Windover_Construction_at_FMUV_Project.jpg` aerial image as a full-bleed background behind centered copy. `motion.css` gives the image a slow drift while the route is visible and disables that animation for reduced-motion preferences. Vikas's directory title is Surveyor; `site.js` owns the directory data.
+The Technology hero uses the `3-_Drone_Mapping_-_Windover_Construction_at_FMUV_Project.jpg` aerial image as a full-bleed background behind centered copy. `motion.css` gives the image a slow drift while the route is visible and disables that animation for reduced-motion preferences. Vikas's directory title is Assistant Surveyor; `site.js` owns the directory data.
 
 ## October 8 copy, trust and culture update
 
@@ -248,3 +248,24 @@ The user requested a shorter, sleeker enterprise section and a pista Akshaa clos
 The user's new brief authorizes a vibrant, playful Team exception to the restrained company layouts. The team page uses a cobalt scrapbook opening, six overlapping celebration prints, warm yellow and coral accents, and a complete candid photo wall. Barlow remains the display face; Source Sans 3 remains the body and caption face. Employee names, roles, order and the two lead profiles are preserved in site.js. All image files from assets/team and assets/fun_team appear, either as the existing named portraits or candid album images.
 
 Runtime ownership: team.css owns the route-scoped --crew-blue (#1959d1), --crew-yellow (#ffdf70), --crew-coral (#ff947e), --crew-paper (#f1f5ff), and --crew-ink (#14243b). These expressive accents do not change shared company or Akshaa tokens. The scrapbook composition is the signature; the directory keeps an orderly hierarchy. Each image uses the existing keyboard-accessible full-image viewer. Photo hover movement and a finite entrance respect reduced motion; all photos remain available without animation or hover. The album stacks into two columns on phones and one on small phones, with no horizontal scrolling.
+
+## November 2 home links, associations and contact update
+
+Home retains its existing technology and sector grids, with shared primary-button links to `#technology` and `#solutions`. Only the home sector heading becomes “Industry verticals”; shared navigation and the Solutions route retain their labels. Both buttons use existing navigation, focus and reduced-motion behavior. `pages.css` owns the centered action rows.
+
+The shared footer places tiny INFRACON, Society for Data Science (BIT Mesra), Startup India, Google Developer Groups (GDG) and IIT Indore logos inline beneath the company description, without a separate section or visible institution names. A compact “Associations with” label sits directly above the logo group. The corrected five-association list supersedes the earlier IIT BHU/Roorkee selection. Locally hosted official-site artwork is contained on small white surfaces with reserved geometry; image alternatives retain accessible names. Sources are recorded in `assets/associations/sources.json`. The user's association statement supplies the relationship; institutional sites supply the artwork. India telephone enquiries use India: +91 95991 15441; Global (US) enquiries use +1 903 781 1119 (`tel:+19037811119`). The “working wherever the project takes us” phrase is removed.
+
+Vikas's role is Assistant Surveyor. Deep Kumar's portrait uses the full source image with a small inset and no image zoom; `team.css` owns this exception while retaining the shared full-image viewer.
+
+Manjeet Singh Dhillon's designation is “(Advisor - Water and irrigation), Retd. IES and former chairman of GFCC.” `site.js` owns the directory copy.
+
+The Akshaa page hero uses `assets/extra_images/akshaa-hero-transparent.png`, a transparent-background edit of the supplied `MixCollage-02-Nov-2026-02-09-PM-5947.jpg`. Its white outer canvas and gutters are removed, and the website frame has no border, padding or background. The original JPEG is retained. The figure remains centered at 70% of its column, with contained imagery and the shared full-image viewer. The current PNG is 1254 × 1254 with an alpha channel.
+
+## November 2 clientele update
+
+The Home clientele strip removes Anand Raj Constructions and Royal Infra. It retains CEG, Central Railway, Eastern Railway, 50Hertz, Northern Railway, Vedanta and DMIA, and adds Northeast Frontier Railway, SA Infrastructure Consultants, SRK Consulting, ICT (Intercontinental Consultants and Technocrats), Lion Group India, SMEC, Tractebel, Arkitechno, Larsen & Toubro, Assystem, Chaitanya Projects Consultancy (CPC), BRO, Indian Army and Rodic Consultants. SMEC and Tractebel are separate clients as confirmed by the user. Existing marquee spacing, contained logos, reduced-motion behavior and decorative accessibility clones are preserved. Asset URLs are recorded in `assets/clients/sources.json`. The user confirmed SA Infra as SA Infrastructure Consultants, SRK as SRK Consulting, Lion Group as Lion Group India, and CPC as Chaitanya Projects Consultancy. Logos are downloaded locally; no hotlinked runtime assets or generated imitations are used. SA Infra uses its company-profile logo, and Lion Group uses its compact official header logo to avoid the oversized empty canvas in another source file.
+
+
+Client logos use equal 180 × 80px marquee cells and a centered 132 × 56px artwork window. `pages.css` owns this shared geometry; the marquee consumes the same variables in `motion.css`. Raster artwork is positioned proportionally using CSS custom properties on `.client-logo-art` to compensate for blank source margins, without changing or stretching original image files. SVG marks fit the same window. `assets/clients/display-sizing.json` records the source bounds and displayed dimensions. This keeps badges and wide wordmarks aligned while preserving their original aspect ratios and the scrolling behavior.
+
+SMEC and Larsen & Toubro use local light-background SVG variants in the white clientele rail. SMEC retains its blue symbol and red detail, with dark text and the original white SJ backing; L&T retains its paths in brand blue. The original white artwork is preserved alongside each variant. L&T remains between Arkitechno and Assystem; this slot must never look like an empty gap.

@@ -1,0 +1,268 @@
+{
+  "display_area": [
+    132,
+    56
+  ],
+  "cell_size": [
+    180,
+    80
+  ],
+  "rasters": {
+    "ceg.png": {
+      "source_size": [
+        342,
+        139
+      ],
+      "visible_bounds": [
+        0,
+        0,
+        335,
+        139
+      ],
+      "rendered_visible_size": [
+        132.0,
+        54.77014925373135
+      ]
+    },
+    "central-railway.png": {
+      "source_size": [
+        178,
+        218
+      ],
+      "visible_bounds": [
+        4,
+        3,
+        171,
+        213
+      ],
+      "rendered_visible_size": [
+        44.53333333333333,
+        56.0
+      ]
+    },
+    "eastern-railway.png": {
+      "source_size": [
+        205,
+        246
+      ],
+      "visible_bounds": [
+        0,
+        0,
+        205,
+        246
+      ],
+      "rendered_visible_size": [
+        46.666666666666664,
+        56.0
+      ]
+    },
+    "50hertz.png": {
+      "source_size": [
+        449,
+        162
+      ],
+      "visible_bounds": [
+        0,
+        19,
+        445,
+        151
+      ],
+      "rendered_visible_size": [
+        132.0,
+        39.155056179775286
+      ]
+    },
+    "northern-railway.png": {
+      "source_size": [
+        162,
+        194
+      ],
+      "visible_bounds": [
+        0,
+        6,
+        162,
+        192
+      ],
+      "rendered_visible_size": [
+        48.774193548387096,
+        56.0
+      ]
+    },
+    "vedanta.png": {
+      "source_size": [
+        233,
+        89
+      ],
+      "visible_bounds": [
+        11,
+        16,
+        226,
+        71
+      ],
+      "rendered_visible_size": [
+        132.0,
+        33.76744186046512
+      ]
+    },
+    "dmia.png": {
+      "source_size": [
+        200,
+        116
+      ],
+      "visible_bounds": [
+        0,
+        9,
+        200,
+        105
+      ],
+      "rendered_visible_size": [
+        116.66666666666667,
+        56.0
+      ]
+    },
+    "northeast-frontier-railway.png": {
+      "source_size": [
+        400,
+        400
+      ],
+      "visible_bounds": [
+        6,
+        3,
+        395,
+        395
+      ],
+      "rendered_visible_size": [
+        55.57142857142857,
+        56.0
+      ]
+    },
+    "sa-infra.png": {
+      "source_size": [
+        200,
+        200
+      ],
+      "visible_bounds": [
+        28,
+        46,
+        200,
+        175
+      ],
+      "rendered_visible_size": [
+        74.66666666666667,
+        56.0
+      ]
+    },
+    "srk-consulting.png": {
+      "source_size": [
+        1680,
+        600
+      ],
+      "visible_bounds": [
+        48,
+        206,
+        1631,
+        393
+      ],
+      "rendered_visible_size": [
+        132.0,
+        15.593177511054959
+      ]
+    },
+    "ict.jpg": {
+      "source_size": [
+        2241,
+        1952
+      ],
+      "visible_bounds": [
+        0,
+        0,
+        2241,
+        1952
+      ],
+      "rendered_visible_size": [
+        64.29098360655738,
+        56.0
+      ]
+    },
+    "lion-group.png": {
+      "source_size": [
+        154,
+        120
+      ],
+      "visible_bounds": [
+        0,
+        2,
+        154,
+        120
+      ],
+      "rendered_visible_size": [
+        73.08474576271186,
+        56.0
+      ]
+    },
+    "tractebel.png": {
+      "source_size": [
+        380,
+        80
+      ],
+      "visible_bounds": [
+        0,
+        0,
+        380,
+        80
+      ],
+      "rendered_visible_size": [
+        132.0,
+        27.789473684210527
+      ]
+    },
+    "arkitechno.png": {
+      "source_size": [
+        350,
+        118
+      ],
+      "visible_bounds": [
+        5,
+        0,
+        348,
+        115
+      ],
+      "rendered_visible_size": [
+        132.0,
+        44.25655976676385
+      ]
+    },
+    "cpc.png": {
+      "source_size": [
+        448,
+        448
+      ],
+      "visible_bounds": [
+        28,
+        28,
+        419,
+        419
+      ],
+      "rendered_visible_size": [
+        56.0,
+        56.0
+      ]
+    },
+    "rodic.png": {
+      "source_size": [
+        1280,
+        1280
+      ],
+      "visible_bounds": [
+        192,
+        133,
+        1164,
+        1114
+      ],
+      "rendered_visible_size": [
+        55.48623853211009,
+        56.0
+      ]
+    }
+  }
+}

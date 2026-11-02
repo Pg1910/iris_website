@@ -51,12 +51,12 @@
 #team .people-grid .person-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; mix-blend-mode: normal; }
 #team .people-grid .person-row:nth-child(-n+2) .person-portrait .image-open { height: 390px; }
 #team .people-grid .person-row:nth-child(-n+2) .person-portrait img { height: 100%; }
-#team .people-grid .person-row:nth-child(2) .person-portrait img { object-fit: contain; object-position: center bottom; }
+#team .people-grid .person-row:nth-child(2) .person-portrait img { object-fit: contain; object-position: center; padding: 12px; transform: none; }
 #team .person-row:hover .person-portrait, #team .person-row:focus-within .person-portrait { transform: translateY(-5px) rotate(-1deg); }
-#team .person-copy { padding: 19px 2px 0; }
-#team .person-copy h3 { font: 600 25px/1.15 Barlow,sans-serif; color: var(--crew-ink); margin: 0 0 7px; }
+#team .person-copy { padding: 19px 10px 0; text-align: center; overflow-wrap: anywhere; }
+#team .person-copy h3 { font: 600 25px/1.15 Barlow,sans-serif; color: var(--crew-ink); margin: 0 0 7px; text-wrap: balance; }
 #team .person-row:nth-child(-n+2) h3 { font-size: 33px; }
-#team .member-role { font-size: 16px; color: #465775; line-height: 1.45; }
+#team .member-role { display: block; font-size: 16px; color: #465775; line-height: 1.45; text-wrap: balance; }
 .crew-album { background: #fff; }
 .crew-photo-wall { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: start; gap: 38px 28px; padding: 12px 8px 30px; }
 #team .album-photo { margin: 0; padding: 10px 10px 0; border: 1px solid #dce3ed; background: white; box-shadow: 0 7px 20px #14243b12; transform: rotate(var(--photo-turn)); transition: transform .25s,box-shadow .25s; min-width: 0; }
@@ -114,5 +114,5 @@
   #team .person-row:hover .person-portrait, #team .person-row:focus-within .person-portrait, #team .crew-link:hover { transform: none; }
 }
 
-/* Careers hero scaled up ~18% */
-#careers .page-hero > .shell { zoom: 1.18; }
+/* Careers hero scaled up a further 15% (1.18 x 1.15) */
+#careers .page-hero > .shell { zoom: 1.357; }

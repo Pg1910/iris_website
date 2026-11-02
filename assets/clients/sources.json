@@ -1,0 +1,75 @@
+{
+  "smec.svg": {
+    "url": "https://www.smec.com/wp-content/uploads/2024/07/smec_logo_2024.svg",
+    "client": "SMEC"
+  },
+  "arkitechno.png": {
+    "url": "https://arkitechno.com/wp-content/uploads/2025/03/logo.png",
+    "client": "Arkitechno"
+  },
+  "assystem.svg": {
+    "url": "https://www.assystem.com/wp-content/themes/assystem/assets/images/logo-header.svg",
+    "client": "Assystem"
+  },
+  "larsen-toubro.svg": {
+    "url": "https://2025prodstorageaccount-eqdyc8g8hpccdfez.a02.azurefd.net/ltprod/media/d44ph50r/lt.svg",
+    "client": "Larsen & Toubro"
+  },
+  "ict.jpg": {
+    "url": "https://static.wixstatic.com/media/e19a03_c395473aed96438b962c44ff0dee91bd~mv2.jpg",
+    "client": "ICT"
+  },
+  "tractebel.png": {
+    "url": "https://assets.tractebel-engie.com/uploads/2025/06/logo.png",
+    "client": "Tractebel"
+  },
+  "bro.svg": {
+    "url": "https://upload.wikimedia.org/wikipedia/en/8/81/Border_Roads_Organisation_logo.svg",
+    "client": "Border Roads Organisation (BRO)"
+  },
+  "indian-army.svg": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Indian_Army_Circular_Insignia.svg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Indian_Army_Circular_Insignia.svg",
+    "client": "Indian Army"
+  },
+  "rodic.png": {
+    "url": "https://substack-post-media.s3.amazonaws.com/public/images/8021a3ff-ff5f-4420-a272-cf4f7cb6fc28_1280x1280.png",
+    "source_page": "https://insight.rodicconsultants.com/about",
+    "client": "Rodic Consultants"
+  },
+  "northeast-frontier-railway.png": {
+    "url": "https://media.9curry.com/uploads/organization/image/1582/northeast-frontier-railway-logo.png",
+    "source_page": "https://www.9curry.com/organizations/north-east-frontier-railway",
+    "client": "Northeast Frontier Railway"
+  },
+  "cpc.png": {
+    "url": "https://www.chaitanyaprojects.com/cpc-logo-hero.png",
+    "client": "Chaitanya Projects Consultancy (CPC)"
+  },
+  "sa-infra.png": {
+    "url": "https://media.licdn.com/dms/image/v2/C4D0BAQGTfy9JwSCYyQ/company-logo_200_200/company-logo_200_200/0/1658730818122/sainfrastructureconsultantspvtltd_logo?e=2147483647&v=beta&t=lZ1QDNGw4NVoaO8hDZAW4jnBcwjOkQ0pJgWpxx0LCOk",
+    "source_page": "https://www.linkedin.com/company/saicpl",
+    "client": "SA Infrastructure Consultants"
+  },
+  "srk-consulting.png": {
+    "url": "https://www.miningamigos.com/media/com_mtree/images/listings/o/236.png",
+    "client": "SRK Consulting"
+  },
+  "lion-group.png": {
+    "url": "https://liongroup.in/lions/navbar/image/LOGO-3.png",
+    "source_page": "https://liongroup.in/",
+    "client": "Lion Group India"
+  },
+  "smec-on-light.svg": {
+    "url": "https://www.smec.com/wp-content/uploads/2024/07/smec_logo_2024.svg",
+    "client": "SMEC",
+    "derived_from": "smec.svg",
+    "change": "White text changed to dark ink for the white clientele strip; original paths, blue symbol, red detail and white SJ backing retained."
+  },
+  "larsen-toubro-on-light.svg": {
+    "url": "https://2025prodstorageaccount-eqdyc8g8hpccdfez.a02.azurefd.net/ltprod/media/d44ph50r/lt.svg",
+    "client": "Larsen & Toubro",
+    "derived_from": "larsen-toubro.svg",
+    "change": "White vector fills changed to L&T blue for visibility on the white clientele strip; original paths retained."
+  }
+}

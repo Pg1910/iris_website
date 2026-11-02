@@ -28,11 +28,9 @@
     if (!carousel) return;
     const slides = [...carousel.querySelectorAll(".home-carousel-slide")];
     const dotsContainer = carousel.querySelector(".home-carousel-dots");
-    const previousButton = carousel.querySelector(".home-carousel-previous");
-    const nextButton = carousel.querySelector(".home-carousel-next");
     const toggleButton = carousel.querySelector(".home-carousel-toggle");
     const status = carousel.querySelector(".home-carousel-status");
-    if (slides.length < 2 || !dotsContainer || !previousButton || !nextButton || !status) return;
+    if (slides.length < 2 || !dotsContainer || !status) return;
 
     let activeIndex = 0;
     let timer;
@@ -84,8 +82,6 @@
       }, 4000);
     }
 
-    previousButton.addEventListener("click", () => showSlide(activeIndex - 1, true));
-    nextButton.addEventListener("click", () => showSlide(activeIndex + 1, true));
     if (toggleButton) {
       toggleButton.addEventListener("click", () => {
         userPaused = !userPaused;
@@ -428,15 +424,15 @@
     ["Deep Kumar", "Co-founder & CTO", "deepkummar.png"],
     [
       "Manjeet Singh Dhillon",
-      "Former chairman · Ganga Flood Control Commission",
+      "(Advisor - Water and irrigation), Retd. IES and former chairman of GFCC.",
       "manjeet_dhillon.png",
     ],
-    ["Saumya J. Verma", "Business development", "saumya.png"],
+    ["Saumya J. Verma", "AGM · Business Development", "saumya.png"],
+    ["Hitesh Sharma", "Project Manager", "hitesh.png"],
+    ["Ashish", "Project Coordinator", "ashish.png"],
     ["Aditya Raj", "Business analyst", "adityaraj.png"],
-    ["Ashish", "Project manager", "ashish.png"],
-    ["Hitesh", "Lead survey expert", "hitesh.png"],
-    ["Piyush", "AI division · Technical lead", "piyush.jpeg"],
-    ["Vikas", "Surveyor", "vikas.png"],
+    ["Piyush", "Technical Lead - AI division", "piyush.jpeg"],
+    ["Vikas", "Assistant Surveyor", "Vikas.jpeg"],
     ["Arko", "UI/UX & content", "arko.jpeg"],
     ["Lakshay", "Machine learning intern", "lakshay.jpeg"],
     ["Parth", "Machine learning intern", "parth.jpeg"],

@@ -17,10 +17,10 @@
   </title>
   <link as="font" crossorigin="" href="assets/fonts/barlow-600-latin.woff2" rel="preload" type="font/woff2" />
   <link as="font" crossorigin="" href="assets/fonts/source-sans-3-latin.woff2" rel="preload" type="font/woff2" />
-  <link href="styles.css" rel="stylesheet" />
-  <link href="pages.css" rel="stylesheet" />
-  <link href="motion.css" rel="stylesheet" />
-  <link href="character.css" rel="stylesheet" />
+  <link href="styles.css?v=202610291700" rel="stylesheet" />
+  <link href="pages.css?v=202610291700" rel="stylesheet" />
+  <link href="motion.css?v=202610291700" rel="stylesheet" />
+  <link href="character.css?v=202610291700" rel="stylesheet" />
   <link href="team.css?v=2" rel="stylesheet" />
   <link href="assets/brand-symbol.png" rel="icon" type="image/png" />
 </head>
@@ -99,12 +99,6 @@
             <p>Empowering better decisions with aerial intelligence and geospatial technology.</p>
           </div>
         </article>
-        <button aria-label="Previous slide" class="home-carousel-arrow home-carousel-previous" type="button">
-          <span aria-hidden="true">‹</span>
-        </button>
-        <button aria-label="Next slide" class="home-carousel-arrow home-carousel-next" type="button">
-          <span aria-hidden="true">›</span>
-        </button>
         <div aria-label="Carousel controls" class="home-carousel-controls">
           <div aria-label="Choose a slide" class="home-carousel-dots" role="group"></div>
         </div>
@@ -135,52 +129,102 @@
         <div class="shell">
           <h2 class="heading home-tech-heading" id="home-tech-title">Technologies</h2>
           <div class="home-tech-grid">
-            <article class="home-tech-card">
+            <article class="home-tech-card" tabindex="0"><div class="tech-flip"><div class="tech-front">
               <div class="home-tech-card-img">
                 <img alt="LiDAR 3D digital elevation model and terrain survey" height="490" loading="lazy"
                   src="assets/technology/lidar-terrain-3d.jpg" width="735" />
               </div>
-              <div class="home-tech-card-label">Lidar</div>
-            </article>
-            <article class="home-tech-card">
+              <div class="home-tech-card-label">Lidar</div></div><div class="tech-back"><h3>Lidar</h3><p>Laser-scanned point clouds give us millimetre-accurate terrain models, even beneath dense vegetation.</p></div></div></article>
+            <article class="home-tech-card" tabindex="0"><div class="tech-flip"><div class="tech-front">
               <div class="home-tech-card-img">
                 <img alt="Drone photogrammetry aerial surveying and field mapping" height="518" loading="lazy"
-                  src="assets/extra_images/photogram_2.jpeg" width="1024" />
+                  src="assets/extra_images/pg.jpg" width="1024" />
               </div>
-              <div class="home-tech-card-label">Photogrammetry</div>
-            </article>
-            <article class="home-tech-card">
+              <div class="home-tech-card-label">Photogrammetry</div></div><div class="tech-back"><h3>Photogrammetry</h3><p>Overlapping drone photos become orthomosaics, contours and 3D models, checked against ground control.</p></div></div></article>
+            <article class="home-tech-card" tabindex="0"><div class="tech-flip"><div class="tech-front">
               <div class="home-tech-card-img">
                 <img alt="High-resolution satellite imagery of coastal port and urban landscape" height="682" loading="lazy"
                   src="assets/technology/satellite-urban-port.jpg" width="1024" />
               </div>
-              <div class="home-tech-card-label">Satellite</div>
-            </article>
-            <article class="home-tech-card">
+              <div class="home-tech-card-label">Satellite</div></div><div class="tech-back"><h3>Satellite</h3><p>We turn high-resolution imagery into change maps and land-use insight for large areas.</p></div></div></article>
+            <article class="home-tech-card" tabindex="0"><div class="tech-flip"><div class="tech-front">
               <div class="home-tech-card-img">
                 <img alt="Artificial Intelligence (AI) drone system for real-time object detection and geospatial analysis" height="600" loading="lazy"
                   src="assets/akshaa/urban-park.jpg" width="800" />
               </div>
-              <div class="home-tech-card-label">Artificial Intelligence (AI)</div>
-            </article>
-            <article class="home-tech-card">
+              <div class="home-tech-card-label">Artificial Intelligence (AI)</div></div><div class="tech-back"><h3>Artificial Intelligence (AI)</h3><p>Custom models detect objects and changes in imagery, then flag them for review.</p></div></div></article>
+            <article class="home-tech-card" tabindex="0"><div class="tech-flip"><div class="tech-front">
               <div class="home-tech-card-img">
                 <img alt="Differential GPS (DGPS) satellite constellation and base station correction workflow" height="308" loading="lazy"
                   src="assets/extra_images/DGPS.webp" width="486" />
               </div>
-              <div class="home-tech-card-label">DGPS/ETS</div>
-            </article>
-            <article class="home-tech-card">
+              <div class="home-tech-card-label">DGPS/ETS</div></div><div class="tech-back"><h3>DGPS/ETS</h3><p>RTK-grade control points and total-station checks keep every survey tied to ground truth.</p></div></div></article>
+            <article class="home-tech-card" tabindex="0"><div class="tech-flip"><div class="tech-front">
               <div class="home-tech-card-img">
                 <img alt="Hydrographic survey vessel mapping seabed bathymetry with multibeam echo sounder" height="539" loading="lazy"
                   src="assets/technology/hydrography-multibeam-sonar.jpg" width="1024" />
               </div>
-              <div class="home-tech-card-label">Hydrography/Hydrology</div>
-            </article>
+              <div class="home-tech-card-label">Hydrography/Hydrology</div></div><div class="tech-back"><h3>Hydrography/Hydrology</h3><p>Multibeam sonar and echo sounders map seabed depths for ports, rivers and reservoirs.</p></div></div></article>
+          </div>
+          <div class="home-section-actions">
+            <a class="button primary" data-page="technology" href="#technology">
+              Explore technology
+              <span aria-hidden="true" class="arrow"> → </span>
+            </a>
           </div>
         </div>
       </section>
 
+      <!-- ═══════════ Solutions (Industry Verticals) Section ═══════════ -->
+      <section aria-labelledby="home-solutions-title" class="section home-technologies home-solutions-verticals">
+        <div class="shell">
+          <h2 class="heading home-tech-heading" id="home-solutions-title">Industry verticals</h2>
+          <div class="home-tech-grid">
+            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Railway Solutions"><div class="tech-flip"><div class="tech-front">
+              <div class="home-tech-card-img">
+                <img alt="Railway surveying and infrastructure solutions" height="518" loading="lazy"
+                  src="assets/extra_images/rail_survey.jpg" width="1024" />
+              </div>
+              <div class="home-tech-card-label">Railway</div></div><div class="tech-back"><h3>Railway</h3><p>Corridor surveys for alignment, track geometry and yard planning, delivered engineering-ready.</p></div></div></a>
+            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Road Solutions"><div class="tech-flip"><div class="tech-front">
+              <div class="home-tech-card-img">
+                <img alt="Road condition monitoring and highway engineering surveys" height="518" loading="lazy"
+                  src="assets/extra_images/one_design.jpeg" width="1024" />
+              </div>
+              <div class="home-tech-card-label">Road</div></div><div class="tech-back"><h3>Road</h3><p>Highway topography and condition surveys that support design, widening and rehabilitation.</p></div></div></a>
+            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Rural and Urban Solutions"><div class="tech-flip"><div class="tech-front">
+              <div class="home-tech-card-img">
+                <img alt="Rural and urban GIS digitization, 3D digital twins and cadastral mapping" height="518" loading="lazy"
+                  src="assets/verticals/rural_urban.webp" width="1024" />
+              </div>
+              <div class="home-tech-card-label">Rural &amp; Urban</div></div><div class="tech-back"><h3>Rural &amp; Urban</h3><p>GIS digitisation, cadastral mapping and 3D city models for confident planning.</p></div></div></a>
+            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Agriculture Solutions"><div class="tech-flip"><div class="tech-front">
+              <div class="home-tech-card-img">
+                <img alt="Agriculture and irrigation planning, crop health and watershed management" height="518" loading="lazy"
+                  src="assets/verticals/agriculture.webp" width="1024" />
+              </div>
+              <div class="home-tech-card-label">Agriculture</div></div><div class="tech-back"><h3>Agriculture</h3><p>Crop-health, irrigation and watershed mapping that helps farms and agencies decide faster.</p></div></div></a>
+            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Mining Solutions"><div class="tech-flip"><div class="tech-front">
+              <div class="home-tech-card-img">
+                <img alt="Mine pit and dump management, volume surveys and slope stability" height="518" loading="lazy"
+                  src="assets/verticals/mine.webp" width="1024" />
+              </div>
+              <div class="home-tech-card-label">Mine</div></div><div class="tech-back"><h3>Mine</h3><p>Pit and dump volumes, slope checks and progress surveys, repeatable every cycle.</p></div></div></a>
+            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Water Solutions"><div class="tech-flip"><div class="tech-front">
+              <div class="home-tech-card-img">
+                <img alt="Water surveying, dam inspections, flood monitoring and hydrology" height="518" loading="lazy"
+                  src="assets/verticals/water.webp" width="1024" />
+              </div>
+              <div class="home-tech-card-label">Water</div></div><div class="tech-back"><h3>Water</h3><p>Dam, canal and flood-plain surveys with bathymetry for safer water management.</p></div></div></a>
+          </div>
+          <div class="home-section-actions">
+            <a class="button primary" data-page="solutions" href="#solutions">
+              Explore industry verticals
+              <span aria-hidden="true" class="arrow"> → </span>
+            </a>
+          </div>
+        </div>
+      </section>
       <section class="section change-section">
         <div class="shell change-story">
           <div class="change-copy">
@@ -244,56 +288,6 @@
           </div>
         </div>
       </section>
-      <!-- ═══════════ Solutions (Industry Verticals) Section ═══════════ -->
-      <section aria-labelledby="home-solutions-title" class="section home-technologies home-solutions-verticals">
-        <div class="shell">
-          <h2 class="heading home-tech-heading" id="home-solutions-title">SOLUTIONS</h2>
-          <div class="home-tech-grid">
-            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Railway Solutions">
-              <div class="home-tech-card-img">
-                <img alt="Railway surveying and infrastructure solutions" height="518" loading="lazy"
-                  src="assets/extra_images/rail_survey.jpg" width="1024" />
-              </div>
-              <div class="home-tech-card-label">Railway</div>
-            </a>
-            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Road Solutions">
-              <div class="home-tech-card-img">
-                <img alt="Road condition monitoring and highway engineering surveys" height="518" loading="lazy"
-                  src="assets/extra_images/one_design.jpeg" width="1024" />
-              </div>
-              <div class="home-tech-card-label">Road</div>
-            </a>
-            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Rural and Urban Solutions">
-              <div class="home-tech-card-img">
-                <img alt="Rural and urban GIS digitization, 3D digital twins and cadastral mapping" height="518" loading="lazy"
-                  src="assets/verticals/rural_urban.webp" width="1024" />
-              </div>
-              <div class="home-tech-card-label">Rural &amp; Urban</div>
-            </a>
-            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Agriculture Solutions">
-              <div class="home-tech-card-img">
-                <img alt="Agriculture and irrigation planning, crop health and watershed management" height="518" loading="lazy"
-                  src="assets/verticals/agriculture.webp" width="1024" />
-              </div>
-              <div class="home-tech-card-label">Agriculture</div>
-            </a>
-            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Mining Solutions">
-              <div class="home-tech-card-img">
-                <img alt="Mine pit and dump management, volume surveys and slope stability" height="518" loading="lazy"
-                  src="assets/verticals/mine.webp" width="1024" />
-              </div>
-              <div class="home-tech-card-label">Mine</div>
-            </a>
-            <a class="home-tech-card" data-page="solutions" href="#solutions" aria-label="Water Solutions">
-              <div class="home-tech-card-img">
-                <img alt="Water surveying, dam inspections, flood monitoring and hydrology" height="518" loading="lazy"
-                  src="assets/verticals/water.webp" width="1024" />
-              </div>
-              <div class="home-tech-card-label">Water</div>
-            </a>
-          </div>
-        </div>
-      </section>
       <!-- ═══════════ Why Enterprises Trust Us ═══════════ -->
       <section aria-labelledby="enterprise-trust-title" class="section enterprise-trust">
         <div class="shell">
@@ -340,40 +334,130 @@
         <div class="marquee">
           <div class="client-set">
             <div class="client-logo">
-              <img alt="Anand Raj logo" height="104" src="assets/clients/anand-raj.png" width="153" />
-              <span> Anand Raj </span>
-            </div>
-            <div class="client-logo">
-              <img alt="CEG logo" height="139" src="assets/clients/ceg.png" width="342" />
+              <div class="client-logo-art" style="--client-image-width: 134.758px; --client-image-height: 54.770px; --client-image-left: 0.000px; --client-image-top: 0.615px">
+                <img alt="CEG logo" height="139" src="assets/clients/ceg.png" width="342" />
+              </div>
               <span> CEG </span>
             </div>
             <div class="client-logo">
-              <img alt="Central Railway logo" height="218" src="assets/clients/central-railway.png" width="178" />
+              <div class="client-logo-art" style="--client-image-width: 47.467px; --client-image-height: 58.133px; --client-image-left: 42.667px; --client-image-top: -0.800px">
+                <img alt="Central Railway logo" height="218" src="assets/clients/central-railway.png" width="178" />
+              </div>
               <span> Central Railway </span>
             </div>
             <div class="client-logo">
-              <img alt="Eastern Railway logo" height="246" src="assets/clients/eastern-railway.png" width="205" />
+              <div class="client-logo-art" style="--client-image-width: 46.667px; --client-image-height: 56.000px; --client-image-left: 42.667px; --client-image-top: 0.000px">
+                <img alt="Eastern Railway logo" height="246" src="assets/clients/eastern-railway.png" width="205" />
+              </div>
               <span> Eastern Railway </span>
             </div>
             <div class="client-logo">
-              <img alt="50Hertz logo" height="162" src="assets/clients/50hertz.png" width="449" />
+              <div class="client-logo-art" style="--client-image-width: 133.187px; --client-image-height: 48.054px; --client-image-left: 0.000px; --client-image-top: 2.787px">
+                <img alt="50Hertz logo" height="162" src="assets/clients/50hertz.png" width="449" />
+              </div>
               <span> 50Hertz </span>
             </div>
             <div class="client-logo">
-              <img alt="Northern Railway logo" height="194" src="assets/clients/northern-railway.png" width="162" />
+              <div class="client-logo-art" style="--client-image-width: 48.774px; --client-image-height: 58.409px; --client-image-left: 41.613px; --client-image-top: -1.806px">
+                <img alt="Northern Railway logo" height="194" src="assets/clients/northern-railway.png" width="162" />
+              </div>
               <span> Northern Railway </span>
             </div>
             <div class="client-logo">
-              <img alt="Vedanta logo" height="89" src="assets/clients/vedanta.png" width="233" />
+              <div class="client-logo-art" style="--client-image-width: 143.051px; --client-image-height: 54.642px; --client-image-left: -6.753px; --client-image-top: 1.293px">
+                <img alt="Vedanta logo" height="89" src="assets/clients/vedanta.png" width="233" />
+              </div>
               <span> Vedanta </span>
             </div>
             <div class="client-logo">
-              <img alt="Royal client logo" height="124" loading="lazy" src="assets/clients/royal.png" width="369" />
-              <span> Royal </span>
+              <div class="client-logo-art" style="--client-image-width: 116.667px; --client-image-height: 67.667px; --client-image-left: 7.667px; --client-image-top: -5.250px">
+                <img alt="DMIA client logo" height="116" loading="lazy" src="assets/clients/dmia.png" width="200" />
+              </div>
+              <span> DMIA </span>
             </div>
             <div class="client-logo">
-              <img alt="DMIA client logo" height="116" loading="lazy" src="assets/clients/dmia.png" width="200" />
-              <span> DMIA </span>
+              <div class="client-logo-art" style="--client-image-width: 57.143px; --client-image-height: 57.143px; --client-image-left: 37.357px; --client-image-top: -0.429px">
+                <img alt="Northeast Frontier Railway logo" height="400" src="assets/clients/northeast-frontier-railway.png" width="400" />
+              </div>
+              <span> Northeast Frontier Railway </span>
+            </div>
+            <div class="client-logo">
+              <div class="client-logo-art" style="--client-image-width: 86.822px; --client-image-height: 86.822px; --client-image-left: 16.512px; --client-image-top: -19.969px">
+                <img alt="SA Infrastructure Consultants logo" height="200" src="assets/clients/sa-infra.png" width="200" />
+              </div>
+              <span> SA Infrastructure Consultants </span>
+            </div>
+            <div class="client-logo">
+              <div class="client-logo-art" style="--client-image-width: 140.088px; --client-image-height: 50.032px; --client-image-left: -4.003px; --client-image-top: 3.026px">
+                <img alt="SRK Consulting logo" height="600" src="assets/clients/srk-consulting.png" width="1680" />
+              </div>
+              <span> SRK Consulting </span>
+            </div>
+            <div class="client-logo">
+              <div class="client-logo-art" style="--client-image-width: 64.291px; --client-image-height: 56.000px; --client-image-left: 33.855px; --client-image-top: 0.000px">
+                <img alt="ICT logo" height="1952" src="assets/clients/ict.jpg" width="2241" />
+              </div>
+              <span> ICT </span>
+            </div>
+            <div class="client-logo">
+              <div class="client-logo-art" style="--client-image-width: 73.085px; --client-image-height: 56.949px; --client-image-left: 29.458px; --client-image-top: -0.949px">
+                <img alt="Lion Group India logo" height="120" src="assets/clients/lion-group.png" width="154" />
+              </div>
+              <span> Lion Group India </span>
+            </div>
+            <div class="client-logo">
+              <div class="client-logo-art">
+                <img alt="SMEC logo" height="44" src="assets/clients/smec-on-light.svg" width="177" />
+              </div>
+              <span> SMEC </span>
+            </div>
+            <div class="client-logo">
+              <div class="client-logo-art" style="--client-image-width: 132.000px; --client-image-height: 27.789px; --client-image-left: 0.000px; --client-image-top: 14.105px">
+                <img alt="Tractebel logo" height="80" src="assets/clients/tractebel.png" width="380" />
+              </div>
+              <span> Tractebel </span>
+            </div>
+            <div class="client-logo">
+              <div class="client-logo-art" style="--client-image-width: 134.694px; --client-image-height: 45.411px; --client-image-left: -1.924px; --client-image-top: 5.872px">
+                <img alt="Arkitechno logo" height="118" src="assets/clients/arkitechno.png" width="350" />
+              </div>
+              <span> Arkitechno </span>
+            </div>
+            <div class="client-logo">
+              <div class="client-logo-art">
+                <img alt="Larsen &amp; Toubro logo" height="56" src="assets/clients/larsen-toubro-on-light.svg" width="303" />
+              </div>
+              <span> Larsen &amp; Toubro </span>
+            </div>
+            <div class="client-logo">
+              <div class="client-logo-art">
+                <img alt="Assystem logo" height="57" src="assets/clients/assystem.svg" width="80" />
+              </div>
+              <span> Assystem </span>
+            </div>
+            <div class="client-logo">
+              <div class="client-logo-art" style="--client-image-width: 64.164px; --client-image-height: 64.164px; --client-image-left: 33.990px; --client-image-top: -4.010px">
+                <img alt="Chaitanya Projects Consultancy (CPC) logo" height="448" src="assets/clients/cpc.png" width="448" />
+              </div>
+              <span> Chaitanya Projects Consultancy (CPC) </span>
+            </div>
+            <div class="client-logo">
+              <div class="client-logo-art">
+                <img alt="Border Roads Organisation (BRO) logo" height="279" src="assets/clients/bro.svg" width="359" />
+              </div>
+              <span> Border Roads Organisation (BRO) </span>
+            </div>
+            <div class="client-logo">
+              <div class="client-logo-art">
+                <img alt="Indian Army logo" height="214" src="assets/clients/indian-army.svg" width="214" />
+              </div>
+              <span> Indian Army </span>
+            </div>
+            <div class="client-logo">
+              <div class="client-logo-art" style="--client-image-width: 73.068px; --client-image-height: 73.068px; --client-image-left: 27.297px; --client-image-top: -7.592px">
+                <img alt="Rodic Consultants logo" height="1280" src="assets/clients/rodic.png" width="1280" />
+              </div>
+              <span> Rodic Consultants </span>
             </div>
           </div>
         </div>
@@ -384,21 +468,21 @@
             <div class="map-preview">
               <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                 src="https://www.google.com/maps?cid=3752678949204386964&amp;q=Iris+Aerial+Innovations+Pvt+Ltd&amp;z=17&amp;output=embed"
-                title="Map preview for the Iris Aerial office in Dwarka Sector 8">
+                title="Map preview for the Iris Aerial head office in Dwarka">
               </iframe>
               <div class="map-badge">
                 <span> Office / New Delhi </span>
-                <strong>iris office , Sector 8 ,Dwarka </strong>
+                <strong>Head Office, Dwarka</strong>
               </div>
             </div>
             <div class="visit-copy">
               <h2 tabindex="-1">
-                Tell us <span class="hl">where the site is.</span>
+                Discuss your project with our team.
               </h2>
               <p>
-                Send the corridor or boundary, the design stage you are at,
-                and the accuracy you need to hit. We will come back with the
-                control and capture plan to get you there.
+                Share your project location, scope, design stage and accuracy
+                requirements. Our team will recommend a survey and data-capture
+                approach tailored to your objectives.
               </p>
               <div class="address-card">
                 <span> Address </span>
@@ -670,15 +754,12 @@
           <div aria-label="Akshaa evidence layers" class="ak-lens">
             <figure class="ak-lens-main">
               <button
-                aria-label="Enlarge Akshaa object-detection collage showing ships, aircraft, and tanks with labelled bounding boxes"
+                aria-label="Enlarge Akshaa object-detection collage showing ships, boats and tanks with labelled bounding boxes"
                 class="image-open" onclick="irisPreviewImage(this)" type="button">
                 <img
-                  alt="Akshaa object-detection collage showing ships, aircraft, and tanks with labelled bounding boxes"
-                  height="851" loading="lazy" src="assets/akshaa/collage.png" width="1102" />
+                  alt="Akshaa object-detection collage showing ships, boats and tanks with labelled bounding boxes"
+                  height="1254" loading="lazy" src="assets/extra_images/akshaa-hero-transparent.png" width="1254" />
               </button>
-              <figcaption>
-                Object detection / ships, aircraft, and tanks
-              </figcaption>
             </figure>
           </div>
         </div>
@@ -1428,9 +1509,38 @@
           <img alt="Iris Aerial Innovations" height="778" src="assets/brand-logo.png" width="1400" />
           <p>
             Aerial and ground surveying, engineering mapping, and geospatial
-            intelligence. Based in New Delhi, working wherever the project
-            takes us.
+            intelligence. Based in New Delhi.
           </p>
+          <div class="association-group">
+            <h3 class="association-label" id="footer-associations-label">Associations with</h3>
+            <ul aria-labelledby="footer-associations-label" class="association-list">
+              <li>
+                <a class="association-link association-link-wordmark" href="https://infracon.nic.in/" rel="noreferrer" target="_blank">
+                  <img alt="INFRACON" height="111" loading="lazy" src="assets/associations/infracon.png" width="284" />
+                </a>
+              </li>
+              <li>
+                <a class="association-link" href="https://sdsbitmesra.netlify.app/" rel="noreferrer" target="_blank">
+                  <img alt="Society for Data Science, BIT Mesra" height="200" loading="lazy" src="assets/associations/sds-bit-mesra.png" width="200" />
+                </a>
+              </li>
+              <li>
+                <a class="association-link association-link-wordmark" href="https://www.startupindia.gov.in/" rel="noreferrer" target="_blank">
+                  <img alt="Startup India" height="82" loading="lazy" src="assets/associations/startup-india.png" width="300" />
+                </a>
+              </li>
+              <li>
+                <a class="association-link association-link-wide" href="https://gdg.community.dev/" rel="noreferrer" target="_blank">
+                  <img alt="Google Developer Groups (GDG)" height="300" loading="lazy" src="assets/associations/gdg.svg" width="3003" />
+                </a>
+              </li>
+              <li>
+                <a class="association-link" href="https://www.iiti.ac.in/" rel="noreferrer" target="_blank">
+                  <img alt="IIT Indore" height="2420" loading="lazy" src="assets/associations/iit-indore.png" width="2420" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="footer-col">
           <h3>Explore</h3>
@@ -1465,7 +1575,10 @@
               global@irisaerial.in
             </a>
             <a class="contact-link" href="tel:+919599115441">
-              +91 95991 15441
+              India: +91 95991 15441
+            </a>
+            <a class="contact-link" href="tel:+19037811119">
+              Global (US): +1 903 781 1119
             </a>
             <span class="address">
               B-142, Sector 8, Dwarka
@@ -1510,25 +1623,25 @@
         </div>
       </div>
       <div class="footer-bottom">
+        <a class="credit-button" href="https://github.com/Pg1910" rel="noreferrer" target="_blank">
+          <svg aria-hidden="true" fill="currentColor" height="16" viewBox="0 0 24 24" width="16">
+            <path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.3 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.300-5.3-5.700 0-1.300.5-2.300 1.200-3.100-.1-.3-.5-1.500.1-3.100 0 0 1-.3 3.200 1.200a11 11 0 0 1 5.800 0C17 5.300 18 5.600 18 5.600c.6 1.600.2 2.800.1 3.100.8.800 1.200 1.800 1.200 3.100 0 4.400-2.700 5.400-5.300 5.700.4.400.8 1.100.8 2.200v3.300c0 .3.2.7.8.6A11.500 11.500 0 0 0 12 .5Z"></path>
+          </svg>
+          Kalsii
+        </a>
         <span>
           ©
           <span id="year"> </span>
           Iris Aerial Innovations Pvt. Ltd. · Established 2023
         </span>
-        <span> Mapping · Monitoring · Engineering · GIS · AI </span>
-        <a class="credit-button" href="https://github.com/Pg1910" rel="noreferrer" target="_blank">
-          <svg aria-hidden="true" fill="currentColor" height="16" viewBox="0 0 24 24" width="16">
-            <path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.3 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.300-5.3-5.700 0-1.300.5-2.300 1.200-3.100-.1-.3-.5-1.500.1-3.100 0 0 1-.3 3.200 1.200a11 11 0 0 1 5.800 0C17 5.300 18 5.600 18 5.600c.6 1.600.2 2.800.1 3.100.8.800 1.200 1.800 1.200 3.100 0 4.400-2.700 5.400-5.300 5.700.4.400.8 1.100.8 2.200v3.300c0 .3.2.7.8.6A11.500 11.500 0 0 0 12 .5Z"></path>
-          </svg>
-          Crafted by Piyush · Pg1910
-        </a>
+        <span>Aerial magic unleashed</span>
       </div>
     </div>
   </footer>
   <div aria-live="polite" class="toast" id="toast" role="status"></div>
-  <script defer="" src="site.js"></script>
-  <script defer="" src="motion.js"></script>
-  <script defer="" src="character.js"></script>
+  <script defer="" src="site.js?v=202610291700"></script>
+  <script defer="" src="motion.js?v=202610291700"></script>
+  <script defer="" src="character.js?v=202610291700"></script>
   <dialog aria-labelledby="image-viewer-caption" class="image-viewer" id="image-viewer">
     <button aria-label="Close image" autofocus="" class="image-viewer-close" onclick="irisCloseImage()" type="button">
       ×

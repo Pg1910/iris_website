@@ -1,0 +1,51 @@
+{
+  "client_count": 21,
+  "removed": [
+    "Royal Infra",
+    "Anand Raj Constructions"
+  ],
+  "added_assets": [
+    "northeast-frontier-railway.png",
+    "sa-infra.png",
+    "srk-consulting.png",
+    "ict.jpg",
+    "lion-group.png",
+    "smec.svg",
+    "tractebel.png",
+    "arkitechno.png",
+    "larsen-toubro.svg",
+    "assystem.svg",
+    "cpc.png",
+    "bro.svg",
+    "indian-army.svg",
+    "rodic.png"
+  ],
+  "checks": {
+    "local_assets": true,
+    "actual_image_dimensions": true,
+    "accessible_image_names": true,
+    "all_14_requested_clients": true,
+    "SMEC_and_Tractebel_separate": true,
+    "script_syntax": "checked separately with node --check"
+  },
+  "visual_browser_check": "Not performed; browser automation previously failed to determine current URL.",
+  "consistent_logo_sizing": {
+    "cells": [
+      180,
+      80
+    ],
+    "artwork_window": [
+      132,
+      56
+    ],
+    "logo_count": 21,
+    "source_artwork_unchanged": true,
+    "raster_blank_margins_compensated_in_css": true
+  },
+  "light_background_logo_fix": {
+    "SMEC": "smec-on-light.svg",
+    "Larsen_and_Toubro": "larsen-toubro-on-light.svg",
+    "artwork_preview": "Both variants rendered and visually inspected on white; L&T visible between Arkitechno and Assystem.",
+    "client_count": 21
+  }
+}

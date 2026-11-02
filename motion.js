@@ -28,87 +28,29 @@
     set.replaceWith(track);
     track.append(set);
 
-    // The clone is decorative: screen readers read the original set only.
-    const clone = set.cloneNode(true);
-    clone.setAttribute("aria-hidden", "true");
-    clone
-      .querySelectorAll("img")
-      .forEach((img) => img.setAttribute("alt", ""));
-    track.append(clone);
-
-    const setDuration = () => {
-      const distance = set.scrollWidth;
-      if (!distance) return;
-      // Constant speed (~58px/s) regardless of how many logos are on the rail.
-      track.style.setProperty(
-        "--marquee-duration",
-        `${Math.max(24, Math.round(distance / 58))}s`,
-      );
+    // Copies are decorative: screen readers read the original set only.
+    const build = () => {
+      track.querySelectorAll(".client-set[aria-hidden]").forEach((n) => n.remove());
+      const width = set.getBoundingClientRect().width;
+      if (!width) return;
+      const copies = Math.ceil(marquee.clientWidth / width) + 1;
+      for (let i = 0; i < copies; i += 1) {
+        const clone = set.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        clone.querySelectorAll("img").forEach((img) => img.setAttribute("alt", ""));
+        track.append(clone);
+      }
+      track.style.setProperty("--marquee-shift", `${width}px`);
+      // Constant speed (~60px/s) regardless of how many logos are on the rail.
+      track.style.setProperty("--marquee-duration", `${Math.max(12, Math.round(width / 60))}s`);
     };
-    setDuration();
-    addEventListener("resize", setDuration, { passive: true });
-    if (document.fonts?.ready) document.fonts.ready.then(setDuration);
-
-    // Center spotlight: colorize & zoom whichever logo is currently passing through the middle
-    let isVisible = false;
-    let rafId = null;
-    let activeCenterLogo = null;
-
-    function updateCenter() {
-      if (!isVisible) return;
-      const marqueeRect = marquee.getBoundingClientRect();
-      const centerX = marqueeRect.left + marqueeRect.width / 2;
-      const allLogos = track.querySelectorAll(".client-logo");
-
-      let closestLogo = null;
-      let minDistance = Infinity;
-
-      for (let i = 0; i < allLogos.length; i++) {
-        const logo = allLogos[i];
-        const rect = logo.getBoundingClientRect();
-        if (rect.width === 0) continue;
-        const logoCenterX = rect.left + rect.width / 2;
-        const dist = Math.abs(logoCenterX - centerX);
-        if (dist < minDistance) {
-          minDistance = dist;
-          closestLogo = logo;
-        }
-      }
-
-      // Spotlight zone: within 90px of marquee horizontal center
-      const threshold = 90;
-      const targetLogo = (closestLogo && minDistance < threshold) ? closestLogo : null;
-
-      if (targetLogo !== activeCenterLogo) {
-        if (activeCenterLogo) {
-          activeCenterLogo.classList.remove("is-center");
-        }
-        if (targetLogo) {
-          targetLogo.classList.add("is-center");
-        }
-        activeCenterLogo = targetLogo;
-      }
-
-      rafId = requestAnimationFrame(updateCenter);
-    }
-
-    const observer = new IntersectionObserver(([entry]) => {
-      isVisible = entry.isIntersecting;
-      if (isVisible) {
-        cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(updateCenter);
-      } else {
-        cancelAnimationFrame(rafId);
-        if (activeCenterLogo) {
-          activeCenterLogo.classList.remove("is-center");
-          activeCenterLogo = null;
-        }
-      }
-    }, { threshold: 0.05 });
-
-    observer.observe(marquee);
+    build();
+    addEventListener("resize", build, { passive: true });
+    set.querySelectorAll("img").forEach((img) => {
+      if (!img.complete) img.addEventListener("load", build, { once: true });
+    });
+    if (document.fonts?.ready) document.fonts.ready.then(build);
   }
-
   /* -------------------------------------------------------------------------
      3. Scroll reveal — imagery and cards arrive as you reach them
      ------------------------------------------------------------------------- */
@@ -145,6 +87,7 @@
       const nodes = [...document.querySelectorAll(selector)];
       nodes.forEach((node, index) => {
         if (node.hasAttribute("data-reveal")) return;
+        if (node.dataset.split || node.dataset.textFade) return;
         node.setAttribute("data-reveal", mode);
         // Stagger within a group, but never let the tail wait too long.
         node.style.setProperty(
@@ -293,10 +236,145 @@
     }
   }
 
+  /* -------------------------------------------------------------------------
+     7. Text choreography — headings rise word by word, copy follows on the
+        same easing so every section reads as one system
+     ------------------------------------------------------------------------- */
+
+  function splitWords(root, counter) {
+    [...root.childNodes].forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const parts = node.textContent.split(/(\s+)/);
+        const frag = document.createDocumentFragment();
+        parts.forEach((part) => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) {
+            frag.append(document.createTextNode(" "));
+            return;
+          }
+          const outer = document.createElement("span");
+          outer.className = "tw";
+          const inner = document.createElement("span");
+          inner.className = "tw-i";
+          inner.style.setProperty("--w", counter.n++);
+          inner.textContent = part;
+          outer.append(inner);
+          frag.append(outer);
+        });
+        node.replaceWith(frag);
+      } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== "BR") {
+        splitWords(node, counter);
+      }
+    });
+  }
+
+  function initText() {
+    if (reduceMotion()) return;
+    const headings = document.querySelectorAll(
+      ".page h1, .page h2, .heading, .crew-copy h1",
+    );
+    const copy = document.querySelectorAll(
+      [
+        ".page-hero p",
+        ".hero-copy p",
+        ".section-head p",
+        ".eyebrow",
+        ".crew-eyebrow",
+        ".crew-copy > p",
+        ".crew-section-heading > p",
+        ".home-tech-card-label",
+        ".solution-family p",
+        ".tech-method p",
+        ".enterprise-trust p",
+        ".footer-top p",
+        ".page .btn",
+        ".page .button",
+        ".page-hero a",
+      ].join(","),
+    );
+    const targets = [];
+    headings.forEach((h) => {
+      if (h.dataset.split) return;
+      h.dataset.split = "1";
+      splitWords(h, { n: 0 });
+      h.classList.add("text-split");
+      targets.push(h);
+    });
+    copy.forEach((el) => {
+      if (el.hasAttribute("data-reveal") || el.dataset.textFade) return;
+      el.dataset.textFade = "1";
+      targets.push(el);
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("text-in");
+          observer.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.01 },
+    );
+    targets.forEach((el) => observer.observe(el));
+    // Timer fallback: a backgrounded tab suspends observer delivery.
+    setTimeout(() => {
+      targets.forEach((el) => {
+        if (el.classList.contains("text-in") || el.closest(".page")?.hidden) return;
+        const box = el.getBoundingClientRect();
+        if (box.top < innerHeight && box.bottom > 0) el.classList.add("text-in");
+      });
+    }, 1500);
+  }
+
+  /* -------------------------------------------------------------------------
+     8. Feel-good layer — header shadow and card tilt
+     ------------------------------------------------------------------------- */
+
+  function initFeel() {
+    const header = document.querySelector(".site-header");
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      header?.classList.toggle("is-scrolled", scrollY > 8);
+    };
+    addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      },
+      { passive: true },
+    );
+    update();
+
+    if (reduceMotion() || !matchMedia("(hover: hover)").matches) return;
+    document.querySelectorAll(".job-card").forEach((card) => {
+      card.addEventListener("pointermove", (e) => {
+        card.classList.add("tilt");
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.setProperty("--rx", `${(x * 6).toFixed(2)}deg`);
+        card.style.setProperty("--ry", `${(-y * 6).toFixed(2)}deg`);
+        card.classList.add("is-tilting");
+      });
+      card.addEventListener("pointerleave", () => {
+        card.style.setProperty("--rx", "0deg");
+        card.style.setProperty("--ry", "0deg");
+        card.classList.remove("is-tilting");
+      });
+    });
+  }
+
   /* ----------------------------------------------------------------------- */
 
   function start() {
+    initFeel();
     initMarquee();
+    initText();
     initReveal();
     initParticles();
     initPeopleColour();

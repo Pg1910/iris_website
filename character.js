@@ -72,35 +72,6 @@
   }
 
   /* -------------------------------------------------------------------------
-     3. Scroll position, drawn as a survey chain across the top
-     ------------------------------------------------------------------------- */
-
-  function initScrollChain() {
-    const chain = document.createElement("div");
-    chain.className = "scroll-chain";
-    chain.setAttribute("aria-hidden", "true");
-    chain.innerHTML = "<i></i>";
-    document.body.append(chain);
-    let queued = false;
-    const update = () => {
-      queued = false;
-      const max = document.documentElement.scrollHeight - innerHeight;
-      chain.style.setProperty("--progress", max > 0 ? scrollY / max : 0);
-    };
-    addEventListener(
-      "scroll",
-      () => {
-        if (queued) return;
-        queued = true;
-        requestAnimationFrame(update);
-      },
-      { passive: true },
-    );
-    addEventListener("resize", update, { passive: true });
-    update();
-  }
-
-  /* -------------------------------------------------------------------------
      4. Hero: live readout and pointer parallax
      ------------------------------------------------------------------------- */
 
@@ -373,7 +344,6 @@
   function start() {
     initContours();
     splitWords(document.querySelector("#home .hero-copy h1"));
-    initScrollChain();
     initHud();
     initHeroParallax();
     initTally();
