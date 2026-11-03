@@ -1293,12 +1293,13 @@ html[data-motion="reduce"] *::after {
 }
 .association-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 8px;
   list-style: none;
   padding: 0;
   margin: 0;
+  max-width: 100%;
 }
 .association-link {
   display: grid;
@@ -1324,3 +1325,10 @@ html[data-motion="reduce"] *::after {
 .association-link-wide { width: 119px; }
 .association-link:hover { outline: 2px solid var(--accent); outline-offset: 2px; }
 .association-link:active { opacity: .8; }
+@media (max-width: 520px) {
+  .association-list { gap: 4px; }
+  .association-link { width: 28px; height: 34px; padding: 3px; }
+  .association-link-wordmark { width: 58px; }
+  .association-link-wide { width: 80px; }
+  .footer-brand .association-link img { max-height: 26px; }
+}

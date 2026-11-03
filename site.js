@@ -421,7 +421,7 @@
 
   const team = [
     ["Nikhil Saini", "Founder & CEO", "nikhil.png"],
-    ["Deep Kumar", "Co-founder & CTO", "deepkummar.png"],
+    ["Deep Kumar", "Co-founder & CTO", "deep_sir_new.jpeg"],
     [
       "Manjeet Singh Dhillon",
       "(Advisor - Water and irrigation), Retd. IES and former chairman of GFCC.",

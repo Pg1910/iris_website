@@ -2794,6 +2794,12 @@ body[data-route="akshaa"] {
 #solutions .solution-family .service-media img {
   border-radius: 14px;
 }
+#solutions #solution-water .service-media img {
+  transform: scale(1.38) !important;
+}
+#solutions #solution-water:hover .service-media img {
+  transform: scale(1.44) !important;
+}
 #solutions .solution-family .service-copy {
   padding: 48px 44px;
 }

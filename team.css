@@ -51,7 +51,7 @@
 #team .people-grid .person-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; mix-blend-mode: normal; }
 #team .people-grid .person-row:nth-child(-n+2) .person-portrait .image-open { height: 390px; }
 #team .people-grid .person-row:nth-child(-n+2) .person-portrait img { height: 100%; }
-#team .people-grid .person-row:nth-child(2) .person-portrait img { object-fit: contain; object-position: center; padding: 12px; transform: none; }
+#team .people-grid .person-row:nth-child(2) .person-portrait img { object-fit: contain; object-position: center; padding: 12px; transform: scale(1.5) !important; }
 #team .person-row:hover .person-portrait, #team .person-row:focus-within .person-portrait { transform: translateY(-5px) rotate(-1deg); }
 #team .person-copy { padding: 19px 10px 0; text-align: center; overflow-wrap: anywhere; }
 #team .person-copy h3 { font: 600 25px/1.15 Barlow,sans-serif; color: var(--crew-ink); margin: 0 0 7px; text-wrap: balance; }

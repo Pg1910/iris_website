@@ -3194,33 +3194,21 @@ body #careers .page-hero h1 {
 }
 
 /* ---------------------------------------------------------------------------
-   13. Home technologies — hover flips the card to a brown note
+   13. Home technology and industry cards — clean, readable flip copy
    --------------------------------------------------------------------------- */
 .home-technologies .home-tech-card {
-  overflow: visible;
-  background: none;
-  box-shadow: none;
-  perspective: 1100px;
+  overflow: hidden;
+  border-radius: 10px;
 }
 .home-technologies .tech-flip {
   position: relative;
   border-radius: 10px;
-  transform-style: preserve-3d;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.home-technologies .home-tech-card:hover .tech-flip,
-.home-technologies .home-tech-card:focus-visible .tech-flip,
-.home-technologies .home-tech-card:focus-within .tech-flip {
-  transform: rotateY(180deg);
 }
 .home-technologies .tech-front {
   overflow: hidden;
   border-radius: 10px;
-  background: #111;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
+/* Description fades in over the photo on a translucent dark layer. */
 .home-technologies .tech-back {
   position: absolute;
   inset: 0;
@@ -3231,30 +3219,39 @@ body #careers .page-hero h1 {
   gap: 10px;
   padding: 18px 22px;
   border-radius: 10px;
-  background:
-    radial-gradient(120% 90% at 20% 0%, rgba(255, 214, 170, 0.22), transparent 60%),
-    linear-gradient(160deg, #8a5a3c 0%, #5e3820 100%);
-  box-shadow: 0 12px 30px rgba(60, 32, 14, 0.35);
-  color: #fbeedd;
+  background: rgba(8, 24, 42, 0.72);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  color: #fff;
   text-align: center;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.home-technologies .home-tech-card:hover .tech-back,
+.home-technologies .home-tech-card:focus-visible .tech-back,
+.home-technologies .home-tech-card:focus-within .tech-back {
+  opacity: 1;
 }
 .home-technologies .tech-back h3 {
   margin: 0;
-  color: #ffd9a8;
-  font-size: clamp(16px, 1.4vw, 20px);
+  color: #fff;
+  font-size: clamp(17px, 1.4vw, 21px);
+  font-weight: 700;
   letter-spacing: 0.02em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 .home-technologies .tech-back p {
-  max-width: 30ch;
+  max-width: 32ch;
   margin: 0;
-  font-size: clamp(13px, 1.05vw, 15px);
-  line-height: 1.45;
+  color: #fff;
+  font-size: clamp(14px, 1.05vw, 16px);
+  font-weight: 600;
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 @media (prefers-reduced-motion: reduce) {
-  .home-technologies .tech-flip {
+  .home-technologies .tech-back {
     transition-duration: 0.01s;
   }
 }
@@ -3354,22 +3351,4 @@ body #careers .page-hero h1 {
 }
 .image-viewer.team-photo-viewer[open]::backdrop {
   animation: none;
-}
-
-/* Solutions cards flip to a deep-teal note (technologies keep brown). */
-.home-solutions-verticals .tech-back {
-  background:
-    radial-gradient(120% 90% at 20% 0%, rgba(120, 220, 230, 0.24), transparent 60%),
-    linear-gradient(160deg, #0f6b7a 0%, #0a3d58 100%);
-  box-shadow: 0 12px 30px rgba(6, 40, 60, 0.38);
-}
-.home-solutions-verticals .home-tech-card .tech-back h3 {
-  color: #a6f0f7;
-}
-.home-solutions-verticals .home-tech-card .tech-back p {
-  color: #e8fafc !important;
-}
-.home-technologies:not(.home-solutions-verticals) .home-tech-card .tech-back p {
-  color: #fff4e6 !important;
-  opacity: 1;
 }
